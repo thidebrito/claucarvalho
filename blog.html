@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Clau Carvalho | Método Aurora | Pós-Operatório Especializado</title>
+  <meta name="description" content="Blog da Clau Carvalho: artigos sobre pós-operatório, Método Aurora, fibrose, drenagem linfática manual, mentoria para profissionais e mais. Conteúdo real e verificado.">
+  <meta name="keywords" content="pós-operatório blog, Clau Carvalho, Método Aurora, fibrose, drenagem linfática, fisioterapia estética, mentoria estética, Goiânia">
+  <meta name="author" content="Clau Carvalho">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://claucarvalho.com.br/blog.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog — Clau Carvalho | Método Aurora">
+  <meta property="og:description" content="Artigos reais sobre pós-operatório, Método Aurora, fibrose, mentoria e mais.">
+
+  <!-- Schema BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog Clau Carvalho",
+    "description": "Artigos sobre pós-operatório especializado, Método Aurora, prevenção de fibrose e mentoria para profissionais.",
+    "url": "https://claucarvalho.com.br/blog.html",
+    "author": {
+      "@type": "Person",
+      "name": "Clau Carvalho",
+      "jobTitle": "Fisioterapeuta"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-deep: #06030E;
+      --bg-section: #0A0714;
+      --accent: #D4A85C;
+      --accent-glow: #C8956A;
+      --accent-soft: rgba(212, 168, 92, 0.12);
+      --text-primary: #F2EDE4;
+      --text-secondary: #9E9183;
+      --text-muted: #6B5F50;
+      --glass-bg: rgba(255, 255, 255, 0.04);
+      --glass-border: rgba(212, 168, 92, 0.08);
+      --glow-soft: 0 0 100px rgba(212, 168, 92, 0.12);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-sans); background: var(--bg-deep); color: var(--text-primary); line-height: 1.7; overflow-x: hidden; }
+    .container { max-width: min(900px, 90vw); margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; background: rgba(6,3,14,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border); }
+    nav .container { display: flex; justify-content: space-between; align-items: center; max-width: min(1200px, 90vw); }
+    .nav-logo { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600; color: var(--accent); text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { padding: 10px 24px; background: linear-gradient(135deg, var(--accent), var(--accent-glow)); color: var(--bg-deep) !important; border-radius: 50px; font-weight: 600 !important; font-size: 0.8rem !important; letter-spacing: 1px !important; }
+
+    /* Blog Header */
+    .blog-header { padding: 140px 0 60px; text-align: center; }
+    .blog-header h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+    .blog-header h1 em { color: var(--accent); font-style: italic; }
+    .blog-header p { color: var(--text-secondary); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+
+    /* Articles Grid */
+    .articles-grid { padding: 0 0 80px; }
+
+    .article-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 36px 32px;
+      margin-bottom: 20px;
+      transition: all 0.4s;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+    }
+
+    .article-card:hover {
+      border-color: rgba(212, 168, 92, 0.15);
+      box-shadow: var(--glow-soft);
+      transform: translateY(-2px);
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .article-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 4px 12px;
+      border: 1px solid var(--accent-soft);
+      border-radius: 50px;
+      background: rgba(212, 168, 92, 0.06);
+    }
+
+    .article-date { font-size: 0.82rem; color: var(--text-muted); }
+
+    .article-card h2 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .article-excerpt {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .article-body {
+      display: none;
+      padding-top: 20px;
+      border-top: 1px solid var(--glass-border);
+      margin-top: 16px;
+    }
+
+    .article-body.open { display: block; }
+
+    .article-body p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .article-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin: 24px 0 12px;
+    }
+
+    .article-body ul {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    .article-body ul li {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      padding: 6px 0 6px 20px;
+      position: relative;
+    }
+
+    .article-body ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.7rem;
+      top: 9px;
+    }
+
+    .article-body .source {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-style: italic;
+      border-left: 2px solid var(--accent);
+      padding-left: 12px;
+      margin-top: 20px;
+    }
+
+    .read-more {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .read-more:hover { opacity: 0.7; }
+
+    /* Footer */
+    footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--glass-border); }
+    footer p { font-size: 0.85rem; color: var(--text-muted); }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(30px); }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .article-card { padding: 28px 22px; }
+      .article-card h2 { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="index.html" class="nav-logo">Clau Carvalho</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html#metodo">Método</a></li>
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="blog.html" style="color:var(--accent)">Blog</a></li>
+        <li><a href="https://wa.me/5562999999999?text=Ol%C3%A1%2C%20gostaria%20de%20agendar" class="nav-cta" target="_blank" rel="noopener">Agendar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="blog-header">
+    <div class="container">
+      <h1>Blog <em>Clau Carvalho</em></h1>
+      <p>Conhecimento real sobre pós-operatório, Método Aurora e carreira na estética. Tudo baseado em prática clínica e experiência verificada.</p>
+    </div>
+  </section>
+
+  <section class="articles-grid">
+    <div class="container">
+
+      <!-- ARTIGO 1 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Método Aurora</span>
+          <span class="article-date">Baseado em conteúdo @clinicaclau</span>
+        </div>
+        <h2>O que é o Método Aurora e por que ele muda o pós-operatório</h2>
+        <p class="article-excerpt">O Método Aurora é uma técnica exclusiva criada por Clau Carvalho que utiliza manobras 100% manuais a seco, sem eletroterapia, com raciocínio clínico individualizado para cada paciente.</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <p>O Método Aurora foi desenvolvido com um objetivo central: proporcionar uma reabilitação no pós-operatório em menor tempo e livre de intercorrências.</p>
+          <h3>Os 5 pilares fundamentais</h3>
+          <ul>
+            <li>Técnica 100% manual a seco — manobras de pressão, descompressão e cisalhamento com a pele seca para garantir a pressão correta</li>
+            <li>Exclusão total de eletroterapia — aparelhos com calor aceleram fibroblastos de forma desordenada, causando fibrose</li>
+            <li>Sem deslizamento inicial — na primeira fase, apenas bombeamentos leves para desobstruir linfonodos</li>
+            <li>Raciocínio clínico individualizado — cada sessão adaptada ao tipo de pele, procedimento e estado emocional</li>
+            <li>Assistência 24 horas — acompanhamento com fotos e videochamadas compartilhadas com o médico cirurgião</li>
+          </ul>
+          <p>Diferente de protocolos genéricos, o Método Aurora trata cada paciente como único, adaptando pressão, manobras e frequência a cada sessão.</p>
+          <p class="source">Fonte: Conteúdo verificado no perfil @clinicaclau e material da Mentoria Técnica Aurora</p>
+        </div>
+      </article>
+
+      <!-- ARTIGO 2 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Técnica</span>
+          <span class="article-date">Baseado em conteúdo @clinicaclau</span>
+        </div>
+        <h2>Técnica 100% manual a seco: por que não usar cremes no pós-operatório inicial</h2>
+        <p class="article-excerpt">O Método Aurora condena o uso de cremes e óleos na fase inicial do pós-operatório. A técnica é realizada com a pele seca para garantir a pressão correta e evitar causar "lesão sobre lesão".</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <p>Uma das bases do Método Aurora é a exclusividade da técnica manual a seco. Mas por que isso importa?</p>
+          <h3>O problema dos cremes na fase inicial</h3>
+          <p>Quando se aplica cremes ou óleos na pele recém-operada, a mão do profissional desliza com facilidade excessiva. Isso impede o controle preciso da pressão — e no pós-operatório, pressão descontrolada pode causar lesão no tecido que já está inflamado.</p>
+          <h3>Como funciona a técnica a seco</h3>
+          <ul>
+            <li>Manobras de pressão controlada diretamente sobre a pele seca</li>
+            <li>Movimentos de descompressão que respeitam a fase cicatricial</li>
+            <li>Cisalhamento suave para alinhar fibras de colágeno</li>
+            <li>Força nunca é usada — o toque é preciso, não intenso</li>
+          </ul>
+          <p>O resultado é um alinhamento mais organizado das fibras, prevenção de aderências e uma recuperação mais rápida e segura.</p>
+          <p class="source">Fonte: Técnica documentada no Método Aurora — Clau Carvalho</p>
+        </div>
+      </article>
+
+      <!-- ARTIGO 3 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Prevenção</span>
+          <span class="article-date">Baseado em conteúdo @clinicaclau</span>
+        </div>
+        <h2>Fibrose no pós-operatório: como prevenir e por que ela acontece</h2>
+        <p class="article-excerpt">A fibrose é uma das maiores preocupações de quem passa por uma cirurgia estética. Entenda o que causa e como o Método Aurora trabalha na prevenção desde a primeira sessão.</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <p>A fibrose aparente no pós-operatório é resultado de uma cicatrização desordenada. Quando as fibras de colágeno se organizam de forma caótica, surgem endurecimentos, irregularidades e desconforto.</p>
+          <h3>Causas mais comuns</h3>
+          <ul>
+            <li>Uso de eletroterapia com calor — acelera fibroblastos de forma desordenada</li>
+            <li>Drenagem linfática com deslizamento precoce — agride o tecido antes da hora</li>
+            <li>Falta de acompanhamento individualizado — protocolo genérico não considera o estado real do tecido</li>
+            <li>Ausência de orientações posturais e de fitas tape adequadas</li>
+          </ul>
+          <h3>Como o Método Aurora previne</h3>
+          <p>A técnica 100% manual a seco, sem calor e sem deslizamento inicial, garante que o tecido cicatrize de forma organizada. A cada sessão, o raciocínio clínico avalia o estado da pele e adapta as manobras para aquele momento específico da recuperação.</p>
+          <p class="source">Fonte: Conteúdo @clinicaclau — #posoperatorio #fibrose</p>
+        </div>
+      </article>
+
+      <!-- ARTIGO 4 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Ciência</span>
+          <span class="article-date">Baseado em conteúdo @clinicaclau</span>
+        </div>
+        <h2>Por que o Método Aurora não usa eletroterapia no pós-operatório</h2>
+        <p class="article-excerpt">Ao contrário de muitas abordagens convencionais, o Método Aurora proíbe o uso de aparelhos que emitem calor na região operada. Entenda o raciocínio clínico por trás dessa decisão.</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <p>A eletroterapia com calor é amplamente utilizada em protocolos convencionais de pós-operatório. No entanto, o Método Aurora a exclui completamente. A razão é baseada em raciocínio clínico.</p>
+          <h3>O que o calor faz no tecido operado</h3>
+          <p>O aquecimento da região operada acelera a produção de fibroblastos. Em condições normais, isso poderia ser benéfico. Porém, no pós-operatório, essa aceleração acontece de forma desordenada — os fibroblastos se multiplicam sem organização, comprometendo a cicatrização e promovendo o desenvolvimento de fibrose aparente.</p>
+          <h3>A alternativa manual</h3>
+          <p>No lugar de aparelhos, o Método Aurora utiliza exclusivamente manobras manuais de pressão, descompressão e cisalhamento. Essas técnicas, inspiradas na Drenagem Linfática Manual (Método Vodder), permitem controle total sobre a intensidade e direção das manobras.</p>
+          <p class="source">Fonte: Fundamentação do Método Aurora — Clau Carvalho</p>
+        </div>
+      </article>
+
+      <!-- ARTIGO 5 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Raciocínio Clínico</span>
+          <span class="article-date">Baseado em Reel @clinicaclau · 31/03/2026</span>
+        </div>
+        <h2>Raciocínio clínico no pós-operatório: por que cada paciente é único</h2>
+        <p class="article-excerpt">O raciocínio clínico é o coração do Método Aurora. Não existe "receita de bolo" — cada sessão é adaptada ao estado real do tecido, ao procedimento cirúrgico e à sensibilidade de cada paciente.</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <p>Um dos pilares do Método Aurora é a recusa de protocolos padronizados. Cada sessão começa com uma avaliação detalhada do estado atual do tecido.</p>
+          <h3>O que é avaliado a cada sessão</h3>
+          <ul>
+            <li>Tipo de pele e espessura do tecido</li>
+            <li>Tipo de procedimento cirúrgico realizado</li>
+            <li>Fase da cicatrização (inflamatória, proliferativa, remodelamento)</li>
+            <li>Hábitos de vida da paciente</li>
+            <li>Sensibilidade e estado emocional</li>
+          </ul>
+          <p>Com base nessa avaliação, as manobras e a pressão são rigorosamente adaptadas. O que funciona na segunda sessão pode ser completamente diferente do que é necessário na quinta.</p>
+          <p>Como a própria @marianasimoes.dra comentou no Instagram: "Pós-operatório é muito importante, quando não é feito da forma correta compromete o resultado da cirurgia."</p>
+          <p class="source">Fonte: Reel @clinicaclau — "Raciocínio clínico Clau Carvalho no pós operatório" (31/03/2026, 274 visualizações)</p>
+        </div>
+      </article>
+
+      <!-- ARTIGO 6 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Pós-Operatório</span>
+          <span class="article-date">Baseado em conteúdo @clinicaclau</span>
+        </div>
+        <h2>Drenagem linfática no pós-operatório: por que o Método Aurora é diferente</h2>
+        <p class="article-excerpt">A drenagem linfática manual é essencial no pós-operatório, mas nem toda drenagem é igual. O Método Aurora utiliza uma abordagem que difere da drenagem convencional, especialmente na fase inicial.</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <h3>Fase inicial: sem deslizamento</h3>
+          <p>Na primeira fase do pós-operatório, o Método Aurora não utiliza movimentos de deslizamento típicos da drenagem linfática comum. A técnica foca apenas em leves bombeamentos para desobstruir os linfonodos, protegendo os pontos e a pele recém-lesionada.</p>
+          <h3>Por que isso importa</h3>
+          <ul>
+            <li>A pele recém-operada está inflamada e frágil</li>
+            <li>Deslizamento precoce pode deslocar pontos e agredir tecido</li>
+            <li>Bombeamentos leves ativam o sistema linfático sem risco</li>
+            <li>A transição para manobras mais intensas é gradual e baseada em avaliação clínica</li>
+          </ul>
+          <p>Essa abordagem é inspirada no Método Vodder de Drenagem Linfática Manual, adaptada especificamente para o contexto cirúrgico.</p>
+          <p class="source">Fonte: Fundamentação técnica do Método Aurora</p>
+        </div>
+      </article>
+
+      <!-- ARTIGO 7 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Cuidados</span>
+          <span class="article-date">Baseado em conteúdo @clinicaclau</span>
+        </div>
+        <h2>Assistência 24 horas no pós-operatório: o que significa na prática</h2>
+        <p class="article-excerpt">O Método Aurora oferece acompanhamento contínuo com fotografias e videochamadas compartilhadas com o médico cirurgião. Entenda como funciona essa rede de apoio.</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <p>Uma das maiores ansiedades de quem passa por uma cirurgia estética é não saber se a recuperação está indo bem. O Método Aurora resolve isso com um sistema de acompanhamento contínuo.</p>
+          <h3>Como funciona</h3>
+          <ul>
+            <li>A paciente pode enviar fotos e vídeos da evolução a qualquer momento</li>
+            <li>As imagens são compartilhadas diretamente com o médico cirurgião</li>
+            <li>Videochamadas são realizadas quando necessário para avaliação remota</li>
+            <li>Orientações posturais, de alimentação e de cuidados são atualizadas constantemente</li>
+          </ul>
+          <p>Esse sistema garante que a paciente tenha uma rede de apoio físico e emocional durante todo o processo, reduzindo ansiedade e prevenindo intercorrências por falta de orientação.</p>
+          <p class="source">Fonte: Protocolo do Método Aurora — Clau Carvalho</p>
+        </div>
+      </article>
+
+      <!-- ARTIGO 8 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Prevenção</span>
+          <span class="article-date">Baseado em conteúdo @clinicaclau</span>
+        </div>
+        <h2>Seroma no pós-operatório: o que é e como prevenir</h2>
+        <p class="article-excerpt">O seroma é uma das complicações mais comuns no pós-operatório de cirurgias estéticas. Conheça as causas e como o Método Aurora trabalha na prevenção.</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <p>O seroma é o acúmulo de líquido seroso (plasma sanguíneo) na região operada. É uma resposta natural do corpo à cirurgia, mas quando excessivo, pode comprometer o resultado.</p>
+          <h3>Fatores de risco</h3>
+          <ul>
+            <li>Área cirúrgica extensa (especialmente abdominoplastias)</li>
+            <li>Movimentação inadequada nos primeiros dias</li>
+            <li>Falta de uso correto de fitas tape e malha compressiva</li>
+            <li>Drenagem insuficiente ou com técnica inadequada</li>
+          </ul>
+          <h3>Prevenção no Método Aurora</h3>
+          <p>O Método Aurora utiliza fitas tape (kinesioterapia) para contenção, orientações posturais específicas e exercícios de alongamento e respiração para prevenir o acúmulo de líquido. Cada protocolo é adaptado ao tipo de cirurgia e ao perfil da paciente.</p>
+          <p class="source">Fonte: Protocolo de prevenção de intercorrências — Método Aurora</p>
+        </div>
+      </article>
+
+      <!-- ARTIGO 9 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Cirurgias</span>
+          <span class="article-date">Baseado em conteúdo @clinicaclau</span>
+        </div>
+        <h2>Pós-operatório de abdominoplastia: o que esperar e como se recuperar</h2>
+        <p class="article-excerpt">A abdominoplastia é uma das cirurgias mais procuradas — e uma das que mais exigem cuidado no pós-operatório. Saiba o que esperar em cada fase.</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <p>A abdominoplastia envolve remoção de pele e gordura abdominal, frequentemente acompanhada de plicatura muscular. O pós-operatório exige atenção redobrada.</p>
+          <h3>Fases da recuperação</h3>
+          <ul>
+            <li>Primeiros 7 dias: máxima proteção, bombeamentos leves, uso de fitas tape</li>
+            <li>7-21 dias: início gradual de manobras mais profundas, sempre com avaliação clínica</li>
+            <li>21-60 dias: trabalho de alinhamento de fibras e prevenção de aderências</li>
+            <li>60+ dias: manutenção e refinamento do resultado</li>
+          </ul>
+          <p>No Método Aurora, cada uma dessas fases tem protocolo próprio, adaptado ao tipo de abdominoplastia (clássica, mini, circunferencial) e à resposta individual do tecido.</p>
+          <p class="source">Fonte: Especialidades clínicas da Clau Carvalho — @clinicaclau</p>
+        </div>
+      </article>
+
+      <!-- ARTIGO 10 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Cirurgias</span>
+          <span class="article-date">Baseado em conteúdo @clinicaclau</span>
+        </div>
+        <h2>Pós-operatório de lipoaspiração: cuidados essenciais para um bom resultado</h2>
+        <p class="article-excerpt">A lipoaspiração é o procedimento estético mais realizado no Brasil. O pós-operatório bem conduzido é o que diferencia um resultado bom de um resultado inesquecível.</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <p>Na lipoaspiração, o tecido subcutâneo sofre uma lesão controlada. A forma como esse tecido cicatriza determina a qualidade final do contorno corporal.</p>
+          <h3>Riscos de um pós-operatório mal conduzido</h3>
+          <ul>
+            <li>Fibrose — endurecimentos visíveis e palpáveis</li>
+            <li>Irregularidades — ondulações na pele por cicatrização desordenada</li>
+            <li>Seroma — acúmulo de líquido na região aspirada</li>
+            <li>Assimetria — resultado irregular por falta de acompanhamento</li>
+          </ul>
+          <h3>O diferencial do Método Aurora</h3>
+          <p>A técnica manual a seco permite trabalhar cada área com pressão específica, sem o risco de agravamento que a eletroterapia com calor representa. O raciocínio clínico individualizado avalia a cada sessão qual região precisa de mais atenção.</p>
+          <p class="source">Fonte: Serviços @clinicaclau — Pós-operatório especializado</p>
+        </div>
+      </article>
+
+      <!-- ARTIGO 11 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Estética</span>
+          <span class="article-date">Baseado em conteúdo @clinicaclau</span>
+        </div>
+        <h2>Lipo de papada: o que é e como funciona o pós-operatório</h2>
+        <p class="article-excerpt">A lipo de papada é um dos tratamentos oferecidos pela Clau Carvalho com técnica manual exclusiva. Resultados naturais, sem aparelhos invasivos.</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <p>A região da papada exige atenção especial no pós-operatório por ser uma área de alta visibilidade e sensibilidade. O tratamento com o Método Aurora garante uma recuperação segura.</p>
+          <h3>Cuidados específicos da região</h3>
+          <ul>
+            <li>A pele do pescoço é fina e sensível — manobras precisam ser delicadas</li>
+            <li>O inchaço (edema) é esperado nos primeiros dias</li>
+            <li>Uso de malha compressiva específica para a região</li>
+            <li>Bombeamentos leves nos linfonodos cervicais para drenar o edema</li>
+          </ul>
+          <p>O acompanhamento com fotos e videochamadas é especialmente importante nesta região, onde a evolução visual é rápida e qualquer intercorrência precisa ser identificada cedo.</p>
+          <p class="source">Fonte: Serviços @clinicaclau — Lipo de Papada</p>
+        </div>
+      </article>
+
+      <!-- ARTIGO 12 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Técnica</span>
+          <span class="article-date">Baseado em conteúdo @clinicaclau</span>
+        </div>
+        <h2>Kinesioterapia (fitas tape) no pós-operatório: como e quando usar</h2>
+        <p class="article-excerpt">O uso adequado de fitas tape é um dos elementos do Método Aurora para contenção e prevenção de seromas e fibroses. Entenda como são aplicadas.</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <p>As fitas tape (kinesioterapia) são um complemento importante à técnica manual no pós-operatório. No Método Aurora, são usadas com critérios específicos.</p>
+          <h3>Funções das fitas tape</h3>
+          <ul>
+            <li>Contenção do tecido — evita acúmulo de líquido</li>
+            <li>Suporte postural — ajuda a paciente a manter a posição correta</li>
+            <li>Estímulo linfático — a tensão da fita favorece a drenagem natural</li>
+            <li>Proteção — oferece suporte sem comprimir excessivamente</li>
+          </ul>
+          <h3>Quando são aplicadas</h3>
+          <p>A aplicação varia conforme o tipo de cirurgia e a fase da recuperação. No Método Aurora, as fitas são trocadas e reposicionadas a cada sessão, com base na avaliação do tecido naquele momento. Não existe uma posição fixa — tudo é adaptado ao estado real da paciente.</p>
+          <p class="source">Fonte: Protocolo Método Aurora — Kinesioterapia</p>
+        </div>
+      </article>
+
+      <!-- ARTIGO 13 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Cirurgias</span>
+          <span class="article-date">Baseado em Reel @marianasimoes.dra · 30/03/2026</span>
+        </div>
+        <h2>Pós-operatório de face e pescoço: abordagem cirúrgica especializada</h2>
+        <p class="article-excerpt">A recuperação de cirurgias faciais exige delicadeza máxima. A Dra. Mariana Simões compartilhou sua expertise em aula na Mentoria Técnica Aurora sobre esse tema.</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <p>As cirurgias de face e pescoço — rinoplastia, lifting facial, blefaroplastia — exigem um pós-operatório com atenção redobrada à sensibilidade da região.</p>
+          <h3>Desafios específicos</h3>
+          <ul>
+            <li>Edema facial pode ser intenso e assustador nos primeiros dias</li>
+            <li>A pele facial é fina e rica em vasos — qualquer manobra inadequada pode causar hematomas</li>
+            <li>A região tem alta vascularização — técnica manual precisa ser extremamente delicada</li>
+            <li>O componente emocional é forte — ver o rosto inchado gera ansiedade</li>
+          </ul>
+          <p>Como a @marianasimoes.dra destacou em aula na Mentoria Aurora: "Resultado não é só técnica. É planejamento, execução e, principalmente, acompanhamento."</p>
+          <p class="source">Fonte: Reel @marianasimoes.dra — Aula na @clinicaclau (30/03/2026)</p>
+        </div>
+      </article>
+
+      <!-- ARTIGO 14 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Mentoria</span>
+          <span class="article-date">Baseado em Reel @clinicaclau · 06/04/2026</span>
+        </div>
+        <h2>Mentoria Técnica Aurora: para quem é e o que transforma</h2>
+        <p class="article-excerpt">A Mentoria Técnica Aurora é o programa de Clau Carvalho para fisioterapeutas e esteticistas que querem sair do comum e construir uma carreira de alta autoridade. "Lucre com o Pós."</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <p>A Mentoria Técnica Aurora vai além da técnica clínica — é um programa completo para transformar a carreira de profissionais da estética.</p>
+          <h3>Os 6 módulos</h3>
+          <ul>
+            <li>Técnica Profissional — prevenção de intercorrências, foco no tratamento de fibroses e segurança clínica</li>
+            <li>Posicionamento de Marca — construção de autoridade no Instagram e criação de uma vitrine digital de alto valor</li>
+            <li>Conteúdo e Marketing — funis de conteúdo, criação de desejo e atração de clientes</li>
+            <li>Gestão e Organização — precificação correta, controle financeiro e organização da agenda</li>
+            <li>Comercial e Vendas — captação de clientes, fechamento de vendas pelo WhatsApp e parcerias médicas</li>
+            <li>Plano de Ação 30/60/90 — roteiro prático para escalar o negócio</li>
+          </ul>
+          <p>A mentoria conta com palestrantes convidados especializados — incluindo especialistas em ozonioterapia e médicos cirurgiões que compartilham sua perspectiva sobre a importância do pós-operatório bem feito.</p>
+          <p class="source">Fonte: Reel @clinicaclau — "Mentoria Técnica Aurora - Clau Carvalho" (06/04/2026)</p>
+        </div>
+      </article>
+
+      <!-- ARTIGO 15 -->
+      <article class="article-card reveal">
+        <div class="article-meta">
+          <span class="article-tag">Mentoria</span>
+          <span class="article-date">Baseado em Reel @magicozoniogoiania · 17/03/2026</span>
+        </div>
+        <h2>Ozonioterapia no pós-operatório: ciência aplicada à recuperação</h2>
+        <p class="article-excerpt">Na Mentoria Técnica Aurora, especialistas convidados compartilham conhecimento complementar. A ozonioterapia foi tema de uma das aulas, mostrando como pode auxiliar na cicatrização.</p>
+        <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        <div class="article-body">
+          <p>A ozonioterapia é uma terapia complementar que utiliza uma mistura de ozônio e oxigênio para estimular processos de cicatrização e controle de inflamação. Na Mentoria Técnica Aurora, o tema foi abordado como conhecimento complementar para profissionais da estética.</p>
+          <h3>Potenciais benefícios no pós-operatório</h3>
+          <ul>
+            <li>Auxílio no controle inflamatório</li>
+            <li>Estímulo à oxigenação do tecido</li>
+            <li>Propriedades bactericidas que podem auxiliar na prevenção de infecções</li>
+            <li>Complemento às técnicas manuais do Método Aurora</li>
+          </ul>
+          <p>Como o especialista @magicozoniogoiania destacou: "Conhecimento não foi feito para ser guardado — foi feito para atravessar pessoas, ampliar visões e transformar realidades."</p>
+          <p class="source">Fonte: Reel @magicozoniogoiania — Palestra na Mentoria @clinicaclau (17/03/2026)</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:80px 0;text-align:center;background:var(--bg-section);position:relative;overflow:hidden">
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(212,168,92,0.06),transparent 60%);border-radius:50%;pointer-events:none"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <h2 style="font-family:var(--font-serif);font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:12px">Quer saber mais sobre o <em style="color:var(--accent);font-style:italic">Método Aurora</em>?</h2>
+      <p style="color:var(--text-secondary);max-width:500px;margin:0 auto 30px">Agende sua avaliação e descubra como transformar sua recuperação.</p>
+      <a href="https://wa.me/5562999999999?text=Ol%C3%A1%2C%20gostaria%20de%20agendar" class="nav-cta" style="display:inline-flex;padding:16px 36px;font-size:0.9rem;box-shadow:0 0 50px rgba(212,168,92,0.35);text-decoration:none" target="_blank" rel="noopener">✦ Agendar pelo WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Clau Carvalho — Todos os direitos reservados. Desenvolvido por <a href="#">AENET</a></p>
+    </div>
+  </footer>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.reveal').forEach(el => {
+      gsap.to(el, {
+        scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+        opacity: 1, y: 0, duration: 0.7, ease: 'power3.out'
+      });
+    });
+  </script>
+
+</body>
+</html>
