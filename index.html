@@ -1070,6 +1070,23 @@
     }
 
     /* ══════════════════════════════════════════
+       INSTAGRAM GRID
+       ══════════════════════════════════════════ */
+    .instagram-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .instagram-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 580px) {
+      .instagram-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ══════════════════════════════════════════
        FLOATING WHATSAPP BUTTON (UX)
        ══════════════════════════════════════════ */
     .floating-whatsapp {
@@ -1366,22 +1383,23 @@
   <!-- ══════════════ NÚMEROS ══════════════ -->
   <section id="numeros">
     <div class="container">
-      <div class="stats-grid">
+      <p class="section-eyebrow reveal">O Método em números</p>
+      <div class="stats-grid" style="margin-top:32px">
         <div class="stat-item reveal">
-          <h3>100<span style="font-size:0.6em">%</span></h3>
-          <p>Técnica manual</p>
+          <h3 style="display:flex;align-items:baseline;justify-content:center;gap:4px"><span class="counter" data-target="5">0</span></h3>
+          <p>Pilares clínicos exclusivos</p>
         </div>
         <div class="stat-item reveal">
-          <h3>24<span style="font-size:0.6em">h</span></h3>
-          <p>Assistência contínua</p>
+          <h3>24<span style="font-size:0.55em;opacity:0.7">h/dia</span></h3>
+          <p>Assistência à paciente</p>
         </div>
         <div class="stat-item reveal">
-          <h3><span class="counter" data-target="5">0</span></h3>
-          <p>Pilares do método</p>
+          <h3><span class="counter" data-target="6">0</span></h3>
+          <p>Módulos na Mentoria Aurora</p>
         </div>
         <div class="stat-item reveal">
-          <h3>0<span style="font-size:0.6em">%</span></h3>
-          <p>Eletroterapia</p>
+          <h3><span class="counter" data-target="30">0</span></h3>
+          <p>Artigos no Blog da Clau</p>
         </div>
       </div>
     </div>
@@ -1475,7 +1493,7 @@
       <div class="glow-line reveal"></div>
       <p class="section-subtitle reveal">Veja de perto o trabalho, os bastidores e os resultados reais. Tudo publicado, tudo verificável.</p>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px" class="reveal">
+      <div class="instagram-grid reveal">
         <!-- Post real 1: Mentoria Técnica Aurora — imagem real baixada do Instagram -->
         <a href="https://www.instagram.com/reel/DWzmiS-DB0d/" target="_blank" rel="noopener" class="glass" style="padding:0;text-decoration:none;display:block;transition:all 0.4s;overflow:hidden">
           <img src="assets/instagram/mentoria-aurora.jpg" alt="Mentoria Técnica Aurora - Clau Carvalho - vídeo real do Instagram @clinicaclau" style="width:100%;height:220px;object-fit:cover;object-position:center 35%;border-radius:20px 20px 0 0">
@@ -1517,6 +1535,27 @@
             <h3 style="font-family:var(--font-serif);font-size:1.05rem;color:var(--text-primary);margin-bottom:8px">Ozonioterapia na Mentoria Aurora</h3>
             <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7">Conhecimento que atravessa pessoas e transforma realidades.</p>
             <p style="font-size:0.82rem;color:var(--text-muted);margin-top:12px">17 de março, 2026 · @magicozoniogoiania</p>
+          </div>
+        </a>
+        <!-- Post real 5: Mentoria Pós-Operatório -->
+        <a href="https://www.instagram.com/reel/DUJ1VKXjUcT/" target="_blank" rel="noopener" class="glass" style="padding:0;text-decoration:none;display:block;transition:all 0.4s;overflow:hidden">
+          <img src="assets/instagram/mentoria-pos.jpg" alt="Mentoria Clau Carvalho - Pós-Operatório - Imagem real do Instagram @clinicaclau" style="width:100%;height:220px;object-fit:cover;object-position:center 30%;border-radius:20px 20px 0 0">
+          <div style="padding:20px 24px 24px">
+            <p style="font-size:0.82rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px">✦ Pós-Operatório</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.05rem;color:var(--text-primary);margin-bottom:8px">Mentoria Clau Carvalho — Pós-Operatório</h3>
+            <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7">Resultado não é só técnica. É planejamento, execução e acompanhamento.</p>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-top:12px">Fevereiro, 2026 · @clinicaclau</p>
+          </div>
+        </a>
+
+        <!-- Post real 6: Fibrose e intercorrências -->
+        <a href="https://www.instagram.com/reel/DVgkD4KjQgI/" target="_blank" rel="noopener" class="glass" style="padding:0;text-decoration:none;display:block;transition:all 0.4s;overflow:hidden">
+          <img src="assets/instagram/raciocinio-clinico.jpg" alt="Raciocínio clínico protocolo Clau Carvalho - fibrose e intercorrências" style="width:100%;height:220px;object-fit:cover;object-position:center 40%;border-radius:20px 20px 0 0">
+          <div style="padding:20px 24px 24px">
+            <p style="font-size:0.82rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px">✦ Fibrose</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.05rem;color:var(--text-primary);margin-bottom:8px">Fibrose e intercorrências: protocolo Clau Carvalho</h3>
+            <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7">Prevenção e tratamento de fibrose com raciocínio clínico individualizado.</p>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-top:12px">5 de março, 2026 · @clinicaclau</p>
           </div>
         </a>
       </div>
