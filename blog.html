@@ -51,168 +51,168 @@
       --text-muted: #6B5F50;
       --glass-bg: rgba(255, 255, 255, 0.04);
       --glass-border: rgba(212, 168, 92, 0.08);
-      --glow-soft: 0 0 100px rgba(212, 168, 92, 0.12);
+      --glass-hover: rgba(212, 168, 92, 0.06);
+      --glow-soft: 0 0 80px rgba(212, 168, 92, 0.1);
       --font-serif: 'Playfair Display', Georgia, serif;
       --font-sans: 'Inter', -apple-system, sans-serif;
     }
 
     html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
     body { font-family: var(--font-sans); background: var(--bg-deep); color: var(--text-primary); line-height: 1.7; overflow-x: hidden; }
-    .container { max-width: min(900px, 90vw); margin: 0 auto; padding: 0 24px; }
+    .container { max-width: min(1100px, 92vw); margin: 0 auto; padding: 0 24px; }
 
-    /* Nav */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; background: rgba(6,3,14,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border); }
-    nav .container { display: flex; justify-content: space-between; align-items: center; max-width: min(1200px, 90vw); }
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; background: rgba(6,3,14,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border); }
+    nav .container { display: flex; justify-content: space-between; align-items: center; }
     .nav-logo { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600; color: var(--accent); text-decoration: none; }
     .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
     .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.3s; }
     .nav-links a:hover { color: var(--accent); }
     .nav-cta { padding: 10px 24px; background: linear-gradient(135deg, var(--accent), var(--accent-glow)); color: var(--bg-deep) !important; border-radius: 50px; font-weight: 600 !important; font-size: 0.8rem !important; letter-spacing: 1px !important; }
 
-    /* Blog Header */
-    .blog-header { padding: 140px 0 60px; text-align: center; }
-    .blog-header h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+    /* ── HEADER ── */
+    .blog-header { padding: 130px 0 40px; border-bottom: 1px solid var(--glass-border); }
+    .blog-header .eyebrow { font-size: 0.82rem; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+    .blog-header h1 { font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.15; margin-bottom: 12px; white-space: pre-line; }
     .blog-header h1 em { color: var(--accent); font-style: italic; }
-    .blog-header p { color: var(--text-secondary); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+    .blog-header .subtitle { color: var(--text-secondary); font-size: 1.05rem; max-width: 550px; font-weight: 300; }
 
-    /* Articles Grid */
-    .articles-grid { padding: 0 0 80px; }
+    /* ── FEATURED POST ── */
+    .featured-card {
+      display: flex; flex-direction: row; gap: 32px; align-items: center;
+      padding: 40px 44px; border-radius: 20px; overflow: hidden;
+      background: linear-gradient(135deg, #0A0714 0%, #12091E 60%, #1A0D12 100%);
+      border: 1px solid var(--glass-border);
+      text-decoration: none; color: inherit;
+      transition: all 0.4s; position: relative;
+    }
+    .featured-card:hover { border-color: rgba(212,168,92,0.2); box-shadow: var(--glow-soft); transform: translateY(-2px); }
+    .featured-card::before { content: ''; position: absolute; inset: 0; opacity: 0.15; background: radial-gradient(ellipse at 80% 50%, rgba(212,168,92,0.3) 0%, transparent 60%); pointer-events: none; }
+    .featured-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 700; padding: 5px 14px; border-radius: 50px; background: rgba(212,168,92,0.15); color: var(--accent); border: 1px solid rgba(212,168,92,0.2); margin-bottom: 16px; }
+    .featured-card h2 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; line-height: 1.3; transition: color 0.3s; }
+    .featured-card:hover h2 { color: var(--accent); }
+    .featured-card .excerpt { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 16px; font-weight: 300; }
+    .featured-card .meta { display: flex; gap: 20px; font-size: 0.82rem; color: var(--text-muted); }
+    .featured-cta { display: flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 14px; background: linear-gradient(135deg, var(--accent), var(--accent-glow)); color: var(--bg-deep); font-weight: 700; font-size: 0.85rem; white-space: nowrap; transition: all 0.3s; flex-shrink: 0; }
+    .featured-card:hover .featured-cta { box-shadow: 0 0 30px rgba(212,168,92,0.4); }
+
+    /* ── SEARCH + FILTERS ── */
+    .filters-section { padding: 32px 0 0; }
+    .search-box { position: relative; margin-bottom: 20px; }
+    .search-box input {
+      width: 100%; padding: 14px 16px 14px 44px;
+      background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 14px;
+      color: var(--text-primary); font-size: 0.92rem; font-family: var(--font-sans);
+      transition: all 0.3s; outline: none;
+    }
+    .search-box input::placeholder { color: var(--text-muted); }
+    .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 20px rgba(212,168,92,0.08); }
+    .search-box .icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1rem; pointer-events: none; }
+
+    .filter-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .filter-pill {
+      font-size: 0.82rem; font-weight: 500; padding: 8px 18px;
+      border-radius: 10px; border: 1px solid var(--glass-border);
+      background: transparent; color: var(--text-secondary);
+      cursor: pointer; transition: all 0.25s; font-family: var(--font-sans);
+    }
+    .filter-pill:hover { border-color: rgba(212,168,92,0.2); color: var(--text-primary); background: var(--glass-bg); }
+    .filter-pill.active { background: var(--accent); color: var(--bg-deep); border-color: var(--accent); font-weight: 600; }
+
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; padding-bottom: 24px; margin-bottom: 32px; border-bottom: 1px solid var(--glass-border); }
+    .tag-pill {
+      font-size: 0.75rem; font-weight: 500; padding: 4px 12px;
+      border-radius: 50px; border: 1px solid var(--glass-border);
+      background: transparent; color: var(--text-muted);
+      cursor: pointer; transition: all 0.25s; font-family: var(--font-sans);
+    }
+    .tag-pill:hover { border-color: var(--accent); color: var(--accent); }
+    .tag-pill.active { background: var(--accent); color: var(--bg-deep); border-color: var(--accent); }
+
+    .results-count { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; }
+
+    /* ── ARTICLES GRID ── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding-bottom: 60px;
+    }
 
     .article-card {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 36px 32px;
-      margin-bottom: 20px;
-      transition: all 0.4s;
-      backdrop-filter: blur(10px);
-      cursor: pointer;
+      display: flex; flex-direction: column;
+      background: var(--glass-bg); border: 1px solid var(--glass-border);
+      border-radius: 16px; overflow: hidden;
+      transition: all 0.35s; cursor: pointer;
     }
+    .article-card:hover { border-color: rgba(212,168,92,0.15); box-shadow: var(--glow-soft); transform: translateY(-3px); }
 
-    .article-card:hover {
-      border-color: rgba(212, 168, 92, 0.15);
-      box-shadow: var(--glow-soft);
-      transform: translateY(-2px);
-    }
+    .article-card .card-body { padding: 24px 22px; flex: 1; display: flex; flex-direction: column; }
 
-    .article-meta {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-    }
+    .article-meta { display: flex; gap: 10px; align-items: center; margin-bottom: 14px; flex-wrap: wrap; }
 
     .article-tag {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      padding: 4px 12px;
-      border: 1px solid var(--accent-soft);
-      border-radius: 50px;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--accent); padding: 3px 10px;
+      border: 1px solid var(--accent-soft); border-radius: 50px;
       background: rgba(212, 168, 92, 0.06);
     }
 
-    .article-date { font-size: 0.82rem; color: var(--text-muted); }
+    .article-date { font-size: 0.78rem; color: var(--text-muted); }
 
     .article-card h2 {
-      font-family: var(--font-serif);
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: var(--text-primary);
-      line-height: 1.4;
+      font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600;
+      margin-bottom: 10px; color: var(--text-primary); line-height: 1.35;
+      transition: color 0.3s;
     }
+    .article-card:hover h2 { color: var(--accent); }
 
     .article-excerpt {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-
-    .article-body {
-      display: none;
-      padding-top: 20px;
-      border-top: 1px solid var(--glass-border);
-      margin-top: 16px;
-    }
-
-    .article-body.open { display: block; }
-
-    .article-body p {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.9;
-      margin-bottom: 16px;
-    }
-
-    .article-body h3 {
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      color: var(--text-primary);
-      margin: 24px 0 12px;
-    }
-
-    .article-body ul {
-      list-style: none;
-      margin-bottom: 16px;
-    }
-
-    .article-body ul li {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
-      padding: 6px 0 6px 20px;
-      position: relative;
-    }
-
-    .article-body ul li::before {
-      content: '✦';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-size: 0.7rem;
-      top: 9px;
-    }
-
-    .article-body .source {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      font-style: italic;
-      border-left: 2px solid var(--accent);
-      padding-left: 12px;
-      margin-top: 20px;
+      font-size: 0.85rem; color: var(--text-secondary);
+      line-height: 1.7; margin-bottom: 16px; flex: 1;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
     }
 
     .read-more {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      transition: opacity 0.3s;
+      font-size: 0.8rem; font-weight: 600; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 1px;
+      background: none; border: none; cursor: pointer;
+      transition: opacity 0.3s; text-align: left; padding: 0;
+      margin-top: auto;
     }
-
     .read-more:hover { opacity: 0.7; }
 
-    /* Footer */
+    /* Article expanded body */
+    .article-body {
+      display: none; padding: 20px 22px 24px;
+      border-top: 1px solid var(--glass-border);
+    }
+    .article-body.open { display: block; }
+    .article-body p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 14px; }
+    .article-body h3 { font-family: var(--font-serif); font-size: 1.05rem; color: var(--text-primary); margin: 20px 0 10px; }
+    .article-body ul { list-style: none; margin-bottom: 14px; }
+    .article-body ul li { font-size: 0.88rem; color: var(--text-secondary); padding: 5px 0 5px 18px; position: relative; }
+    .article-body ul li::before { content: '✦'; position: absolute; left: 0; color: var(--accent); font-size: 0.65rem; top: 8px; }
+    .article-body .source { font-size: 0.78rem; color: var(--text-muted); font-style: italic; border-left: 2px solid var(--accent); padding-left: 12px; margin-top: 16px; }
+
+    /* ── FOOTER ── */
     footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--glass-border); }
     footer p { font-size: 0.85rem; color: var(--text-muted); }
     footer a { color: var(--accent); text-decoration: none; }
 
-    /* Reveal */
-    .reveal { opacity: 0; transform: translateY(30px); }
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(25px); }
 
-    /* Responsive */
-    @media (max-width: 600px) {
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
       .nav-links { display: none; }
-      .article-card { padding: 28px 22px; }
-      .article-card h2 { font-size: 1.15rem; }
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+      .featured-card { flex-direction: column; padding: 28px 24px; }
+      .featured-cta { align-self: flex-start; }
+    }
+    @media (max-width: 580px) {
+      .articles-grid { grid-template-columns: 1fr; }
+      .article-card .card-body { padding: 20px 18px; }
     }
   </style>
 </head>
@@ -231,18 +231,82 @@
     </div>
   </nav>
 
+  <!-- ══════ HEADER ══════ -->
   <section class="blog-header">
     <div class="container">
-      <h1>Blog <em>da Clau</em></h1>
-      <p>Conhecimento real sobre pós-operatório, Método Aurora e carreira na estética. Tudo baseado em prática clínica e experiência verificada.</p>
+      <p class="eyebrow">Blog</p>
+      <h1>Pós-operatório, método
+e <em>carreira na estética.</em></h1>
+      <p class="subtitle">Conteúdo real de quem está na prática clínica — não nas teorias.</p>
     </div>
   </section>
 
-  <section class="articles-grid">
+  <!-- ══════ FEATURED POST ══════ -->
+  <section style="padding:32px 0;border-bottom:1px solid var(--glass-border)" id="featured-section">
+    <div class="container">
+      <a href="#" class="featured-card" onclick="event.preventDefault(); document.querySelector('[data-article=\x221\x22]').scrollIntoView({behavior:'smooth'})">
+        <div style="flex:1;position:relative;z-index:1">
+          <span class="featured-badge">✦ Em destaque</span>
+          <span class="featured-badge" style="background:rgba(255,255,255,0.06);color:var(--text-secondary);border-color:rgba(255,255,255,0.08)">Método Aurora</span>
+          <h2>O que é o Método Aurora e por que ele muda o pós-operatório</h2>
+          <p class="excerpt">Técnica exclusiva criada por Clau Carvalho: 100% manual a seco, sem eletroterapia, raciocínio clínico individualizado e assistência 24 horas.</p>
+          <div class="meta">
+            <span>✦ 5 min de leitura</span>
+            <span>Baseado em @clinicaclau</span>
+          </div>
+        </div>
+        <div class="featured-cta">Ler →</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════ SEARCH + FILTERS + GRID ══════ -->
+  <section style="padding:32px 0 0">
     <div class="container">
 
+      <!-- Search -->
+      <div class="search-box">
+        <span class="icon">🔍</span>
+        <input type="search" id="blogSearch" placeholder="Buscar artigos..." oninput="filterArticles()">
+      </div>
+
+      <!-- Category filter -->
+      <div class="filter-pills" id="categoryFilters">
+        <button class="filter-pill active" onclick="setCategory('')">Todos</button>
+        <button class="filter-pill" onclick="setCategory('Método Aurora')">Método Aurora</button>
+        <button class="filter-pill" onclick="setCategory('Técnica')">Técnica</button>
+        <button class="filter-pill" onclick="setCategory('Cirurgias')">Cirurgias</button>
+        <button class="filter-pill" onclick="setCategory('Prevenção')">Prevenção</button>
+        <button class="filter-pill" onclick="setCategory('Cuidados')">Cuidados</button>
+        <button class="filter-pill" onclick="setCategory('Mentoria')">Mentoria</button>
+        <button class="filter-pill" onclick="setCategory('Ciência')">Ciência</button>
+      </div>
+
+      <!-- Tag cloud -->
+      <div class="tag-cloud">
+        <button class="tag-pill" onclick="setTag('fibrose')">#fibrose</button>
+        <button class="tag-pill" onclick="setTag('pós-operatório')">#pós-operatório</button>
+        <button class="tag-pill" onclick="setTag('drenagem')">#drenagem</button>
+        <button class="tag-pill" onclick="setTag('eletroterapia')">#eletroterapia</button>
+        <button class="tag-pill" onclick="setTag('abdominoplastia')">#abdominoplastia</button>
+        <button class="tag-pill" onclick="setTag('lipoaspiração')">#lipoaspiração</button>
+        <button class="tag-pill" onclick="setTag('mentoria')">#mentoria</button>
+        <button class="tag-pill" onclick="setTag('raciocínio clínico')">#raciocínio clínico</button>
+        <button class="tag-pill" onclick="setTag('assistência 24h')">#assistência 24h</button>
+        <button class="tag-pill" onclick="setTag('tape')">#tape</button>
+        <button class="tag-pill" onclick="setTag('seroma')">#seroma</button>
+        <button class="tag-pill" onclick="setTag('rinoplastia')">#rinoplastia</button>
+      </div>
+
+      <!-- Results count -->
+      <p class="results-count" id="resultsCount">30 artigos</p>
+
+      <!-- Articles Grid -->
+      <div class="articles-grid" id="articlesGrid">
+
       <!-- ARTIGO 1 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="1" data-category="Método Aurora">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Método Aurora</span>
           <span class="article-date">Baseado em conteúdo @clinicaclau</span>
@@ -250,6 +314,7 @@
         <h2>O que é o Método Aurora e por que ele muda o pós-operatório</h2>
         <p class="article-excerpt">O Método Aurora é uma técnica exclusiva criada por Clau Carvalho que utiliza manobras 100% manuais a seco, sem eletroterapia, com raciocínio clínico individualizado para cada paciente.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>O Método Aurora foi desenvolvido com um objetivo central: proporcionar uma reabilitação no pós-operatório em menor tempo e livre de intercorrências.</p>
           <h3>Os 5 pilares fundamentais</h3>
@@ -266,7 +331,8 @@
       </article>
 
       <!-- ARTIGO 2 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="2" data-category="Técnica">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Técnica</span>
           <span class="article-date">Baseado em conteúdo @clinicaclau</span>
@@ -274,6 +340,7 @@
         <h2>Técnica 100% manual a seco: por que não usar cremes no pós-operatório inicial</h2>
         <p class="article-excerpt">O Método Aurora condena o uso de cremes e óleos na fase inicial do pós-operatório. A técnica é realizada com a pele seca para garantir a pressão correta e evitar causar "lesão sobre lesão".</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>Uma das bases do Método Aurora é a exclusividade da técnica manual a seco. Mas por que isso importa?</p>
           <h3>O problema dos cremes na fase inicial</h3>
@@ -291,7 +358,8 @@
       </article>
 
       <!-- ARTIGO 3 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="3" data-category="Prevenção">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Prevenção</span>
           <span class="article-date">Baseado em conteúdo @clinicaclau</span>
@@ -299,6 +367,7 @@
         <h2>Fibrose no pós-operatório: como prevenir e por que ela acontece</h2>
         <p class="article-excerpt">A fibrose é uma das maiores preocupações de quem passa por uma cirurgia estética. Entenda o que causa e como o Método Aurora trabalha na prevenção desde a primeira sessão.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>A fibrose aparente no pós-operatório é resultado de uma cicatrização desordenada. Quando as fibras de colágeno se organizam de forma caótica, surgem endurecimentos, irregularidades e desconforto.</p>
           <h3>Causas mais comuns</h3>
@@ -315,7 +384,8 @@
       </article>
 
       <!-- ARTIGO 4 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="4" data-category="Ciência">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Ciência</span>
           <span class="article-date">Baseado em conteúdo @clinicaclau</span>
@@ -323,6 +393,7 @@
         <h2>Por que o Método Aurora não usa eletroterapia no pós-operatório</h2>
         <p class="article-excerpt">Ao contrário de muitas abordagens convencionais, o Método Aurora proíbe o uso de aparelhos que emitem calor na região operada. Entenda o raciocínio clínico por trás dessa decisão.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>A eletroterapia com calor é amplamente utilizada em protocolos convencionais de pós-operatório. No entanto, o Método Aurora a exclui completamente. A razão é baseada em raciocínio clínico.</p>
           <h3>O que o calor faz no tecido operado</h3>
@@ -334,7 +405,8 @@
       </article>
 
       <!-- ARTIGO 5 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="5" data-category="Raciocínio Clínico">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Raciocínio Clínico</span>
           <span class="article-date">Baseado em Reel @clinicaclau · 31/03/2026</span>
@@ -342,6 +414,7 @@
         <h2>Raciocínio clínico no pós-operatório: por que cada paciente é único</h2>
         <p class="article-excerpt">O raciocínio clínico é o coração do Método Aurora. Não existe "receita de bolo" — cada sessão é adaptada ao estado real do tecido, ao procedimento cirúrgico e à sensibilidade de cada paciente.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>Um dos pilares do Método Aurora é a recusa de protocolos padronizados. Cada sessão começa com uma avaliação detalhada do estado atual do tecido.</p>
           <h3>O que é avaliado a cada sessão</h3>
@@ -359,7 +432,8 @@
       </article>
 
       <!-- ARTIGO 6 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="6" data-category="Pós-Operatório">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Pós-Operatório</span>
           <span class="article-date">Baseado em conteúdo @clinicaclau</span>
@@ -367,6 +441,7 @@
         <h2>Drenagem linfática no pós-operatório: por que o Método Aurora é diferente</h2>
         <p class="article-excerpt">A drenagem linfática manual é essencial no pós-operatório, mas nem toda drenagem é igual. O Método Aurora utiliza uma abordagem que difere da drenagem convencional, especialmente na fase inicial.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <h3>Fase inicial: sem deslizamento</h3>
           <p>Na primeira fase do pós-operatório, o Método Aurora não utiliza movimentos de deslizamento típicos da drenagem linfática comum. A técnica foca apenas em leves bombeamentos para desobstruir os linfonodos, protegendo os pontos e a pele recém-lesionada.</p>
@@ -383,7 +458,8 @@
       </article>
 
       <!-- ARTIGO 7 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="7" data-category="Cuidados">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Cuidados</span>
           <span class="article-date">Baseado em conteúdo @clinicaclau</span>
@@ -391,6 +467,7 @@
         <h2>Assistência 24 horas no pós-operatório: o que significa na prática</h2>
         <p class="article-excerpt">O Método Aurora oferece acompanhamento contínuo com fotografias e videochamadas compartilhadas com o médico cirurgião. Entenda como funciona essa rede de apoio.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>Uma das maiores ansiedades de quem passa por uma cirurgia estética é não saber se a recuperação está indo bem. O Método Aurora resolve isso com um sistema de acompanhamento contínuo.</p>
           <h3>Como funciona</h3>
@@ -406,7 +483,8 @@
       </article>
 
       <!-- ARTIGO 8 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="8" data-category="Prevenção">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Prevenção</span>
           <span class="article-date">Baseado em conteúdo @clinicaclau</span>
@@ -414,6 +492,7 @@
         <h2>Seroma no pós-operatório: o que é e como prevenir</h2>
         <p class="article-excerpt">O seroma é uma das complicações mais comuns no pós-operatório de cirurgias estéticas. Conheça as causas e como o Método Aurora trabalha na prevenção.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>O seroma é o acúmulo de líquido seroso (plasma sanguíneo) na região operada. É uma resposta natural do corpo à cirurgia, mas quando excessivo, pode comprometer o resultado.</p>
           <h3>Fatores de risco</h3>
@@ -430,7 +509,8 @@
       </article>
 
       <!-- ARTIGO 9 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="9" data-category="Cirurgias">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Cirurgias</span>
           <span class="article-date">Baseado em conteúdo @clinicaclau</span>
@@ -438,6 +518,7 @@
         <h2>Pós-operatório de abdominoplastia: o que esperar e como se recuperar</h2>
         <p class="article-excerpt">A abdominoplastia é uma das cirurgias mais procuradas — e uma das que mais exigem cuidado no pós-operatório. Saiba o que esperar em cada fase.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>A abdominoplastia envolve remoção de pele e gordura abdominal, frequentemente acompanhada de plicatura muscular. O pós-operatório exige atenção redobrada.</p>
           <h3>Fases da recuperação</h3>
@@ -453,7 +534,8 @@
       </article>
 
       <!-- ARTIGO 10 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="10" data-category="Cirurgias">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Cirurgias</span>
           <span class="article-date">Baseado em conteúdo @clinicaclau</span>
@@ -461,6 +543,7 @@
         <h2>Pós-operatório de lipoaspiração: cuidados essenciais para um bom resultado</h2>
         <p class="article-excerpt">A lipoaspiração é o procedimento estético mais realizado no Brasil. O pós-operatório bem conduzido é o que diferencia um resultado bom de um resultado inesquecível.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>Na lipoaspiração, o tecido subcutâneo sofre uma lesão controlada. A forma como esse tecido cicatriza determina a qualidade final do contorno corporal.</p>
           <h3>Riscos de um pós-operatório mal conduzido</h3>
@@ -477,7 +560,8 @@
       </article>
 
       <!-- ARTIGO 11 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="11" data-category="Estética">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Estética</span>
           <span class="article-date">Baseado em conteúdo @clinicaclau</span>
@@ -485,6 +569,7 @@
         <h2>Lipo de papada: o que é e como funciona o pós-operatório</h2>
         <p class="article-excerpt">A lipo de papada é um dos tratamentos oferecidos pela Clau Carvalho com técnica manual exclusiva. Resultados naturais, sem aparelhos invasivos.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>A região da papada exige atenção especial no pós-operatório por ser uma área de alta visibilidade e sensibilidade. O tratamento com o Método Aurora garante uma recuperação segura.</p>
           <h3>Cuidados específicos da região</h3>
@@ -500,7 +585,8 @@
       </article>
 
       <!-- ARTIGO 12 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="12" data-category="Técnica">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Técnica</span>
           <span class="article-date">Baseado em conteúdo @clinicaclau</span>
@@ -508,6 +594,7 @@
         <h2>Kinesioterapia (fitas tape) no pós-operatório: como e quando usar</h2>
         <p class="article-excerpt">O uso adequado de fitas tape é um dos elementos do Método Aurora para contenção e prevenção de seromas e fibroses. Entenda como são aplicadas.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>As fitas tape (kinesioterapia) são um complemento importante à técnica manual no pós-operatório. No Método Aurora, são usadas com critérios específicos.</p>
           <h3>Funções das fitas tape</h3>
@@ -524,7 +611,8 @@
       </article>
 
       <!-- ARTIGO 13 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="13" data-category="Cirurgias">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Cirurgias</span>
           <span class="article-date">Baseado em Reel @marianasimoes.dra · 30/03/2026</span>
@@ -532,6 +620,7 @@
         <h2>Pós-operatório de face e pescoço: abordagem cirúrgica especializada</h2>
         <p class="article-excerpt">A recuperação de cirurgias faciais exige delicadeza máxima. A Dra. Mariana Simões compartilhou sua expertise em aula na Mentoria Técnica Aurora sobre esse tema.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>As cirurgias de face e pescoço — rinoplastia, lifting facial, blefaroplastia — exigem um pós-operatório com atenção redobrada à sensibilidade da região.</p>
           <h3>Desafios específicos</h3>
@@ -547,7 +636,8 @@
       </article>
 
       <!-- ARTIGO 14 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="14" data-category="Mentoria">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Mentoria</span>
           <span class="article-date">Baseado em Reel @clinicaclau · 06/04/2026</span>
@@ -555,6 +645,7 @@
         <h2>Mentoria Técnica Aurora: para quem é e o que transforma</h2>
         <p class="article-excerpt">A Mentoria Técnica Aurora é o programa de Clau Carvalho para fisioterapeutas e esteticistas que querem sair do comum e construir uma carreira de alta autoridade. "Lucre com o Pós."</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>A Mentoria Técnica Aurora vai além da técnica clínica — é um programa completo para transformar a carreira de profissionais da estética.</p>
           <h3>Os 6 módulos</h3>
@@ -572,7 +663,8 @@
       </article>
 
       <!-- ARTIGO 15 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="15" data-category="Mentoria">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Mentoria</span>
           <span class="article-date">Baseado em Reel @magicozoniogoiania · 17/03/2026</span>
@@ -580,6 +672,7 @@
         <h2>Ozonioterapia no pós-operatório: ciência aplicada à recuperação</h2>
         <p class="article-excerpt">Na Mentoria Técnica Aurora, especialistas convidados compartilham conhecimento complementar. A ozonioterapia foi tema de uma das aulas, mostrando como pode auxiliar na cicatrização.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>A ozonioterapia é uma terapia complementar que utiliza uma mistura de ozônio e oxigênio para estimular processos de cicatrização e controle de inflamação. Na Mentoria Técnica Aurora, o tema foi abordado como conhecimento complementar para profissionais da estética.</p>
           <h3>Potenciais benefícios no pós-operatório</h3>
@@ -595,7 +688,8 @@
       </article>
 
       <!-- ARTIGO 16 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="16" data-category="Cirurgias">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Cirurgias</span>
           <span class="article-date">25/03/2026</span>
@@ -603,6 +697,7 @@
         <h2>Mastopexia: cuidados no pós-operatório</h2>
         <p class="article-excerpt">A mastopexia (lifting de mama) exige um pós-operatório cuidadoso para preservar a forma, evitar cicatrizes alargadas e garantir uma recuperação confortável. Entenda os cuidados essenciais.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>A mastopexia reposiciona o tecido mamário e remove excesso de pele, resultando em cicatrizes que precisam de atenção especial durante a recuperação. O pós-operatório é determinante para o resultado final — tanto estético quanto funcional.</p>
           <h3>Principais cuidados após a mastopexia</h3>
@@ -621,7 +716,8 @@
       </article>
 
       <!-- ARTIGO 17 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="17" data-category="Ciência">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Ciência</span>
           <span class="article-date">22/03/2026</span>
@@ -629,6 +725,7 @@
         <h2>Por que a técnica a seco previne fibroses?</h2>
         <p class="article-excerpt">A fibrose é o maior medo de quem faz cirurgia plástica. Entenda o mecanismo por trás da técnica manual a seco do Método Aurora e por que ela reduz significativamente esse risco.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>A fibrose pós-operatória ocorre quando as fibras de colágeno se depositam de forma desorganizada durante o processo de cicatrização. Fatores como calor excessivo, pressão inadequada e estímulo desordenado dos fibroblastos podem agravar esse quadro.</p>
           <h3>O problema da eletroterapia com calor</h3>
@@ -647,7 +744,8 @@
       </article>
 
       <!-- ARTIGO 18 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="18" data-category="Cirurgias">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Cirurgias</span>
           <span class="article-date">20/03/2026</span>
@@ -655,6 +753,7 @@
         <h2>Rinoplastia: o que esperar no pós-operatório facial</h2>
         <p class="article-excerpt">A rinoplastia é uma das cirurgias mais delicadas do rosto. O pós-operatório facial exige paciência, cuidados específicos e acompanhamento profissional atento.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>Diferente das cirurgias corporais, a rinoplastia envolve tecidos ósseos e cartilaginosos numa região de alta visibilidade. O edema facial pode durar meses, e o resultado definitivo costuma aparecer entre 6 e 12 meses após a cirurgia.</p>
           <h3>Fases do pós-operatório da rinoplastia</h3>
@@ -678,7 +777,8 @@
       </article>
 
       <!-- ARTIGO 19 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="19" data-category="Mentoria">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Mentoria</span>
           <span class="article-date">18/03/2026</span>
@@ -686,6 +786,7 @@
         <h2>Posicionamento de marca para fisioterapeutas de pós-operatório</h2>
         <p class="article-excerpt">Dominar a técnica é essencial, mas não basta. A Mentoria Técnica Aurora ensina profissionais a se posicionarem como referência no pós-operatório — com identidade, autoridade e presença digital.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>O mercado de pós-operatório no Brasil cresce a cada ano, acompanhando o aumento das cirurgias plásticas. Para o profissional se destacar, não basta fazer um bom trabalho — é preciso que o público saiba disso.</p>
           <h3>Pilares do posicionamento profissional</h3>
@@ -703,7 +804,8 @@
       </article>
 
       <!-- ARTIGO 20 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="20" data-category="Cuidados">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Cuidados</span>
           <span class="article-date">15/03/2026</span>
@@ -711,6 +813,7 @@
         <h2>Alimentação no pós-operatório: o que ajuda e o que atrapalha</h2>
         <p class="article-excerpt">A alimentação tem impacto direto na cicatrização, no controle do edema e na recuperação geral. Entenda quais alimentos favorecem e quais prejudicam o pós-operatório.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>Durante o pós-operatório, o corpo está em processo de cicatrização e reparo tecidual. A nutrição adequada fornece os substratos necessários para que esse processo aconteça de forma eficiente.</p>
           <h3>Alimentos que auxiliam a recuperação</h3>
@@ -733,7 +836,8 @@
       </article>
 
       <!-- ARTIGO 21 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="21" data-category="Técnica">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Técnica</span>
           <span class="article-date">12/03/2026</span>
@@ -741,6 +845,7 @@
         <h2>Exercícios de alongamento e respiração no pós-operatório</h2>
         <p class="article-excerpt">A mobilização precoce e os exercícios respiratórios são aliados importantes na recuperação pós-cirúrgica. Saiba quando começar e quais cuidados tomar.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>Após uma cirurgia plástica, é natural que o corpo fique mais rígido e que a paciente sinta medo de se movimentar. No entanto, a mobilização gradual e os exercícios respiratórios são fundamentais para uma boa recuperação.</p>
           <h3>Benefícios da respiração diafragmática</h3>
@@ -763,7 +868,8 @@
       </article>
 
       <!-- ARTIGO 22 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="22" data-category="Cuidados">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Cuidados</span>
           <span class="article-date">10/03/2026</span>
@@ -771,6 +877,7 @@
         <h2>Malha compressiva: quando usar e quando trocar</h2>
         <p class="article-excerpt">A malha compressiva é parte essencial do pós-operatório, mas seu uso incorreto pode comprometer o resultado. Entenda as orientações mais importantes.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>A malha compressiva (ou cinta pós-cirúrgica) é prescrita pelo cirurgião para auxiliar na contenção do edema, dar suporte aos tecidos e ajudar no modelamento durante a cicatrização. Porém, o uso inadequado pode causar mais problemas do que resolver.</p>
           <h3>Orientações gerais sobre a malha</h3>
@@ -792,7 +899,8 @@
       </article>
 
       <!-- ARTIGO 23 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="23" data-category="Método Aurora">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Método Aurora</span>
           <span class="article-date">08/03/2026</span>
@@ -800,6 +908,7 @@
         <h2>Convencional vs. Aurora: por que o resultado é tão diferente</h2>
         <p class="article-excerpt">Muitas pacientes já passaram por drenagens convencionais antes de conhecer o Método Aurora. Entenda as diferenças fundamentais entre as duas abordagens.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>O pós-operatório convencional ainda é amplamente praticado com uso de aparelhos de eletroterapia, cremes deslizantes e protocolos padronizados. O Método Aurora nasceu da observação de que essa abordagem pode causar mais problemas do que resolver.</p>
           <h3>Abordagem convencional</h3>
@@ -823,7 +932,8 @@
       </article>
 
       <!-- ARTIGO 24 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="24" data-category="Prevenção">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Prevenção</span>
           <span class="article-date">05/03/2026</span>
@@ -831,6 +941,7 @@
         <h2>Prevenção de intercorrências: o protocolo que salva resultados</h2>
         <p class="article-excerpt">No pós-operatório, a prevenção é sempre mais eficaz que o tratamento. Conheça as medidas que o Método Aurora adota para evitar complicações antes que elas aconteçam.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>Intercorrências no pós-operatório — como seroma, infecção, necrose e fibrose — podem comprometer o resultado de uma cirurgia plástica. A melhor estratégia é sempre a prevenção, e isso começa com um acompanhamento atento desde o primeiro dia.</p>
           <h3>Medidas preventivas do Método Aurora</h3>
@@ -855,7 +966,8 @@
       </article>
 
       <!-- ARTIGO 25 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="25" data-category="Método Aurora">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Método Aurora</span>
           <span class="article-date">03/03/2026</span>
@@ -863,6 +975,7 @@
         <h2>Parceria médico-fisioterapeuta: como o Método Aurora trabalha em equipe</h2>
         <p class="article-excerpt">O resultado de uma cirurgia plástica não depende só do cirurgião. A parceria entre médico e fisioterapeuta é fundamental — e no Método Aurora, essa relação é construída com transparência.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>No modelo convencional, muitas vezes o cirurgião e o fisioterapeuta trabalham de forma isolada. O Método Aurora foi construído com a premissa de que o pós-operatório é um trabalho de equipe.</p>
           <h3>Como funciona a parceria na prática</h3>
@@ -885,7 +998,8 @@
       </article>
 
       <!-- ARTIGO 26 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="26" data-category="Cirurgias">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Cirurgias</span>
           <span class="article-date">28/02/2026</span>
@@ -893,6 +1007,7 @@
         <h2>Pós-operatório de prótese de silicone: cuidados específicos</h2>
         <p class="article-excerpt">A mamoplastia de aumento com prótese de silicone tem particularidades no pós-operatório que vão além do inchaço. Conheça os cuidados específicos para cada fase.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>A colocação de prótese de silicone envolve a criação de uma loja (espaço) submuscular ou subglandular. O corpo precisa de tempo para se adaptar ao implante, e o pós-operatório é o período em que essa adaptação acontece.</p>
           <h3>Fases da recuperação</h3>
@@ -916,7 +1031,8 @@
       </article>
 
       <!-- ARTIGO 27 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="27" data-category="Orientação">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Orientação</span>
           <span class="article-date">25/02/2026</span>
@@ -924,6 +1040,7 @@
         <h2>Como escolher a profissional certa para o seu pós-operatório</h2>
         <p class="article-excerpt">A escolha da profissional que vai cuidar do seu pós-operatório é tão importante quanto a escolha do cirurgião. Saiba quais critérios observar antes de confiar sua recuperação a alguém.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>Com o crescimento do mercado de cirurgia plástica no Brasil, também aumentou o número de profissionais que oferecem serviços de pós-operatório. Mas nem todos têm a mesma formação, experiência ou abordagem. Escolher com critério pode ser a diferença entre um resultado excelente e uma complicação evitável.</p>
           <h3>Critérios para avaliar</h3>
@@ -947,7 +1064,8 @@
       </article>
 
       <!-- ARTIGO 28 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="28" data-category="Cuidados">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Cuidados</span>
           <span class="article-date">22/02/2026</span>
@@ -955,6 +1073,7 @@
         <h2>O papel emocional no pós-operatório: acolhimento além da técnica</h2>
         <p class="article-excerpt">O pós-operatório não é só físico — é emocional. Medo, ansiedade e insegurança fazem parte do processo. Um bom acompanhamento reconhece e acolhe essas emoções.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>Após uma cirurgia plástica, é comum que a paciente passe por fases emocionais intensas: a expectativa antes, o desconforto nos primeiros dias, a ansiedade pela evolução e, por vezes, a frustração com o edema que esconde o resultado. Reconhecer essas emoções como parte natural do processo é fundamental.</p>
           <h3>Emoções comuns no pós-operatório</h3>
@@ -978,7 +1097,8 @@
       </article>
 
       <!-- ARTIGO 29 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="29" data-category="Mentoria">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Mentoria</span>
           <span class="article-date">20/02/2026</span>
@@ -986,6 +1106,7 @@
         <h2>Funil de conteúdo para profissionais de estética</h2>
         <p class="article-excerpt">Publicar nas redes sociais sem estratégia não constrói autoridade nem atrai pacientes. Entenda como estruturar um funil de conteúdo que converte seguidores em clientes.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>Para profissionais de pós-operatório e estética, o conteúdo nas redes sociais é a principal ferramenta de atração de pacientes. Mas publicar aleatoriamente não gera resultados consistentes. Um funil de conteúdo organiza a comunicação em etapas estratégicas.</p>
           <h3>Etapas do funil de conteúdo</h3>
@@ -1007,7 +1128,8 @@
       </article>
 
       <!-- ARTIGO 30 -->
-      <article class="article-card reveal">
+      <article class="article-card reveal" data-article="30" data-category="Mentoria">
+        <div class="card-body">
         <div class="article-meta">
           <span class="article-tag">Mentoria</span>
           <span class="article-date">18/02/2026</span>
@@ -1015,6 +1137,7 @@
         <h2>Por que Clau Carvalho ensina: a filosofia por trás da Mentoria Aurora</h2>
         <p class="article-excerpt">Clau Carvalho poderia manter seu método restrito ao consultório. Em vez disso, escolheu ensinar. Entenda o que a motivou a criar a Mentoria Técnica Aurora e transformar a carreira de outros profissionais.</p>
         <button class="read-more" onclick="this.parentElement.querySelector('.article-body').classList.toggle('open'); this.textContent = this.textContent === 'Ler mais →' ? 'Fechar ↑' : 'Ler mais →'">Ler mais →</button>
+        </div>
         <div class="article-body">
           <p>Claudiene Gomes de Carvalho Luz — Clau Carvalho — é fisioterapeuta em Goiânia, GO, e criadora do Método Aurora. Após anos de prática clínica no pós-operatório, percebeu que muitas pacientes chegavam com complicações causadas por abordagens inadequadas de outros profissionais. A decisão de ensinar nasceu dessa realidade.</p>
           <h3>A motivação</h3>
@@ -1054,11 +1177,83 @@
   </footer>
 
   <script>
+    // ── GSAP REVEALS ──
     gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray('.reveal').forEach(el => {
-      gsap.to(el, {
-        scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
-        opacity: 1, y: 0, duration: 0.7, ease: 'power3.out'
+    function initReveals() {
+      gsap.utils.toArray('.reveal').forEach(el => {
+        gsap.to(el, {
+          scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none none' },
+          opacity: 1, y: 0, duration: 0.6, ease: 'power3.out'
+        });
+      });
+    }
+    initReveals();
+
+    // ── SEARCH + FILTER ──
+    let activeCategory = '';
+    let activeTag = '';
+
+    function filterArticles() {
+      const search = document.getElementById('blogSearch').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.article-card');
+      let visible = 0;
+
+      cards.forEach(card => {
+        const cat = card.dataset.category || '';
+        const text = card.textContent.toLowerCase();
+        const matchCat = !activeCategory || cat === activeCategory;
+        const matchSearch = !search || text.includes(search);
+        const matchTag = !activeTag || text.includes(activeTag.toLowerCase());
+
+        if (matchCat && matchSearch && matchTag) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.getElementById('resultsCount').textContent =
+        visible + (visible === 1 ? ' artigo' : ' artigos') +
+        (activeCategory ? ' em ' + activeCategory : '') +
+        (activeTag ? ' · #' + activeTag : '');
+
+      // Hide featured if filtering
+      const featuredSection = document.getElementById('featured-section');
+      if (featuredSection) {
+        featuredSection.style.display = (search || activeCategory || activeTag) ? 'none' : '';
+      }
+    }
+
+    function setCategory(cat) {
+      activeCategory = (activeCategory === cat) ? '' : cat;
+      // Update pills
+      document.querySelectorAll('.filter-pill').forEach(p => {
+        const pillCat = p.textContent === 'Todos' ? '' : p.textContent;
+        p.classList.toggle('active', pillCat === activeCategory);
+      });
+      filterArticles();
+    }
+
+    function setTag(tag) {
+      activeTag = (activeTag === tag) ? '' : tag;
+      document.querySelectorAll('.tag-pill').forEach(p => {
+        const pillTag = p.textContent.replace('#', '');
+        p.classList.toggle('active', pillTag === activeTag);
+      });
+      filterArticles();
+    }
+
+    // Fix read-more toggle (needs to find .article-body as sibling of card-body)
+    document.querySelectorAll('.read-more').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const article = this.closest('.article-card');
+        const body = article.querySelector('.article-body');
+        if (body) {
+          body.classList.toggle('open');
+          this.textContent = body.classList.contains('open') ? 'Fechar ↑' : 'Ler mais →';
+        }
       });
     });
   </script>
