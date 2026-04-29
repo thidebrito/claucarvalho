@@ -143,23 +143,37 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      /* Palette — Arquétipo Cleópatra: regal, soberano, ouro antigo */
-      --bg-deep: #06030E;
-      --bg-section: #0A0714;
-      --bg-card: rgba(255, 255, 255, 0.035);
-      --accent: #D4A85C;
-      --accent-glow: #C8956A;
-      --accent-soft: rgba(212, 168, 92, 0.12);
-      --accent-hover: #E8C278;
-      --accent-wine: #6B1D3A;
-      --text-primary: #F2EDE4;
-      --text-secondary: #9E9183;
-      --text-muted: #6B5F50;
-      --glass-bg: rgba(255, 255, 255, 0.04);
-      --glass-border: rgba(212, 168, 92, 0.08);
-      --glass-hover: rgba(212, 168, 92, 0.06);
-      --glow-gold: 0 0 50px rgba(212, 168, 92, 0.35);
-      --glow-soft: 0 0 100px rgba(212, 168, 92, 0.12);
+      /* Palette oficial Clau Carvalho — terracota/creme premium */
+      --cream-pale: #F6E9D8;
+      --cream: #DBC1A9;
+      --terracotta-light: #BA8565;
+      --terracotta: #8D5B3A;
+      --deep-brown: #2B1710;
+      --burgundy: #8E230B;
+      --gray: #D9D9D9;
+      --white: #FFFFFF;
+
+      /* Tokens */
+      --bg-deep: #F6E9D8;
+      --bg-section: #FFFFFF;
+      --bg-dark: #2B1710;
+      --bg-card: rgba(255, 255, 255, 0.7);
+      --accent: #8D5B3A;
+      --accent-glow: #BA8565;
+      --accent-soft: rgba(141, 91, 58, 0.12);
+      --accent-hover: #6F4528;
+      --accent-wine: #8E230B;
+      --text-primary: #2B1710;
+      --text-secondary: rgba(43, 23, 16, 0.72);
+      --text-muted: rgba(43, 23, 16, 0.5);
+      --text-on-dark: #F6E9D8;
+      --glass-bg: rgba(255, 255, 255, 0.6);
+      --glass-border: rgba(141, 91, 58, 0.15);
+      --glass-hover: rgba(255, 255, 255, 0.85);
+      --glow-gold: 0 0 50px rgba(141, 91, 58, 0.18);
+      --glow-soft: 0 8px 40px rgba(141, 91, 58, 0.1);
+      --shadow-card: 0 4px 24px rgba(43, 23, 16, 0.06);
+      --shadow-card-hover: 0 8px 40px rgba(43, 23, 16, 0.12);
 
       /* Typography */
       --font-serif: 'Playfair Display', Georgia, serif;
@@ -192,8 +206,9 @@
       top: 0; left: 0; right: 0; bottom: 0;
       pointer-events: none;
       z-index: 9999;
-      opacity: 0.03;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.04;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     }
 
     .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
@@ -205,22 +220,22 @@
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
       border-radius: 20px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-card);
     }
 
     .glass:hover {
       background: var(--glass-hover);
-      border-color: rgba(212, 168, 92, 0.18);
-      box-shadow: var(--glow-soft), inset 0 1px 0 rgba(212, 168, 92, 0.08);
+      border-color: rgba(141, 91, 58, 0.25);
+      box-shadow: var(--shadow-card-hover);
     }
 
     /* ══════════════════════════════════════════
        GLOW UTILITY
        ══════════════════════════════════════════ */
     .glow-text {
-      text-shadow: 0 0 30px rgba(201, 169, 110, 0.4),
-                   0 0 60px rgba(201, 169, 110, 0.15);
+      text-shadow: 0 2px 20px rgba(141, 91, 58, 0.2);
     }
 
     .glow-line {
@@ -260,10 +275,11 @@
     }
 
     nav.scrolled {
-      background: rgba(8, 5, 16, 0.9);
+      background: rgba(246, 233, 216, 0.92);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--glass-border);
+      box-shadow: 0 1px 20px rgba(43, 23, 16, 0.06);
     }
 
     nav .container {
@@ -301,20 +317,20 @@
 
     .nav-cta {
       padding: 10px 24px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-glow));
-      color: var(--bg-deep) !important;
+      background: linear-gradient(135deg, var(--terracotta), var(--terracotta-light));
+      color: var(--cream-pale) !important;
       border-radius: 50px;
       font-weight: 600 !important;
       text-transform: uppercase !important;
       font-size: 0.8rem !important;
       letter-spacing: 1px !important;
-      box-shadow: var(--glow-gold);
+      box-shadow: 0 4px 20px rgba(141, 91, 58, 0.25);
       transition: all 0.3s;
     }
 
     .nav-cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 50px rgba(201, 169, 110, 0.5);
+      box-shadow: 0 8px 30px rgba(141, 91, 58, 0.35);
     }
 
     .hamburger {
@@ -345,7 +361,14 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
+      background: linear-gradient(180deg, #2B1710 0%, #3D2418 100%);
+      color: var(--cream-pale);
     }
+
+    #hero .hero-title { color: var(--cream-pale); }
+    #hero .hero-subtitle { color: rgba(246, 233, 216, 0.8); }
+    #hero .hero-eyebrow { color: var(--terracotta-light); }
+    #hero .scroll-indicator span { color: rgba(246, 233, 216, 0.5); }
 
     #hero-canvas {
       position: absolute;
@@ -360,9 +383,8 @@
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background:
-        radial-gradient(ellipse at center, transparent 0%, var(--bg-deep) 70%),
-        radial-gradient(ellipse at 20% 80%, rgba(107, 29, 58, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(212, 168, 92, 0.05) 0%, transparent 50%);
+        radial-gradient(ellipse at 80% 20%, rgba(186, 133, 101, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 80%, rgba(142, 35, 11, 0.1) 0%, transparent 50%);
       z-index: 1;
     }
 
@@ -420,8 +442,8 @@
       align-items: center;
       gap: 10px;
       padding: 16px 36px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-glow));
-      color: var(--bg-deep);
+      background: linear-gradient(135deg, var(--terracotta), var(--terracotta-light));
+      color: var(--cream-pale);
       font-family: var(--font-sans);
       font-weight: 700;
       font-size: 0.9rem;
@@ -431,7 +453,7 @@
       border-radius: 50px;
       border: none;
       cursor: pointer;
-      box-shadow: var(--glow-gold);
+      box-shadow: 0 6px 24px rgba(141, 91, 58, 0.25);
       transition: all 0.3s;
       position: relative;
       overflow: hidden;
@@ -439,7 +461,7 @@
 
     .btn-primary:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 0 60px rgba(212, 168, 92, 0.5), 0 8px 32px rgba(0,0,0,0.3);
+      box-shadow: 0 12px 40px rgba(141, 91, 58, 0.35);
     }
 
     .btn-primary::after {
@@ -470,7 +492,7 @@
       text-transform: uppercase;
       text-decoration: none;
       border-radius: 50px;
-      border: 1px solid var(--glass-border);
+      border: 1px solid rgba(141, 91, 58, 0.3);
       cursor: pointer;
       transition: all 0.3s;
     }
@@ -478,7 +500,18 @@
     .btn-secondary:hover {
       border-color: var(--accent);
       color: var(--accent);
-      box-shadow: var(--glow-soft);
+      background: rgba(141, 91, 58, 0.05);
+    }
+
+    /* Hero on dark bg — secondary button needs cream colors */
+    #hero .btn-secondary {
+      color: var(--cream-pale);
+      border-color: rgba(246, 233, 216, 0.25);
+    }
+    #hero .btn-secondary:hover {
+      color: var(--terracotta-light);
+      border-color: var(--terracotta-light);
+      background: rgba(186, 133, 101, 0.08);
     }
 
     .scroll-indicator {
@@ -570,7 +603,7 @@
       width: 100%;
       aspect-ratio: 3/4;
       border-radius: 24px;
-      background: linear-gradient(135deg, rgba(201,169,110,0.1) 0%, rgba(201,169,110,0.03) 100%);
+      background: linear-gradient(135deg, rgba(186, 133, 101, 0.12) 0%, rgba(141, 91, 58, 0.04) 100%);
       border: 1px solid var(--glass-border);
       display: flex;
       align-items: center;
@@ -605,7 +638,7 @@
       transform: translate(-50%, -50%);
       width: 300px;
       height: 300px;
-      background: radial-gradient(circle, rgba(201,169,110,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(186, 133, 101, 0.18) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -639,7 +672,7 @@
       color: var(--accent);
       border: 1px solid var(--accent-soft);
       border-radius: 50px;
-      background: rgba(201, 169, 110, 0.06);
+      background: rgba(141, 91, 58, 0.05);
     }
 
     /* ══════════════════════════════════════════
@@ -684,7 +717,7 @@
       justify-content: center;
       font-size: 1.4rem;
       margin-bottom: 24px;
-      box-shadow: 0 0 30px rgba(201, 169, 110, 0.1);
+      box-shadow: 0 0 30px rgba(186, 133, 101, 0.12);
     }
 
     .pilar-card h3 {
@@ -718,16 +751,16 @@
     }
 
     .comparison-col.convencional {
-      background: rgba(255, 80, 80, 0.04);
-      border: 1px solid rgba(255, 80, 80, 0.1);
+      background: rgba(142, 35, 11, 0.06);
+      border: 1px solid rgba(142, 35, 11, 0.18);
       border-radius: 20px;
     }
 
     .comparison-col.metodo-clau {
-      background: rgba(201, 169, 110, 0.04);
-      border: 1px solid rgba(201, 169, 110, 0.15);
+      background: linear-gradient(135deg, rgba(141, 91, 58, 0.08) 0%, rgba(186, 133, 101, 0.05) 100%);
+      border: 1px solid rgba(141, 91, 58, 0.25);
       border-radius: 20px;
-      box-shadow: 0 0 60px rgba(201, 169, 110, 0.08);
+      box-shadow: 0 8px 40px rgba(141, 91, 58, 0.1);
     }
 
     .comparison-col h3 {
@@ -737,7 +770,7 @@
       text-align: center;
     }
 
-    .convencional h3 { color: #FF6B6B; }
+    .convencional h3 { color: #8E230B; }
     .metodo-clau h3 { color: var(--accent); }
 
     .comparison-item {
@@ -791,12 +824,12 @@
       height: 72px;
       margin: 0 auto 24px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent-soft), rgba(201,169,110,0.05));
+      background: linear-gradient(135deg, var(--accent-soft), rgba(141, 91, 58, 0.04));
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.8rem;
-      box-shadow: 0 0 40px rgba(201, 169, 110, 0.1);
+      box-shadow: 0 0 40px rgba(186, 133, 101, 0.12);
     }
 
     .servico-card h3 {
@@ -815,7 +848,7 @@
        NÚMEROS / STATS
        ══════════════════════════════════════════ */
     #numeros {
-      background: var(--bg-section);
+      background: linear-gradient(180deg, var(--bg-section) 0%, var(--bg-deep) 100%);
       border-top: 1px solid var(--glass-border);
       border-bottom: 1px solid var(--glass-border);
     }
@@ -860,7 +893,7 @@
       right: -100px;
       width: 300px;
       height: 300px;
-      background: radial-gradient(circle, rgba(201,169,110,0.1), transparent 70%);
+      background: radial-gradient(circle, rgba(186, 133, 101, 0.12), transparent 70%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -983,7 +1016,7 @@
       transform: translate(-50%, -50%);
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(201,169,110,0.08), transparent 60%);
+      background: radial-gradient(circle, rgba(186, 133, 101, 0.1), transparent 60%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -1181,7 +1214,7 @@
         top: 70px;
         left: 0;
         right: 0;
-        background: rgba(8, 5, 16, 0.97);
+        background: rgba(246, 233, 216, 0.97);
         backdrop-filter: blur(20px);
         padding: 32px;
         gap: 24px;
@@ -1691,8 +1724,8 @@
       const colors = new Float32Array(count * 3);
       const sizes = new Float32Array(count);
 
-      const gold = new THREE.Color(0xC9A96E);
-      const cream = new THREE.Color(0xF5F0E8);
+      const terracotta = new THREE.Color(0xBA8565);
+      const cream = new THREE.Color(0xF6E9D8);
 
       for (let i = 0; i < count; i++) {
         positions[i * 3]     = (Math.random() - 0.5) * 8;
@@ -1700,7 +1733,7 @@
         positions[i * 3 + 2] = (Math.random() - 0.5) * 4;
 
         const mix = Math.random();
-        const c = gold.clone().lerp(cream, mix * 0.3);
+        const c = terracotta.clone().lerp(cream, mix * 0.4);
         colors[i * 3]     = c.r;
         colors[i * 3 + 1] = c.g;
         colors[i * 3 + 2] = c.b;
