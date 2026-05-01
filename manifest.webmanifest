@@ -1,0 +1,13 @@
+{
+  "name": "Clau Carvalho — Pós-Operatório Método Aurora",
+  "short_name": "Clau Carvalho",
+  "description": "Pós-operatório especializado em Goiânia com Método Aurora — técnica 100% manual, sem eletroterapia, assistência 24h.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F6E9D8",
+  "theme_color": "#8D5B3A",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
