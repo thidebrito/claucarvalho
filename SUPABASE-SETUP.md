@@ -12,7 +12,15 @@
 
 ---
 
-## Passo 1: Criar a tabela `clau_leads`
+## ✅ Status atual (2026-05-01)
+
+- **Tabela `clau_leads` já criada no banco** com RLS ativo, GRANT pra anon, policy de INSERT, 3 CHECK constraints e índices.
+- **Apenas o Passo 2 abaixo está pendente**: pegar a `anon key` e colar no `index.html`.
+- A migration ficou em `supabase/migrations/20260430_clau_leads.sql` para referência futura.
+
+---
+
+## Passo 1: Criar a tabela `clau_leads` (já feito ✅)
 
 1. Abra o **SQL Editor** no Supabase:
    👉 https://supabase.com/dashboard/project/qkcnawpkzfpmyrdczjac/sql/new

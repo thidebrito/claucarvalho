@@ -27,12 +27,18 @@ create index if not exists clau_leads_created_idx on public.clau_leads(created_a
 
 alter table public.clau_leads enable row level security;
 
--- Permite INSERT anônimo (frontend público)
-drop policy if exists "anon can insert leads" on public.clau_leads;
-create policy "anon can insert leads"
+-- GRANT explícito (Supabase não dá INSERT por default em todas as tabelas)
+grant insert on public.clau_leads to anon, authenticated;
+grant usage on schema public to anon, authenticated;
+
+-- Permite INSERT anônimo (frontend público) — anon e authenticated
+drop policy if exists "anon can insert leads"   on public.clau_leads;
+drop policy if exists "clau_leads_anon_insert"  on public.clau_leads;
+create policy "clau_leads_anon_insert"
   on public.clau_leads
+  as permissive
   for insert
-  to anon
+  to anon, authenticated
   with check (true);
 
 -- Bloqueia SELECT/UPDATE/DELETE para anon (dados privados)
