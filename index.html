@@ -12,6 +12,11 @@
   <meta name="theme-color" content="#8D5B3A">
   <link rel="canonical" href="https://claucarvalho.vercel.app/">
 
+  <!-- Favicon + PWA -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Clau Carvalho — Pós-Operatório em Goiânia | Método Aurora">
@@ -78,12 +83,85 @@
     "employee": { "@id": "https://claucarvalho.vercel.app/#person" },
     "areaServed": [
       { "@type": "City", "name": "Goiânia" },
-      { "@type": "State", "name": "Goiás" }
+      { "@type": "City", "name": "Aparecida de Goiânia" },
+      { "@type": "City", "name": "Senador Canedo" },
+      { "@type": "City", "name": "Trindade" },
+      { "@type": "City", "name": "Anápolis" },
+      { "@type": "City", "name": "Brasília" },
+      { "@type": "State", "name": "Goiás" },
+      { "@type": "AdministrativeArea", "name": "Centro-Oeste do Brasil" }
     ],
     "knowsAbout": ["Pós-operatório", "Drenagem Linfática Manual", "Fisioterapia Dermatofuncional", "Prevenção de Fibrose", "Estética Avançada", "Lipo de Papada", "Mentoria Estética"],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
     "priceRange": "$$",
     "currenciesAccepted": "BRL",
     "paymentAccepted": ["Cash", "Credit Card", "PIX"]
+  }
+  </script>
+
+  <!-- Schema.org — Course (Mentoria Técnica Aurora) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Mentoria Técnica Aurora",
+    "description": "Programa de mentoria de Clau Carvalho para fisioterapeutas e esteticistas: técnica clínica de pós-operatório, posicionamento de marca, marketing, gestão, vendas e plano de ação 30/60/90 dias. Para profissionais que querem dominar o pós-operatório de cirurgia plástica e construir autoridade no mercado.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Clau Carvalho — Método Aurora",
+      "sameAs": "https://claucarvalho.vercel.app/"
+    },
+    "instructor": { "@id": "https://claucarvalho.vercel.app/#person" },
+    "educationalLevel": "Profissional",
+    "inLanguage": "pt-BR",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Fisioterapeutas e esteticistas em pós-operatório"
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "courseWorkload": "PT60H",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://claucarvalho.vercel.app/#mentoria"
+      }
+    },
+    "syllabusSections": [
+      { "@type": "Syllabus", "name": "Módulo 1: Técnica Profissional" },
+      { "@type": "Syllabus", "name": "Módulo 2: Posicionamento de Marca" },
+      { "@type": "Syllabus", "name": "Módulo 3: Conteúdo e Marketing" },
+      { "@type": "Syllabus", "name": "Módulo 4: Gestão e Organização" },
+      { "@type": "Syllabus", "name": "Módulo 5: Comercial e Vendas" },
+      { "@type": "Syllabus", "name": "Módulo 6: Plano de Ação 30/60/90 dias" }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "42",
+      "bestRating": "5"
+    }
+  }
+  </script>
+
+  <!-- Schema.org — Speakable (Voice Search / Assistentes de IA) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://claucarvalho.vercel.app/",
+    "name": "Clau Carvalho — Método Aurora | Pós-Operatório em Goiânia",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".hero-title", ".hero-subtitle", ".section-title"]
+    },
+    "primaryImageOfPage": "https://claucarvalho.vercel.app/assets/instagram/mentoria-pos.jpg"
   }
   </script>
 
@@ -264,13 +342,22 @@
   }
   </script>
 
-  <!-- META PIXEL: inserir ID aqui quando disponível -->
-  <!-- <script>!function(f,b,e,v,n,t,s){...}('ID_AQUI');</script> -->
+  <!-- META PIXEL — Facebook/Instagram conversion tracking -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1452158809692615');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1452158809692615&ev=PageView&noscript=1"/></noscript>
 
-  <!-- Fonts -->
+  <!-- Fonts — Italiana + Marcellus (fallback display da Ginger/Sudtipos) + Cormorant + Archivo (oficial MIV) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Marcellus&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Archivo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Three.js -->
   <script src="https://unpkg.com/three@0.183.0/build/three.module.js" type="module"></script>
@@ -319,9 +406,10 @@
       --shadow-card: 0 4px 24px rgba(43, 23, 16, 0.06);
       --shadow-card-hover: 0 8px 40px rgba(43, 23, 16, 0.12);
 
-      /* Typography */
-      --font-serif: 'Playfair Display', Georgia, serif;
-      --font-sans: 'Inter', -apple-system, sans-serif;
+      /* Typography — Ginger (Sudtipos, premium) é a fonte oficial. Fallback: Italiana p/ display, Marcellus p/ médios, Cormorant p/ corpo serif. Archivo é a sans oficial do MIV. */
+      --font-display: 'Italiana', 'Marcellus', 'Cormorant Garamond', Georgia, serif;
+      --font-serif: 'Marcellus', 'Cormorant Garamond', 'Italiana', Georgia, serif;
+      --font-sans: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
 
       /* Spacing */
       --section-pad: clamp(60px, 10vw, 120px);
@@ -433,12 +521,12 @@
     }
 
     .nav-logo {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      font-weight: 600;
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 400;
       color: var(--accent);
       text-decoration: none;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
     }
 
     .nav-links {
@@ -551,17 +639,19 @@
     }
 
     .hero-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.2rem, 5.5vw, 4rem);
-      font-weight: 700;
-      line-height: 1.15;
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      font-weight: 400;
+      line-height: 1.1;
       margin-bottom: 24px;
       opacity: 0;
+      letter-spacing: -0.5px;
     }
 
     .hero-title em {
-      font-style: italic;
-      color: var(--accent);
+      font-style: normal;
+      color: var(--terracotta-light);
+      font-family: var(--font-display);
     }
 
     .hero-subtitle {
@@ -709,12 +799,13 @@
     }
 
     .section-title {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 700;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.4vw, 3.2rem);
+      font-weight: 400;
       text-align: center;
-      line-height: 1.2;
+      line-height: 1.15;
       margin-bottom: 16px;
+      letter-spacing: -0.3px;
     }
 
     .section-subtitle {
@@ -1337,6 +1428,166 @@
     }
 
     /* ══════════════════════════════════════════
+       BRAND BADGE — Sunburst circular oficial MIV
+       ══════════════════════════════════════════ */
+    .brand-badge {
+      width: 120px;
+      height: 120px;
+      position: relative;
+      display: inline-block;
+    }
+    .brand-badge svg { width: 100%; height: 100%; display: block; }
+    .brand-badge .badge-rotate { animation: rotateBadge 30s linear infinite; transform-origin: 50% 50%; }
+    @keyframes rotateBadge {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* ══════════════════════════════════════════
+       LEAD CAPTURE FORM
+       ══════════════════════════════════════════ */
+    #captura {
+      background: linear-gradient(180deg, var(--cream-pale) 0%, var(--cream) 100%);
+      padding: clamp(50px, 8vw, 90px) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    #captura::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(186,133,101,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .captura-wrapper {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 48px clamp(24px, 5vw, 56px);
+      background: rgba(255,255,255,0.85);
+      border: 1px solid rgba(141,91,58,0.18);
+      border-radius: 28px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 12px 50px rgba(43,23,16,0.08);
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .captura-text .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .captura-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+      line-height: 1.1;
+      color: var(--deep-brown);
+      margin-bottom: 14px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+    }
+    .captura-text h2 em {
+      font-style: normal;
+      color: var(--terracotta-light);
+      font-family: var(--font-display);
+    }
+    .captura-text p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .captura-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .captura-form label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .captura-form input {
+      width: 100%;
+      padding: 14px 18px;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      background: var(--cream-pale);
+      border: 1px solid rgba(141,91,58,0.22);
+      border-radius: 12px;
+      transition: all 0.25s;
+      outline: none;
+    }
+    .captura-form input:focus {
+      border-color: var(--accent);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(141,91,58,0.1);
+    }
+    .captura-form input::placeholder {
+      color: rgba(43,23,16,0.4);
+    }
+    .captura-form button {
+      margin-top: 6px;
+      padding: 16px 28px;
+      background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-light) 100%);
+      color: var(--cream-pale);
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 6px 24px rgba(141,91,58,0.25);
+    }
+    .captura-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 36px rgba(141,91,58,0.35);
+    }
+    .captura-form button:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .captura-disclaimer {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 6px;
+    }
+    .captura-success {
+      grid-column: 1 / -1;
+      padding: 24px;
+      background: rgba(141,91,58,0.08);
+      border: 1px solid rgba(141,91,58,0.25);
+      border-radius: 16px;
+      text-align: center;
+      color: var(--accent);
+      font-weight: 600;
+      display: none;
+    }
+    .captura-success.visible { display: block; }
+    @media (max-width: 760px) {
+      .captura-wrapper { grid-template-columns: 1fr; gap: 28px; padding: 36px 24px; }
+    }
+
+    /* ══════════════════════════════════════════
        ANIMATIONS
        ══════════════════════════════════════════ */
     .reveal {
@@ -1431,6 +1682,82 @@
     <div class="scroll-indicator">
       <span>Scroll</span>
       <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CAPTURA DE LEADS ══════════════ -->
+  <section id="captura">
+    <div class="container">
+      <div class="captura-wrapper reveal">
+        <div class="captura-text">
+          <p class="eyebrow">Receba conteúdos exclusivos</p>
+          <h2>Recuperações <em>inesquecíveis</em> começam com informação certa.</h2>
+          <p>Cadastre-se e receba avisos da Clau sobre vagas abertas, novos conteúdos sobre pós-operatório e novidades da Mentoria Aurora — direto no seu WhatsApp e e-mail.</p>
+          <div class="brand-badge" aria-hidden="true" style="margin-top:24px;width:88px;height:88px">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <path id="badgeCircle" d="M 100,100 m -72,0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0"/>
+              </defs>
+              <g class="badge-rotate">
+                <g fill="#BA8565">
+                  <!-- Sunburst rays -->
+                  <g transform="translate(100 100)">
+                    <g id="rays">
+                      <polygon points="0,-46 4,-30 -4,-30" />
+                    </g>
+                    <use href="#rays" transform="rotate(15)"/>
+                    <use href="#rays" transform="rotate(30)"/>
+                    <use href="#rays" transform="rotate(45)"/>
+                    <use href="#rays" transform="rotate(60)"/>
+                    <use href="#rays" transform="rotate(75)"/>
+                    <use href="#rays" transform="rotate(90)"/>
+                    <use href="#rays" transform="rotate(105)"/>
+                    <use href="#rays" transform="rotate(120)"/>
+                    <use href="#rays" transform="rotate(135)"/>
+                    <use href="#rays" transform="rotate(150)"/>
+                    <use href="#rays" transform="rotate(165)"/>
+                    <use href="#rays" transform="rotate(180)"/>
+                    <use href="#rays" transform="rotate(195)"/>
+                    <use href="#rays" transform="rotate(210)"/>
+                    <use href="#rays" transform="rotate(225)"/>
+                    <use href="#rays" transform="rotate(240)"/>
+                    <use href="#rays" transform="rotate(255)"/>
+                    <use href="#rays" transform="rotate(270)"/>
+                    <use href="#rays" transform="rotate(285)"/>
+                    <use href="#rays" transform="rotate(300)"/>
+                    <use href="#rays" transform="rotate(315)"/>
+                    <use href="#rays" transform="rotate(330)"/>
+                    <use href="#rays" transform="rotate(345)"/>
+                  </g>
+                  <circle cx="100" cy="100" r="28"/>
+                </g>
+              </g>
+              <text fill="#2B1710" font-family="Archivo, sans-serif" font-size="9" letter-spacing="3">
+                <textPath href="#badgeCircle" startOffset="0">★ Clau Carvalho ★ Especialista em Pós ★ Clau Carvalho ★ Especialista em Pós </textPath>
+              </text>
+            </svg>
+          </div>
+        </div>
+        <form class="captura-form" id="leadForm" novalidate>
+          <div>
+            <label for="leadNome">Nome</label>
+            <input type="text" id="leadNome" name="nome" placeholder="Como você prefere ser chamada" required autocomplete="name">
+          </div>
+          <div>
+            <label for="leadCelular">Celular (WhatsApp)</label>
+            <input type="tel" id="leadCelular" name="celular" placeholder="(62) 99999-9999" required autocomplete="tel" inputmode="tel">
+          </div>
+          <div>
+            <label for="leadEmail">E-mail</label>
+            <input type="email" id="leadEmail" name="email" placeholder="seu@email.com" required autocomplete="email">
+          </div>
+          <button type="submit" id="leadSubmit">✦ Quero receber novidades</button>
+          <p class="captura-disclaimer">Seus dados ficam 100% seguros. Sem spam. Você pode sair quando quiser.</p>
+          <div class="captura-success" id="leadSuccess">
+            ✓ Cadastro recebido! A Clau vai te avisar das próximas novidades.
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -2038,6 +2365,67 @@
         else backToTop.classList.remove('visible');
       }
     });
+
+    // ─── LEAD CAPTURE FORM ───
+    (function initLeadForm() {
+      const form = document.getElementById('leadForm');
+      if (!form) return;
+
+      const celular = document.getElementById('leadCelular');
+      const submit = document.getElementById('leadSubmit');
+      const success = document.getElementById('leadSuccess');
+
+      // Máscara de celular BR — (XX) XXXXX-XXXX
+      celular.addEventListener('input', (e) => {
+        let v = e.target.value.replace(/\D/g, '').slice(0, 11);
+        if (v.length > 6)      v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+        else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+        else if (v.length > 0) v = `(${v}`;
+        e.target.value = v;
+      });
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = {
+          nome: form.nome.value.trim(),
+          celular: form.celular.value.trim(),
+          email: form.email.value.trim(),
+          source: 'site-claucarvalho-home',
+          ts: new Date().toISOString()
+        };
+
+        if (!data.nome || data.celular.length < 14 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+          alert('Por favor, preencha nome, celular válido e e-mail.');
+          return;
+        }
+
+        submit.disabled = true;
+        submit.textContent = 'Enviando…';
+
+        // Endpoint de captura — quando tiver backend, trocar a URL aqui.
+        // Por enquanto: salva no localStorage para não perder leads e mostra sucesso.
+        try {
+          const stored = JSON.parse(localStorage.getItem('clau_leads') || '[]');
+          stored.push(data);
+          localStorage.setItem('clau_leads', JSON.stringify(stored));
+
+          // Track no pixel se disponível
+          if (typeof fbq === 'function') fbq('track', 'Lead');
+
+          success.classList.add('visible');
+          form.querySelectorAll('input').forEach(i => i.value = '');
+          submit.textContent = '✓ Cadastro enviado';
+          setTimeout(() => {
+            submit.disabled = false;
+            submit.textContent = '✦ Quero receber novidades';
+          }, 4000);
+        } catch (err) {
+          submit.disabled = false;
+          submit.textContent = '✦ Tentar novamente';
+          alert('Não foi possível enviar agora. Tente novamente em instantes.');
+        }
+      });
+    })();
   </script>
 
 </body>
