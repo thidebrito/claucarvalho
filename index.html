@@ -2367,6 +2367,12 @@
     });
 
     // ─── LEAD CAPTURE FORM ───
+    // Backend: Supabase. Configurar SUPABASE_URL e SUPABASE_ANON_KEY abaixo.
+    // Schema da tabela em /supabase/migrations/20260430_clau_leads.sql
+    // Setup: ver SUPABASE-SETUP.md
+    const SUPABASE_URL      = 'https://qkcnawpkzfpmyrdczjac.supabase.co';
+    const SUPABASE_ANON_KEY = ''; // ← COLAR ANON KEY AQUI (eyJhbGc...). Sem isso, leads vão para localStorage.
+
     (function initLeadForm() {
       const form = document.getElementById('leadForm');
       if (!form) return;
@@ -2384,6 +2390,30 @@
         e.target.value = v;
       });
 
+      async function sendToSupabase(payload) {
+        if (!SUPABASE_ANON_KEY) throw new Error('NO_ANON_KEY');
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/clau_leads`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error(`Supabase ${res.status}: ${text}`);
+        }
+      }
+
+      function saveLocalFallback(payload) {
+        const stored = JSON.parse(localStorage.getItem('clau_leads') || '[]');
+        stored.push({ ...payload, ts: new Date().toISOString() });
+        localStorage.setItem('clau_leads', JSON.stringify(stored));
+      }
+
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const data = {
@@ -2391,7 +2421,7 @@
           celular: form.celular.value.trim(),
           email: form.email.value.trim(),
           source: 'site-claucarvalho-home',
-          ts: new Date().toISOString()
+          user_agent: navigator.userAgent
         };
 
         if (!data.nome || data.celular.length < 14 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
@@ -2402,12 +2432,14 @@
         submit.disabled = true;
         submit.textContent = 'Enviando…';
 
-        // Endpoint de captura — quando tiver backend, trocar a URL aqui.
-        // Por enquanto: salva no localStorage para não perder leads e mostra sucesso.
         try {
-          const stored = JSON.parse(localStorage.getItem('clau_leads') || '[]');
-          stored.push(data);
-          localStorage.setItem('clau_leads', JSON.stringify(stored));
+          try {
+            await sendToSupabase(data);
+          } catch (err) {
+            // Se falhar no Supabase (anon key não configurada ou rede), salva local
+            console.warn('[leadForm] Supabase falhou, salvando localmente:', err.message);
+            saveLocalFallback(data);
+          }
 
           // Track no pixel se disponível
           if (typeof fbq === 'function') fbq('track', 'Lead');
