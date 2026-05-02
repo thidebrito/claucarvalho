@@ -1,34 +1,40 @@
-# Roadmap — Curso Método Aurora
+# Roadmap — Ecossistema Aurora (Curso + Mentoria)
 
-> Lista de itens do ecossistema do curso · status atualizado.
-> Última atualização: 2026-05-02 (v3 — após sessão "pode seguir com tudo")
+> Lista de itens do ecossistema completo · status atualizado.
+> Última atualização: 2026-05-02 (v4 — após inclusão da Mentoria com 2 tickets, sistema/app, certificação)
 
 ---
 
 ## 🟢 Já entregue
 
 ### Páginas web
-- [x] **`index.html`** — site principal · com link "Curso Aurora" no nav
-- [x] **`curso.html`** — LP do curso (lista de espera) · 17 seções com MIV completo · otimizações UX/UI (scroll progress, counter, tilt 3D, parallax, stagger, selo SVG, DMs reais)
-- [x] **`curso-vendas.html`** — versão "carrinho aberto" da LP · CTAs trocados pra checkout Hotmart · countdown de bônus · contador de vagas pioneiras · pixel `InitiateCheckout`
-- [x] **`obrigado.html`** — página de obrigado pós-cadastro · check animado · vídeo placeholder Clau · 3 próximos passos · upsell soft pra mentoria · pixel `CompleteRegistration`
-- [x] **`quiz-aurora.html`** — quiz de qualificação (5 perguntas) · 3 perfis possíveis (Construindo Bases / Pronta pra Saltar / Já é Referência) · captura na lista
+- [x] **`index.html`** — site principal · com links "Curso Aurora" e "Mentoria" no nav
+- [x] **`curso.html`** — LP do curso (lista de espera) · 17 seções com MIV completo · otimizações UX/UI · DMs reais · bônus reformulados (sistema/app + trilha + certificação + afiliados)
+- [x] **`curso-vendas.html`** — versão "carrinho aberto" da LP · CTAs Hotmart · countdown · contador de vagas · pixel `InitiateCheckout` · bônus atualizados
+- [x] **`mentoria.html`** 🆕 — LP dedicada da Mentoria Técnica Aurora · 2 tickets (Aurora R$ 5k · Aurora Premium R$ 8k com curso+sistema) · diferenciação clara curso vs mentoria · CTA WhatsApp pra venda consultiva
+- [x] **`obrigado.html`** — página de obrigado pós-cadastro · check animado · vídeo placeholder · upsell soft pra mentoria · pixel `CompleteRegistration`
+- [x] **`quiz-aurora.html`** — quiz de qualificação (5 perguntas) · 3 perfis possíveis · captura na lista
 - [x] **`admin/leads.html`** — painel interno de leads · stats · filtros · busca · export CSV · auth básico
 
 ### Documentos estratégicos
 - [x] **`BRAND-KIT.md`** — Manual de Identidade Visual (existia)
 - [x] **`SUPABASE-SETUP.md`** — Setup do banco (existia)
-- [x] **`VSL-METODO-AURORA.md`** — VSL v3 (9 blocos · ~7'15" · 3 hooks A/B · pausas marcadas · diagnóstico por métrica)
-- [x] **`EMAILS-AQUECIMENTO.md`** — sequência de 8 e-mails de pré-lançamento (D+0/D+2/D+5/D+8/D+11/D-5/D-day/D-1)
-- [x] **`CRIATIVOS-META-ADS.md`** — 12 copies de anúncios com Mandala VTSD + estrutura de campanha + plano A/B
-- [x] **`REMARKETING.md`** — funil de retargeting completo · públicos personalizados · janelas · 6 criativos específicos
-- [x] **`CONTEUDO-ORGANICO-30DIAS.md`** — calendário editorial dos 30 dias antes do carrinho · 5 pilares · banco de copy
+- [x] **`VSL-METODO-AURORA.md`** — VSL Curso v3 (roteiro corrido · 9 blocos · ~7'15")
+- [x] **`VSL-METODO-AURORA-v2.md`** 🆕 — VSL Curso v2 em formato Q&A · entrevista · 9 perguntas · Clau só responde
+- [x] **`VSL-MENTORIA-AURORA.md`** 🆕 — VSL da Mentoria em formato Q&A · 9 perguntas · apresenta os 2 tickets
+- [x] **`BONUS-ENTREGAVEIS-SCRIPT.md`** 🆕 — script único pra gravar TODOS os bônus em uma sessão (9 clipes) · editor reusa pra cada peça
+- [x] **`EMAILS-AQUECIMENTO.md`** — sequência de 8 e-mails de pré-lançamento
+- [x] **`CRIATIVOS-META-ADS.md`** — 12 copies de anúncios com Mandala VTSD + estrutura de campanha
+- [x] **`REMARKETING.md`** — funil de retargeting completo
+- [x] **`CONTEUDO-ORGANICO-30DIAS.md`** — calendário editorial dos 30 dias antes do carrinho
 
-### Componentes adicionados na v1.x
+### Componentes/melhorias na v1.x e v2.x
 - [x] Schema.org Course completo + meta tags + Pixel Meta
 - [x] Form de captura (Supabase + fallback localStorage + Pixel Lead)
 - [x] Selo de garantia SVG sunburst (MIV)
-- [x] Componente "DMs reais" (provas sociais visuais) na LP
+- [x] Componente "DMs reais" (provas sociais visuais)
+- [x] Bônus reformulados nas LPs com os reais: **Sistema/App** · **Trilha personalizada** · **Material personalizável** · **Certificação Aurora** · **Programa de afiliados/indicação**
+- [x] Diferenciação ticket Aurora (mentoria pura) vs Aurora Premium (mentoria + curso + sistema · só pras primeiras)
 
 ---
 
