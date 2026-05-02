@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de Leads · Clau Carvalho</title>
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream-pale: #F6E9D8;
+      --terracotta-light: #BA8565;
+      --terracotta: #8D5B3A;
+      --deep-brown: #2B1710;
+      --burgundy: #8E230B;
+      --bg: #1A0F0A;
+      --bg-panel: #25160E;
+      --text: #F6E9D8;
+      --text-muted: rgba(246, 233, 216, 0.55);
+      --border: rgba(246, 233, 216, 0.1);
+    }
+
+    body {
+      font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .topbar {
+      padding: 16px 24px;
+      background: var(--bg-panel);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Italiana', Georgia, serif;
+      font-size: 1.4rem;
+      color: var(--terracotta-light);
+      text-decoration: none;
+      letter-spacing: 1.2px;
+    }
+    .topbar-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn {
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .btn:hover {
+      border-color: var(--terracotta-light);
+      color: var(--terracotta-light);
+    }
+    .btn-primary {
+      background: var(--terracotta);
+      border-color: var(--terracotta);
+      color: var(--cream-pale);
+    }
+    .btn-primary:hover {
+      background: var(--terracotta-light);
+      border-color: var(--terracotta-light);
+      color: var(--deep-brown);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+
+    h1 {
+      font-family: 'Italiana', Georgia, serif;
+      font-size: 1.8rem;
+      letter-spacing: -0.3px;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 32px;
+    }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .stat {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .stat-value {
+      font-family: 'Italiana', Georgia, serif;
+      font-size: 2rem;
+      color: var(--terracotta-light);
+      line-height: 1;
+    }
+    .stat-delta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* FILTROS */
+    .filters {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .filter-group {
+      display: flex;
+      gap: 4px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px;
+    }
+    .filter-btn {
+      padding: 6px 14px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.82rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.2s;
+    }
+    .filter-btn.active {
+      background: var(--terracotta);
+      color: var(--cream-pale);
+    }
+    .search-input {
+      padding: 8px 14px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.86rem;
+      flex: 1;
+      min-width: 200px;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--terracotta-light);
+    }
+
+    /* TABELA */
+    .table-wrap {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    thead {
+      background: rgba(0, 0, 0, 0.2);
+    }
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(186, 133, 101, 0.04); }
+
+    .source-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      background: rgba(186, 133, 101, 0.15);
+      color: var(--terracotta-light);
+      border-radius: 50px;
+      font-size: 0.74rem;
+      letter-spacing: 0.5px;
+    }
+    .source-tag.curso { background: rgba(186, 133, 101, 0.2); }
+    .source-tag.quiz { background: rgba(141, 91, 58, 0.25); color: #DBC1A9; }
+    .source-tag.site { background: rgba(255, 255, 255, 0.08); color: var(--text-muted); }
+
+    .empty {
+      padding: 48px 32px;
+      text-align: center;
+      color: var(--text-muted);
+    }
+    .empty p { font-size: 0.95rem; }
+    .empty p strong { color: var(--terracotta-light); }
+
+    .login-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+    }
+    .login-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 380px;
+      width: calc(100% - 40px);
+      text-align: center;
+    }
+    .login-card h2 {
+      font-family: 'Italiana', Georgia, serif;
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+    .login-card p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 24px;
+    }
+    .login-card input {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.92rem;
+      margin-bottom: 12px;
+    }
+    .login-card input:focus {
+      outline: none;
+      border-color: var(--terracotta-light);
+    }
+    .login-card button {
+      width: 100%;
+      padding: 12px;
+      background: var(--terracotta);
+      color: var(--cream-pale);
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+    .login-card button:hover {
+      background: var(--terracotta-light);
+      color: var(--deep-brown);
+    }
+    .login-error {
+      color: var(--burgundy);
+      font-size: 0.82rem;
+      margin-top: 8px;
+      min-height: 20px;
+    }
+
+    @media (max-width: 720px) {
+      th:nth-child(3), td:nth-child(3),
+      th:nth-child(5), td:nth-child(5) { display: none; }
+      .stat-value { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN OVERLAY -->
+  <div class="login-overlay" id="loginOverlay">
+    <div class="login-card">
+      <h2>Painel de Leads</h2>
+      <p>Acesso restrito. Cole sua chave de admin pra entrar.</p>
+      <input type="password" id="loginKey" placeholder="••••••••" autofocus>
+      <button onclick="tryLogin()">Entrar</button>
+      <p class="login-error" id="loginError"></p>
+    </div>
+  </div>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <a href="../index.html" class="logo">Clau Carvalho · Admin</a>
+    <div class="topbar-actions">
+      <button class="btn" onclick="loadLeads()">↻ Atualizar</button>
+      <button class="btn btn-primary" onclick="exportCSV()">↓ Export CSV</button>
+      <button class="btn" onclick="logout()">Sair</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Leads · Curso Método Aurora</h1>
+    <p class="subtitle">Painel interno — visualização e export de leads capturados pela LP, pelo quiz e pelo site principal.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Total</div>
+        <div class="stat-value" id="statTotal">—</div>
+        <div class="stat-delta" id="statTotalDelta">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Hoje</div>
+        <div class="stat-value" id="statHoje">—</div>
+        <div class="stat-delta">novos cadastros</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Últimos 7 dias</div>
+        <div class="stat-value" id="statSemana">—</div>
+        <div class="stat-delta" id="statSemanaDelta">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Top fonte</div>
+        <div class="stat-value" id="statTopSource" style="font-size: 1.1rem; padding-top: 6px;">—</div>
+        <div class="stat-delta" id="statTopSourcePct">—</div>
+      </div>
+    </div>
+
+    <div class="filters">
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter-source="all">Todos</button>
+        <button class="filter-btn" data-filter-source="curso-aurora-lista-espera">Curso (LP)</button>
+        <button class="filter-btn" data-filter-source="quiz-aurora">Quiz</button>
+        <button class="filter-btn" data-filter-source="site-claucarvalho-home">Site</button>
+      </div>
+      <input type="search" class="search-input" id="searchInput" placeholder="Buscar por nome, e-mail, profissão...">
+    </div>
+
+    <div class="table-wrap">
+      <table id="leadsTable">
+        <thead>
+          <tr>
+            <th>Cadastrado</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Celular</th>
+            <th>Profissão</th>
+            <th>Origem</th>
+          </tr>
+        </thead>
+        <tbody id="leadsBody">
+          <tr><td colspan="6" class="empty"><p>Carregando…</p></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // ═══════════════════════════════════════════
+    // CONFIG
+    // ═══════════════════════════════════════════
+    const SUPABASE_URL = 'https://qkcnawpkzfpmyrdczjac.supabase.co';
+    const SUPABASE_ANON_KEY = ''; // ← colar a anon key (mesma do index.html)
+    // Chave de admin local (NÃO é segurança real — é só pra evitar acesso casual)
+    // Pra segurança real: usar Supabase Auth + RLS policy de SELECT pra usuários autenticados
+    const ADMIN_KEY = 'aurora-2026'; // ← TROCAR pela chave que o Thiago quiser
+
+    let allLeads = [];
+    let currentFilter = 'all';
+
+    // ═══════════════════════════════════════════
+    // LOGIN (simples — não é segurança real)
+    // ═══════════════════════════════════════════
+    function tryLogin() {
+      const key = document.getElementById('loginKey').value;
+      if (key === ADMIN_KEY) {
+        sessionStorage.setItem('clau_admin', '1');
+        document.getElementById('loginOverlay').style.display = 'none';
+        loadLeads();
+      } else {
+        document.getElementById('loginError').textContent = 'Chave inválida.';
+      }
+    }
+    function logout() {
+      sessionStorage.removeItem('clau_admin');
+      location.reload();
+    }
+    if (sessionStorage.getItem('clau_admin') === '1') {
+      document.getElementById('loginOverlay').style.display = 'none';
+    }
+    document.getElementById('loginKey').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') tryLogin();
+    });
+
+    // ═══════════════════════════════════════════
+    // FETCH LEADS
+    // ═══════════════════════════════════════════
+    async function fetchSupabase() {
+      if (!SUPABASE_ANON_KEY) {
+        // Fallback: ler do localStorage (mock dev)
+        const local = JSON.parse(localStorage.getItem('clau_leads') || '[]');
+        return local.map(l => ({ ...l, created_at: l.ts || new Date().toISOString() }));
+      }
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/clau_leads?order=created_at.desc&limit=1000`, {
+        headers: {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+        }
+      });
+      if (!res.ok) throw new Error(`Supabase ${res.status}: ${await res.text()}`);
+      return await res.json();
+    }
+
+    async function loadLeads() {
+      const tbody = document.getElementById('leadsBody');
+      tbody.innerHTML = '<tr><td colspan="6" class="empty"><p>Carregando…</p></td></tr>';
+      try {
+        allLeads = await fetchSupabase();
+        renderStats();
+        renderTable();
+      } catch (err) {
+        console.error(err);
+        tbody.innerHTML = `<tr><td colspan="6" class="empty"><p><strong>Erro</strong> ao carregar leads.<br><small style="color:var(--text-muted)">${err.message}</small><br><br>Verifique se a SUPABASE_ANON_KEY está configurada no arquivo.</p></td></tr>`;
+      }
+    }
+
+    // ═══════════════════════════════════════════
+    // RENDER
+    // ═══════════════════════════════════════════
+    function renderStats() {
+      const now = new Date();
+      const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const weekStart = new Date(now.getTime() - 7 * 86400 * 1000);
+
+      const total = allLeads.length;
+      const hoje = allLeads.filter(l => new Date(l.created_at) >= todayStart).length;
+      const semana = allLeads.filter(l => new Date(l.created_at) >= weekStart).length;
+
+      document.getElementById('statTotal').textContent = total.toLocaleString('pt-BR');
+      document.getElementById('statHoje').textContent = hoje;
+      document.getElementById('statSemana').textContent = semana;
+
+      const semanaPrev = allLeads.filter(l => {
+        const d = new Date(l.created_at);
+        return d >= new Date(weekStart.getTime() - 7 * 86400 * 1000) && d < weekStart;
+      }).length;
+      const delta = semanaPrev > 0 ? Math.round((semana / semanaPrev - 1) * 100) : null;
+      document.getElementById('statSemanaDelta').textContent =
+        delta === null ? 'sem dado anterior' :
+        delta > 0 ? `▲ ${delta}% vs semana anterior` :
+        delta < 0 ? `▼ ${Math.abs(delta)}% vs semana anterior` :
+        'estável';
+
+      // Top source
+      const sources = {};
+      allLeads.forEach(l => {
+        const s = l.source || 'desconhecido';
+        sources[s] = (sources[s] || 0) + 1;
+      });
+      const top = Object.entries(sources).sort((a, b) => b[1] - a[1])[0];
+      if (top) {
+        const label = ({
+          'curso-aurora-lista-espera': 'LP do Curso',
+          'quiz-aurora': 'Quiz',
+          'site-claucarvalho-home': 'Site'
+        })[top[0]] || top[0];
+        document.getElementById('statTopSource').textContent = label;
+        document.getElementById('statTopSourcePct').textContent = `${Math.round(top[1] / total * 100)}% do total`;
+      }
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('leadsBody');
+      const search = document.getElementById('searchInput').value.toLowerCase().trim();
+
+      let filtered = allLeads;
+      if (currentFilter !== 'all') {
+        filtered = filtered.filter(l => l.source === currentFilter);
+      }
+      if (search) {
+        filtered = filtered.filter(l =>
+          (l.nome || '').toLowerCase().includes(search) ||
+          (l.email || '').toLowerCase().includes(search) ||
+          (l.profissao || '').toLowerCase().includes(search)
+        );
+      }
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" class="empty"><p>Nenhum lead encontrado com os filtros atuais.</p></td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = filtered.map(l => {
+        const dt = new Date(l.created_at);
+        const dtStr = dt.toLocaleDateString('pt-BR') + ' ' + dt.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+        const sourceLabel = ({
+          'curso-aurora-lista-espera': { label: 'Curso (LP)', cls: 'curso' },
+          'quiz-aurora': { label: 'Quiz', cls: 'quiz' },
+          'site-claucarvalho-home': { label: 'Site', cls: 'site' }
+        })[l.source] || { label: l.source || 'outro', cls: '' };
+        return `<tr>
+          <td style="color: var(--text-muted); font-size: 0.84rem;">${dtStr}</td>
+          <td><strong>${l.nome || '—'}</strong></td>
+          <td><a href="mailto:${l.email}" style="color: var(--terracotta-light); text-decoration: none;">${l.email || '—'}</a></td>
+          <td style="font-family: monospace; font-size: 0.82rem;">${l.celular || '—'}</td>
+          <td>${l.profissao || '—'}</td>
+          <td><span class="source-tag ${sourceLabel.cls}">${sourceLabel.label}</span></td>
+        </tr>`;
+      }).join('');
+    }
+
+    // Filtros
+    document.querySelectorAll('[data-filter-source]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-filter-source]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filterSource;
+        renderTable();
+      });
+    });
+
+    // Busca
+    document.getElementById('searchInput').addEventListener('input', renderTable);
+
+    // Export CSV
+    function exportCSV() {
+      const filtered = currentFilter === 'all' ? allLeads : allLeads.filter(l => l.source === currentFilter);
+      const headers = ['created_at', 'nome', 'email', 'celular', 'profissao', 'source'];
+      const csv = [
+        headers.join(','),
+        ...filtered.map(l => headers.map(h => `"${(l[h] || '').toString().replace(/"/g, '""')}"`).join(','))
+      ].join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `clau_leads_${new Date().toISOString().slice(0,10)}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // Init
+    if (sessionStorage.getItem('clau_admin') === '1') {
+      loadLeads();
+    }
+  </script>
+</body>
+</html>

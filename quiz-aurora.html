@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Aurora — Você tá pronta pra cobrar o que vale? | Clau Carvalho</title>
+  <meta name="description" content="Quiz rápido (60s) pra fisioterapeutas e esteticistas: descubra em qual estágio você está e o que precisa pra dar o próximo passo.">
+  <meta name="theme-color" content="#8D5B3A">
+  <link rel="canonical" href="https://claucarvalho.vercel.app/quiz-aurora.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Quiz Aurora — Em qual estágio você está?">
+  <meta property="og:description" content="60 segundos pra descobrir o que separa você da agenda lotada — e como chegar lá.">
+  <meta property="og:url" content="https://claucarvalho.vercel.app/quiz-aurora.html">
+
+  <!-- META PIXEL -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1452158809692615');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1452158809692615&ev=PageView&noscript=1"/></noscript>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Marcellus&family=Archivo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream-pale: #F6E9D8;
+      --cream: #DBC1A9;
+      --terracotta-light: #BA8565;
+      --terracotta: #8D5B3A;
+      --deep-brown: #2B1710;
+      --burgundy: #8E230B;
+
+      --text-primary: #2B1710;
+      --text-secondary: rgba(43, 23, 16, 0.72);
+      --text-muted: rgba(43, 23, 16, 0.5);
+      --glass-border: rgba(141, 91, 58, 0.15);
+
+      --font-display: 'Italiana', 'Marcellus', Georgia, serif;
+      --font-serif: 'Marcellus', 'Italiana', Georgia, serif;
+      --font-sans: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    html { -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--cream-pale);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.7;
+      overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 80% 0%, rgba(186, 133, 101, 0.18) 0%, transparent 50%),
+        radial-gradient(ellipse at 0% 100%, rgba(141, 91, 58, 0.1) 0%, transparent 50%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .quiz-shell {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--accent, var(--terracotta));
+      letter-spacing: 1.2px;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    /* Progress bar */
+    .progress-track {
+      width: 100%;
+      height: 4px;
+      background: rgba(141, 91, 58, 0.15);
+      border-radius: 2px;
+      overflow: hidden;
+      margin: 24px 0 40px;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--terracotta), var(--terracotta-light));
+      width: 0%;
+      transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      border-radius: 2px;
+    }
+
+    /* SCREEN base */
+    .screen {
+      flex: 1;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      animation: fade-in 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .screen.active { display: flex; }
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* INTRO */
+    .intro {
+      text-align: center;
+    }
+    .intro-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 14px;
+    }
+    .intro h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .intro h1 em {
+      font-style: normal;
+      color: var(--terracotta);
+    }
+    .intro p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 540px;
+      margin: 0 auto 36px;
+    }
+    .intro-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .intro-stat {
+      text-align: center;
+    }
+    .intro-stat .num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--terracotta);
+      display: block;
+      line-height: 1;
+    }
+    .intro-stat .label {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* PERGUNTA */
+    .pergunta-num {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .pergunta-titulo {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+      line-height: 1.2;
+      text-align: center;
+      margin-bottom: 32px;
+      letter-spacing: -0.3px;
+    }
+    .pergunta-titulo em {
+      font-style: normal;
+      color: var(--terracotta);
+    }
+    .opcoes {
+      display: grid;
+      gap: 12px;
+    }
+    .opcao {
+      padding: 18px 24px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-align: left;
+      font-family: var(--font-sans);
+      font-size: 0.98rem;
+      color: var(--text-primary);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .opcao::before {
+      content: '';
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      border: 2px solid rgba(141, 91, 58, 0.3);
+      border-radius: 50%;
+      transition: all 0.25s ease;
+    }
+    .opcao:hover {
+      border-color: var(--terracotta);
+      background: rgba(255, 255, 255, 0.95);
+      transform: translateX(4px);
+    }
+    .opcao:hover::before {
+      border-color: var(--terracotta);
+    }
+    .opcao.selected {
+      background: linear-gradient(135deg, rgba(141, 91, 58, 0.1) 0%, rgba(186, 133, 101, 0.06) 100%);
+      border-color: var(--terracotta);
+      box-shadow: 0 8px 24px rgba(141, 91, 58, 0.12);
+    }
+    .opcao.selected::before {
+      background: var(--terracotta);
+      border-color: var(--terracotta);
+      box-shadow: inset 0 0 0 4px var(--cream-pale);
+    }
+
+    /* NAV botões */
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 32px;
+      gap: 14px;
+    }
+    .btn {
+      padding: 14px 30px;
+      border-radius: 50px;
+      border: none;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--terracotta), var(--terracotta-light));
+      color: var(--cream-pale);
+      box-shadow: 0 6px 20px rgba(141, 91, 58, 0.28);
+    }
+    .btn-primary:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(141, 91, 58, 0.4);
+    }
+    .btn-primary:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .btn-back {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid rgba(141, 91, 58, 0.2);
+    }
+    .btn-back:hover {
+      color: var(--terracotta);
+      border-color: var(--terracotta);
+    }
+    .btn-block {
+      width: 100%;
+      padding: 18px;
+    }
+
+    /* CADASTRO FINAL */
+    .cadastro h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      line-height: 1.2;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .cadastro h2 em { font-style: normal; color: var(--terracotta); }
+    .cadastro > p {
+      text-align: center;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .form-grid {
+      display: grid;
+      gap: 16px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .form-grid label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .form-grid input {
+      width: 100%;
+      padding: 14px 18px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      font-family: var(--font-sans);
+      font-size: 0.98rem;
+      color: var(--text-primary);
+      transition: all 0.3s;
+    }
+    .form-grid input:focus {
+      outline: none;
+      border-color: var(--terracotta);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(141, 91, 58, 0.12);
+    }
+    .form-disclaimer {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+
+    /* RESULTADO */
+    .resultado {
+      text-align: center;
+    }
+    .resultado-emoji {
+      font-size: 3.4rem;
+      margin-bottom: 16px;
+      animation: pop-in 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    @keyframes pop-in {
+      0% { transform: scale(0); }
+      100% { transform: scale(1); }
+    }
+    .resultado h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .resultado h2 em { font-style: normal; color: var(--terracotta); }
+    .resultado-perfil {
+      display: inline-block;
+      padding: 8px 20px;
+      background: var(--terracotta);
+      color: var(--cream-pale);
+      border-radius: 50px;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .resultado p {
+      color: var(--text-secondary);
+      max-width: 540px;
+      margin: 0 auto 16px;
+      font-size: 1rem;
+    }
+    .resultado-cta-card {
+      margin-top: 36px;
+      padding: 32px 28px;
+      background: linear-gradient(135deg, rgba(141, 91, 58, 0.1) 0%, rgba(186, 133, 101, 0.06) 100%);
+      border: 1px solid rgba(141, 91, 58, 0.25);
+      border-radius: 20px;
+    }
+    .resultado-cta-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: var(--terracotta);
+    }
+    .resultado-cta-card p {
+      margin-bottom: 24px;
+    }
+
+    /* HEADER MENU */
+    .quiz-back {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .quiz-back:hover { color: var(--terracotta); }
+
+    @media (max-width: 600px) {
+      .quiz-shell { padding: 60px 18px 40px; }
+      .quiz-back { top: 18px; left: 18px; }
+      .opcao { padding: 16px 18px; font-size: 0.92rem; }
+      .quiz-nav { flex-direction: column-reverse; }
+      .quiz-nav .btn { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="curso.html" class="quiz-back">← voltar</a>
+
+  <div class="quiz-shell">
+    <a href="index.html" class="logo">Clau Carvalho</a>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- ─── INTRO ─── -->
+    <section class="screen intro active" data-screen="intro">
+      <p class="intro-eyebrow">Quiz Aurora</p>
+      <h1>Em qual estágio você está —<br>e <em>o que falta</em> pra você dar o próximo passo?</h1>
+      <p>5 perguntas. Menos de 60 segundos. No final, você descobre seu perfil profissional e o caminho mais curto pra agenda lotada.</p>
+
+      <div class="intro-stats">
+        <div class="intro-stat">
+          <span class="num">5</span>
+          <span class="label">Perguntas</span>
+        </div>
+        <div class="intro-stat">
+          <span class="num">60s</span>
+          <span class="label">Pra responder</span>
+        </div>
+        <div class="intro-stat">
+          <span class="num">3</span>
+          <span class="label">Perfis possíveis</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block" onclick="goTo('q1')">✦ Começar o quiz</button>
+    </section>
+
+    <!-- ─── PERGUNTA 1 ─── -->
+    <section class="screen" data-screen="q1">
+      <p class="pergunta-num">Pergunta 1 de 5</p>
+      <h2 class="pergunta-titulo">Qual a sua <em>profissão</em>?</h2>
+      <div class="opcoes">
+        <button class="opcao" data-q="profissao" data-v="fisioterapeuta">Fisioterapeuta</button>
+        <button class="opcao" data-q="profissao" data-v="esteticista">Esteticista / Biomédica esteta</button>
+        <button class="opcao" data-q="profissao" data-v="estudante">Estudante (último ano)</button>
+        <button class="opcao" data-q="profissao" data-v="outro">Outra área</button>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn btn-back" onclick="goTo('intro')">← Voltar</button>
+        <button class="btn btn-primary" onclick="goTo('q2')" data-next="q1" disabled>Próxima →</button>
+      </div>
+    </section>
+
+    <!-- ─── PERGUNTA 2 ─── -->
+    <section class="screen" data-screen="q2">
+      <p class="pergunta-num">Pergunta 2 de 5</p>
+      <h2 class="pergunta-titulo">Há quanto tempo você <em>atua na área</em>?</h2>
+      <div class="opcoes">
+        <button class="opcao" data-q="tempo" data-v="0-1">Comecei agora (até 1 ano)</button>
+        <button class="opcao" data-q="tempo" data-v="1-3">Entre 1 e 3 anos</button>
+        <button class="opcao" data-q="tempo" data-v="3-7">Entre 3 e 7 anos</button>
+        <button class="opcao" data-q="tempo" data-v="7+">Mais de 7 anos</button>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn btn-back" onclick="goTo('q1')">← Voltar</button>
+        <button class="btn btn-primary" onclick="goTo('q3')" data-next="q2" disabled>Próxima →</button>
+      </div>
+    </section>
+
+    <!-- ─── PERGUNTA 3 ─── -->
+    <section class="screen" data-screen="q3">
+      <p class="pergunta-num">Pergunta 3 de 5</p>
+      <h2 class="pergunta-titulo">Quanto você <em>fatura por mês</em> hoje?</h2>
+      <div class="opcoes">
+        <button class="opcao" data-q="faturamento" data-v="ate-3k">Até R$ 3.000</button>
+        <button class="opcao" data-q="faturamento" data-v="3-7k">Entre R$ 3.000 e R$ 7.000</button>
+        <button class="opcao" data-q="faturamento" data-v="7-15k">Entre R$ 7.000 e R$ 15.000</button>
+        <button class="opcao" data-q="faturamento" data-v="15k+">Acima de R$ 15.000</button>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn btn-back" onclick="goTo('q2')">← Voltar</button>
+        <button class="btn btn-primary" onclick="goTo('q4')" data-next="q3" disabled>Próxima →</button>
+      </div>
+    </section>
+
+    <!-- ─── PERGUNTA 4 ─── -->
+    <section class="screen" data-screen="q4">
+      <p class="pergunta-num">Pergunta 4 de 5</p>
+      <h2 class="pergunta-titulo">Qual seu <em>ticket médio</em> em pós-op hoje?</h2>
+      <div class="opcoes">
+        <button class="opcao" data-q="ticket" data-v="ate-100">Até R$ 100 / sessão</button>
+        <button class="opcao" data-q="ticket" data-v="100-200">R$ 100 a R$ 200 / sessão</button>
+        <button class="opcao" data-q="ticket" data-v="200-400">R$ 200 a R$ 400 / sessão</button>
+        <button class="opcao" data-q="ticket" data-v="pacote">Cobro por pacote, não por sessão</button>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn btn-back" onclick="goTo('q3')">← Voltar</button>
+        <button class="btn btn-primary" onclick="goTo('q5')" data-next="q4" disabled>Próxima →</button>
+      </div>
+    </section>
+
+    <!-- ─── PERGUNTA 5 ─── -->
+    <section class="screen" data-screen="q5">
+      <p class="pergunta-num">Pergunta 5 de 5</p>
+      <h2 class="pergunta-titulo">Qual sua <em>maior dor</em> hoje?</h2>
+      <div class="opcoes">
+        <button class="opcao" data-q="dor" data-v="agenda">Agenda inconstante — paciente não volta</button>
+        <button class="opcao" data-q="dor" data-v="cobranca">Insegurança em cobrar mais</button>
+        <button class="opcao" data-q="dor" data-v="tecnica">Dúvidas técnicas em casos complexos</button>
+        <button class="opcao" data-q="dor" data-v="autoridade">Falta autoridade pra cirurgião indicar</button>
+        <button class="opcao" data-q="dor" data-v="intercorrencia">Medo de errar com fibrose / seroma / intercorrência</button>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn btn-back" onclick="goTo('q4')">← Voltar</button>
+        <button class="btn btn-primary" onclick="goTo('cadastro')" data-next="q5" disabled>Ver meu resultado →</button>
+      </div>
+    </section>
+
+    <!-- ─── CADASTRO ─── -->
+    <section class="screen cadastro" data-screen="cadastro">
+      <h2>Pra entregar seu <em>resultado personalizado</em>—</h2>
+      <p>preciso saber pra quem mandar. É rápido. Sem spam, sem repasse.</p>
+
+      <form class="form-grid" id="quizForm" novalidate>
+        <div>
+          <label for="qNome">Seu nome</label>
+          <input type="text" id="qNome" name="nome" placeholder="Como você prefere ser chamada" required autocomplete="name">
+        </div>
+        <div>
+          <label for="qEmail">E-mail</label>
+          <input type="email" id="qEmail" name="email" placeholder="seu@email.com" required autocomplete="email">
+        </div>
+        <div>
+          <label for="qCelular">WhatsApp</label>
+          <input type="tel" id="qCelular" name="celular" placeholder="(00) 00000-0000" required autocomplete="tel" inputmode="tel">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="qSubmit">✦ Ver meu perfil + entrar na lista</button>
+        <p class="form-disclaimer">Você entra automaticamente na lista de espera do Curso Método Aurora — com todos os bônus pioneiros reservados.</p>
+      </form>
+    </section>
+
+    <!-- ─── RESULTADO ─── -->
+    <section class="screen resultado" data-screen="resultado">
+      <div class="resultado-emoji" id="resEmoji">✦</div>
+      <span class="resultado-perfil" id="resPerfil">Perfil em análise</span>
+      <h2 id="resTitulo">Seu perfil é <em>...</em></h2>
+      <p id="resTexto">Carregando análise...</p>
+
+      <div class="resultado-cta-card">
+        <h3>Próximo passo prático</h3>
+        <p id="resProximo">Carregando...</p>
+        <a href="curso.html" class="btn btn-primary" style="margin-bottom: 12px;">✦ Conhecer o Curso Método Aurora</a>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 16px;">Você já está na lista de espera — <a href="obrigado.html" style="color: var(--terracotta); text-decoration: underline;">veja os próximos passos</a></p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // ═══════════════════════════════════════════
+    // QUIZ ENGINE
+    // ═══════════════════════════════════════════
+    const SUPABASE_URL = 'https://qkcnawpkzfpmyrdczjac.supabase.co';
+    const SUPABASE_ANON_KEY = ''; // ← colar a anon key (mesma do index.html)
+
+    const screens = ['intro', 'q1', 'q2', 'q3', 'q4', 'q5', 'cadastro', 'resultado'];
+    const answers = {};
+    let currentScreen = 'intro';
+
+    function goTo(name) {
+      document.querySelector(`.screen[data-screen="${currentScreen}"]`).classList.remove('active');
+      document.querySelector(`.screen[data-screen="${name}"]`).classList.add('active');
+      currentScreen = name;
+
+      // Atualiza progress bar
+      const idx = screens.indexOf(name);
+      const pct = (idx / (screens.length - 1)) * 100;
+      document.getElementById('progressFill').style.width = pct + '%';
+
+      // Scroll pro topo
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Selecionar opção
+    document.querySelectorAll('.opcao').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const screen = btn.closest('.screen');
+        screen.querySelectorAll('.opcao').forEach(o => o.classList.remove('selected'));
+        btn.classList.add('selected');
+        answers[btn.dataset.q] = btn.dataset.v;
+        const nextBtn = screen.querySelector('[data-next]');
+        if (nextBtn) nextBtn.disabled = false;
+      });
+    });
+
+    // Máscara celular
+    const celular = document.getElementById('qCelular');
+    celular.addEventListener('input', (e) => {
+      let v = e.target.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length > 6)      v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+      else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+      else if (v.length > 0) v = `(${v}`;
+      e.target.value = v;
+    });
+
+    // ═══════════════════════════════════════════
+    // CALCULAR PERFIL
+    // ═══════════════════════════════════════════
+    function calcularPerfil() {
+      const { tempo, faturamento, ticket, dor } = answers;
+
+      // Iniciante: pouco tempo OU faturamento baixo
+      if (tempo === '0-1' || faturamento === 'ate-3k' || ticket === 'ate-100') {
+        return {
+          perfil: 'A Construindo Bases',
+          emoji: '🌱',
+          titulo: 'Você está <em>construindo a sua base</em>',
+          texto: 'Sua técnica está em formação e seu faturamento ainda não reflete seu potencial. A boa notícia é que você está exatamente no momento certo pra construir um caminho sólido — sem vícios técnicos e sem cobrar barato pelo resto da carreira.',
+          proximo: 'Pra você, o Curso Método Aurora vai ser uma fundação completa. Você aprende o método de raciocínio clínico ANTES de criar vícios — e sai já posicionada pra cobrar 3-4× mais que a média da sua cidade.'
+        };
+      }
+
+      // Avançada: muito tempo + ticket alto OU pacote
+      if ((tempo === '7+' && (ticket === '200-400' || ticket === 'pacote')) ||
+          (faturamento === '15k+' && ticket === 'pacote')) {
+        return {
+          perfil: 'Já é Referência',
+          emoji: '✦',
+          titulo: 'Você <em>já é referência</em> — agora é hora de ensinar',
+          texto: 'Você tem técnica, autoridade e faturamento. Sua jornada agora não é mais "como cobrar mais" — é "como sistematizar e escalar". O Curso Método Aurora pode te servir como benchmark, fonte de protocolos pra equipe e ponte pra pensar em formação própria depois.',
+          proximo: 'Considere o curso pra: (1) confirmar/expandir seu próprio método, (2) dar acesso à sua equipe, (3) usar como referência pra construir produto digital próprio no futuro.'
+        };
+      }
+
+      // Padrão: o caso mais comum — tem técnica, fatura razoável, mas ainda não tá no topo
+      return {
+        perfil: 'Pronta pra Saltar',
+        emoji: '🚀',
+        titulo: 'Você está <em>pronta pra saltar</em>',
+        texto: 'Você tem técnica e já fatura razoavelmente. Mas há um gap entre o que você sabe fazer e o que você consegue cobrar. Esse gap não é técnica — é raciocínio clínico, posicionamento e gestão. Exatamente o que o Aurora resolve.',
+        proximo: 'Pra você, o Aurora é o salto. Você sai do curso cobrando 2-3× mais por aplicar o método, com cirurgião indicando direto e agenda lotada com 30 dias de antecedência.'
+      };
+    }
+
+    // ═══════════════════════════════════════════
+    // SUBMIT
+    // ═══════════════════════════════════════════
+    document.getElementById('quizForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById('qNome').value.trim();
+      const email = document.getElementById('qEmail').value.trim();
+      const cel = document.getElementById('qCelular').value.trim();
+
+      if (!nome || cel.length < 14 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Preenche nome, e-mail válido e WhatsApp completo, por favor.');
+        return;
+      }
+
+      const submit = document.getElementById('qSubmit');
+      submit.disabled = true;
+      submit.textContent = 'Calculando seu perfil…';
+
+      const payload = {
+        nome,
+        email,
+        celular: cel,
+        profissao: answers.profissao || null,
+        source: 'quiz-aurora',
+        user_agent: navigator.userAgent,
+        // Quiz answers como meta — se a tabela não tem essas colunas, fica em payload extra (pode ir pra coluna jsonb 'meta' se for criada)
+        quiz_tempo: answers.tempo,
+        quiz_faturamento: answers.faturamento,
+        quiz_ticket: answers.ticket,
+        quiz_dor: answers.dor
+      };
+
+      // Enviar pro Supabase
+      try {
+        if (SUPABASE_ANON_KEY) {
+          await fetch(`${SUPABASE_URL}/rest/v1/clau_leads`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'apikey': SUPABASE_ANON_KEY,
+              'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+              'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify(payload)
+          });
+        } else {
+          // Fallback localStorage
+          const stored = JSON.parse(localStorage.getItem('clau_leads') || '[]');
+          stored.push({ ...payload, ts: new Date().toISOString() });
+          localStorage.setItem('clau_leads', JSON.stringify(stored));
+        }
+      } catch (err) {
+        console.warn('[quiz] Supabase falhou, salvando local:', err.message);
+        const stored = JSON.parse(localStorage.getItem('clau_leads') || '[]');
+        stored.push({ ...payload, ts: new Date().toISOString() });
+        localStorage.setItem('clau_leads', JSON.stringify(stored));
+      }
+
+      // Pixel Lead
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', { content_name: 'Quiz Aurora — Lista de Espera' });
+      }
+
+      // Mostrar resultado
+      const r = calcularPerfil();
+      document.getElementById('resEmoji').textContent = r.emoji;
+      document.getElementById('resPerfil').textContent = r.perfil;
+      document.getElementById('resTitulo').innerHTML = r.titulo;
+      document.getElementById('resTexto').textContent = r.texto;
+      document.getElementById('resProximo').textContent = r.proximo;
+
+      goTo('resultado');
+    });
+  </script>
+</body>
+</html>
