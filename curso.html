@@ -1384,16 +1384,231 @@
     }
 
     /* ════════════════════════════════════════════
-       REVEAL ANIMATION
+       REVEAL ANIMATION (stagger + cubic-bezier)
        ════════════════════════════════════════════ */
     .reveal {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      transform: translateY(28px);
+      transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+    /* Stagger automático para grupos */
+    .stagger > .reveal:nth-child(1) { transition-delay: 0s; }
+    .stagger > .reveal:nth-child(2) { transition-delay: 0.08s; }
+    .stagger > .reveal:nth-child(3) { transition-delay: 0.16s; }
+    .stagger > .reveal:nth-child(4) { transition-delay: 0.24s; }
+    .stagger > .reveal:nth-child(5) { transition-delay: 0.32s; }
+    .stagger > .reveal:nth-child(6) { transition-delay: 0.40s; }
+    .stagger > .reveal:nth-child(7) { transition-delay: 0.48s; }
+    .stagger > .reveal:nth-child(8) { transition-delay: 0.56s; }
+
+    /* ════════════════════════════════════════════
+       SCROLL PROGRESS BAR (top)
+       ════════════════════════════════════════════ */
+    .scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, var(--terracotta), var(--terracotta-light));
+      z-index: 1001;
+      transition: width 0.1s linear;
+      box-shadow: 0 0 8px rgba(186, 133, 101, 0.4);
+    }
+
+    /* ════════════════════════════════════════════
+       COUNTER (prova numérica) — cintilação ao animar
+       ════════════════════════════════════════════ */
+    .stat-num {
+      transition: color 0.3s;
+    }
+    .stat-num.counting {
+      color: var(--terracotta-light);
+    }
+
+    /* ════════════════════════════════════════════
+       TILT 3D nos cards exclusivos (mouse-aware)
+       ════════════════════════════════════════════ */
+    .bonus-card.exclusive,
+    .pilar-card,
+    .modulo {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    /* Border gradient animado nos exclusivos */
+    .bonus-card.exclusive {
+      position: relative;
+      isolation: isolate;
+    }
+    .bonus-card.exclusive::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 18px;
+      padding: 2px;
+      background: conic-gradient(from var(--gradient-angle, 0deg), var(--terracotta), var(--terracotta-light), var(--burgundy), var(--terracotta));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      animation: rotate-gradient 8s linear infinite;
+      z-index: -1;
+      opacity: 0.6;
+    }
+    @property --gradient-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    @keyframes rotate-gradient {
+      to { --gradient-angle: 360deg; }
+    }
+
+    /* ════════════════════════════════════════════
+       BTN PRIMARY — shine contínuo + ripple no click
+       ════════════════════════════════════════════ */
+    .btn-primary {
+      isolation: isolate;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+      transform: translateX(-100%);
+      animation: shine-loop 5s ease-in-out infinite;
+      animation-delay: 2s;
+      pointer-events: none;
+      z-index: 0;
+    }
+    @keyframes shine-loop {
+      0% { transform: translateX(-100%); }
+      40%, 100% { transform: translateX(100%); }
+    }
+
+    /* ════════════════════════════════════════════
+       LOADING SPINNER no submit
+       ════════════════════════════════════════════ */
+    .lead-form button.loading {
+      position: relative;
+      color: transparent !important;
+      pointer-events: none;
+    }
+    .lead-form button.loading::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      margin-left: -10px;
+      margin-top: -10px;
+      border: 2px solid var(--cream-pale);
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ════════════════════════════════════════════
+       SUCCESS — celebration burst
+       ════════════════════════════════════════════ */
+    .form-success {
+      transform: scale(0.95);
+      transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .form-success.visible {
+      transform: scale(1);
+    }
+
+    /* ════════════════════════════════════════════
+       SELO DE GARANTIA SVG (sunburst MIV)
+       ════════════════════════════════════════════ */
+    .garantia-svg {
+      width: 132px;
+      height: 132px;
+      margin: 32px auto 8px;
+      display: block;
+      animation: garantia-rotate 60s linear infinite;
+    }
+    @keyframes garantia-rotate {
+      to { transform: rotate(360deg); }
+    }
+    .garantia-bloco {
+      margin-top: 16px;
+      text-align: center;
+    }
+    .garantia-bloco h4 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--accent);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .garantia-bloco p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      max-width: 380px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ════════════════════════════════════════════
+       HERO PARALLAX (mouse-aware)
+       ════════════════════════════════════════════ */
+    .hero-vsl-card,
+    .hero-text {
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+
+    /* ════════════════════════════════════════════
+       SMOOTH HOVERS (cards + links)
+       ════════════════════════════════════════════ */
+    .servico-card,
+    .pilar-card,
+    .bonus-card,
+    .depo-card,
+    .pratica-card {
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.3s;
+    }
+
+    /* Glow follow on chiclete */
+    .chiclete:hover::before {
+      transition: opacity 0.4s ease;
+      opacity: 1.5;
+    }
+
+    /* ════════════════════════════════════════════
+       FOCUS STATES (acessibilidade)
+       ════════════════════════════════════════════ */
+    .lead-form input:focus,
+    .btn-primary:focus,
+    .nav-cta:focus,
+    button:focus,
+    a:focus {
+      outline: 2px solid var(--terracotta-light);
+      outline-offset: 3px;
+    }
+    .lead-form input:focus { outline-offset: 1px; }
+
+    /* ════════════════════════════════════════════
+       REDUCE MOTION (acessibilidade)
+       ════════════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+      .garantia-svg { animation: none; }
     }
 
     /* ════════════════════════════════════════════
@@ -1580,6 +1795,9 @@
 </head>
 <body>
 
+  <!-- ══════════════ SCROLL PROGRESS ══════════════ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <!-- ══════════════ NAVIGATION ══════════════ -->
   <nav id="navbar">
     <div class="container">
@@ -1669,7 +1887,7 @@
       <div class="glow-line reveal"></div>
       <p class="section-subtitle reveal">Esses são os pilares que você vai dominar dentro do curso. Cada um deles redefine o que significa fazer pós-operatório com excelência.</p>
 
-      <div class="pilares-grid">
+      <div class="pilares-grid stagger">
         <div class="pilar-card glass reveal">
           <div class="pilar-icon">✦</div>
           <h3>Técnica 100% Manual</h3>
@@ -1731,7 +1949,7 @@
   <!-- ══════════════ PROVA NUMÉRICA ══════════════ -->
   <section id="prova-numerica">
     <div class="container">
-      <div class="stats-grid">
+      <div class="stats-grid stagger">
         <div class="stat-block reveal">
           <span class="stat-num">+1.200</span>
           <span class="stat-label">Pacientes acompanhadas</span>
@@ -1761,7 +1979,7 @@
       <div class="glow-line reveal"></div>
       <p class="section-subtitle reveal">Não é curso curtinho. É a formação completa em pós-operatório de cirurgia plástica que vai te fazer dominar técnica, casos e negócio.</p>
 
-      <div class="modulos-stack">
+      <div class="modulos-stack stagger">
         <div class="modulo reveal">
           <div class="modulo-num">00</div>
           <div class="modulo-info">
@@ -1866,7 +2084,7 @@
       <div class="glow-line reveal" style="background: linear-gradient(90deg, transparent, var(--terracotta-light), transparent)"></div>
       <p class="section-subtitle reveal">Não é teoria solta. É manobra acontecendo na pele, filmada de cima e de frente, em cirurgias reais — pra você ver exatamente o que fazer.</p>
 
-      <div class="pratica-grid">
+      <div class="pratica-grid stagger">
         <div class="pratica-card reveal">
           <div class="icon">✦</div>
           <h4>Abdominoplastia</h4>
@@ -2002,7 +2220,7 @@
         Esses bônus são <strong>limitados</strong>. Pras 50 e 10 primeiras a fechar quando o carrinho abrir. Quem entra na lista tem prioridade.
       </div>
 
-      <div class="bonus-grid">
+      <div class="bonus-grid stagger">
         <div class="bonus-card exclusive reveal">
           <span class="bonus-tag">10 primeiras</span>
           <h3>Mentoria 1:1 no WhatsApp</h3>
@@ -2075,7 +2293,61 @@
 
         <a href="#captura-final" class="btn-primary">✦ Quero entrar na lista de espera</a>
 
-        <div class="garantia-selo">◈ Garantia incondicional de 7 dias</div>
+        <!-- Selo de Garantia SVG (sunburst MIV) -->
+        <svg class="garantia-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Selo de garantia 7 dias">
+          <defs>
+            <path id="garantiaCircle" d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
+            <linearGradient id="garantiaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#BA8565"/>
+              <stop offset="100%" stop-color="#8D5B3A"/>
+            </linearGradient>
+          </defs>
+          <!-- Outer ring -->
+          <circle cx="100" cy="100" r="92" fill="none" stroke="#BA8565" stroke-width="0.6" stroke-dasharray="2 3" opacity="0.5"/>
+          <!-- Sunburst rays -->
+          <g transform="translate(100 100)">
+            <g id="garantiaRays" fill="url(#garantiaGrad)">
+              <polygon points="0,-78 3,-58 -3,-58"/>
+            </g>
+            <use href="#garantiaRays" transform="rotate(15)"/>
+            <use href="#garantiaRays" transform="rotate(30)"/>
+            <use href="#garantiaRays" transform="rotate(45)"/>
+            <use href="#garantiaRays" transform="rotate(60)"/>
+            <use href="#garantiaRays" transform="rotate(75)"/>
+            <use href="#garantiaRays" transform="rotate(90)"/>
+            <use href="#garantiaRays" transform="rotate(105)"/>
+            <use href="#garantiaRays" transform="rotate(120)"/>
+            <use href="#garantiaRays" transform="rotate(135)"/>
+            <use href="#garantiaRays" transform="rotate(150)"/>
+            <use href="#garantiaRays" transform="rotate(165)"/>
+            <use href="#garantiaRays" transform="rotate(180)"/>
+            <use href="#garantiaRays" transform="rotate(195)"/>
+            <use href="#garantiaRays" transform="rotate(210)"/>
+            <use href="#garantiaRays" transform="rotate(225)"/>
+            <use href="#garantiaRays" transform="rotate(240)"/>
+            <use href="#garantiaRays" transform="rotate(255)"/>
+            <use href="#garantiaRays" transform="rotate(270)"/>
+            <use href="#garantiaRays" transform="rotate(285)"/>
+            <use href="#garantiaRays" transform="rotate(300)"/>
+            <use href="#garantiaRays" transform="rotate(315)"/>
+            <use href="#garantiaRays" transform="rotate(330)"/>
+            <use href="#garantiaRays" transform="rotate(345)"/>
+          </g>
+          <!-- Center circle -->
+          <circle cx="100" cy="100" r="44" fill="#F6E9D8" stroke="#8D5B3A" stroke-width="1.2"/>
+          <!-- Number -->
+          <text x="100" y="92" text-anchor="middle" fill="#2B1710" font-family="Italiana, Marcellus, Cormorant Garamond, serif" font-size="34" font-weight="400">7</text>
+          <text x="100" y="115" text-anchor="middle" fill="#8D5B3A" font-family="Archivo, sans-serif" font-size="9" letter-spacing="2.5" font-weight="600">DIAS</text>
+          <!-- Orbital text -->
+          <text fill="#2B1710" font-family="Archivo, sans-serif" font-size="8" letter-spacing="3" font-weight="500">
+            <textPath href="#garantiaCircle" startOffset="0">★ GARANTIA INCONDICIONAL ★ MÉTODO AURORA ★ GARANTIA INCONDICIONAL ★ MÉTODO AURORA </textPath>
+          </text>
+        </svg>
+
+        <div class="garantia-bloco">
+          <h4>Garantia incondicional de 7 dias</h4>
+          <p>Comprou e em 7 dias decidiu que não é pra você? Devolvemos 100% do valor. <strong>Sem perguntas, sem burocracia, sem ressentimento.</strong></p>
+        </div>
 
         <p class="oferta-disclaimer">Pagamento via Hotmart. Acesso à plataforma será liberado quando o curso for oficialmente lançado. Lista de espera não cobra nada agora.</p>
       </div>
@@ -2090,7 +2362,7 @@
       <div class="glow-line reveal"></div>
       <p class="section-subtitle reveal">Depoimentos reais de pacientes, alunas e profissionais que cruzaram com a Clau. Todos verificáveis no Instagram <a href="https://instagram.com/clinicaclau" target="_blank" rel="noopener">@clinicaclau</a>.</p>
 
-      <div class="depo-grid">
+      <div class="depo-grid stagger">
         <div class="depo-card reveal">
           <p>"Resultado não é só técnica. É planejamento, execução e, principalmente, acompanhamento. Obrigada pelo convite e pela confiança."</p>
           <span class="author">@marianasimoes.dra</span>
@@ -2260,25 +2532,41 @@
 
   <!-- ══════════════ SCRIPTS ══════════════ -->
   <script>
-    // ─── NAVBAR + STICKY CTA SCROLL STATE ───
+    // ─── PREFERS REDUCED MOTION ───
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ─── NAVBAR + STICKY CTA + SCROLL PROGRESS ───
     const navbar = document.getElementById('navbar');
     const stickyCTA = document.getElementById('stickyCTA');
     const heroSection = document.getElementById('hero');
     const captureSection = document.getElementById('captura-final');
+    const progressBar = document.getElementById('scrollProgress');
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 80) navbar.classList.add('scrolled');
+    let ticking = false;
+    function onScroll() {
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = Math.min((scrollY / docHeight) * 100, 100);
+      if (progressBar) progressBar.style.width = progress + '%';
+
+      if (scrollY > 80) navbar.classList.add('scrolled');
       else navbar.classList.remove('scrolled');
 
-      // Sticky CTA: aparece quando passou do hero, esconde quando entrou na captura final
       const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
       const captureTop = captureSection.offsetTop - 200;
-      if (window.scrollY > heroBottom && window.scrollY < captureTop) {
+      if (scrollY > heroBottom && scrollY < captureTop) {
         stickyCTA.classList.add('visible');
       } else {
         stickyCTA.classList.remove('visible');
       }
-    });
+      ticking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
 
     // ─── REVEAL ON SCROLL (IntersectionObserver leve) ───
     const observer = new IntersectionObserver((entries) => {
@@ -2288,9 +2576,101 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ─── COUNTER ANIMATION (prova numérica) ───
+    function animateCounter(el) {
+      if (reduceMotion) return;
+      const text = el.textContent.trim();
+      // Match: "+1.200", "+8 anos", "+30", "+200" etc
+      const match = text.match(/(\+?)(\d+(?:[\.,]\d+)?)([^\d]*)/);
+      if (!match) return;
+      const prefix = match[1];
+      const targetNum = parseFloat(match[2].replace(/\./g, '').replace(',', '.'));
+      const suffix = match[3];
+      const isInteger = !match[2].includes(',') && !match[2].includes('.') ? true : false;
+      const formatNum = (n) => {
+        if (!isInteger) return n.toFixed(1).replace('.', ',');
+        if (targetNum >= 1000) return Math.floor(n).toLocaleString('pt-BR');
+        return Math.floor(n).toString();
+      };
+      el.classList.add('counting');
+      const duration = 1400;
+      const start = performance.now();
+      function step(now) {
+        const elapsed = now - start;
+        const t = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+        const current = targetNum * eased;
+        el.textContent = prefix + formatNum(current) + suffix;
+        if (t < 1) requestAnimationFrame(step);
+        else {
+          el.textContent = prefix + (isInteger ? targetNum.toLocaleString('pt-BR') : targetNum.toString().replace('.', ',')) + suffix;
+          setTimeout(() => el.classList.remove('counting'), 400);
+        }
+      }
+      requestAnimationFrame(step);
+    }
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el));
+
+    // ─── TILT 3D nos cards exclusivos (mouse-aware) ───
+    if (!reduceMotion && window.matchMedia('(hover: hover)').matches) {
+      document.querySelectorAll('.bonus-card.exclusive').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const cx = rect.width / 2;
+          const cy = rect.height / 2;
+          const rx = ((y - cy) / cy) * -4;
+          const ry = ((x - cx) / cx) * 4;
+          card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+        });
+      });
+    }
+
+    // ─── HERO PARALLAX (mouse-aware, sutil) ───
+    if (!reduceMotion && window.matchMedia('(hover: hover)').matches) {
+      const heroText = document.querySelector('.hero-text');
+      const vslCard = document.querySelector('.hero-vsl-card');
+      heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        const x = (e.clientX / rect.width - 0.5) * 8;
+        const y = (e.clientY / rect.height - 0.5) * 6;
+        if (heroText) heroText.style.transform = `translate(${-x * 0.3}px, ${-y * 0.3}px)`;
+        if (vslCard) vslCard.style.transform = `translate(${x}px, ${y}px)`;
+      });
+      heroSection.addEventListener('mouseleave', () => {
+        if (heroText) heroText.style.transform = '';
+        if (vslCard) vslCard.style.transform = '';
+      });
+    }
+
+    // ─── SMOOTH SCROLL com offset do navbar ───
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href === '#' || href.length < 2) return;
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 70;
+        window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
+    });
 
     // ─── LEAD FORM ───
     // Backend: Supabase. Mesma tabela `clau_leads` do site. Source: 'curso-aurora-lista-espera'.
@@ -2356,7 +2736,7 @@
         }
 
         submit.disabled = true;
-        submit.textContent = 'Enviando…';
+        submit.classList.add('loading');
 
         try {
           try {
@@ -2366,11 +2746,11 @@
             saveLocalFallback(data);
           }
 
-          // Pixel: Lead + InitiateCheckout (lista de espera = intenção alta)
           if (typeof fbq === 'function') {
             fbq('track', 'Lead', { content_name: 'Curso Método Aurora — Lista de Espera' });
           }
 
+          submit.classList.remove('loading');
           success.classList.add('visible');
           form.querySelectorAll('input').forEach(i => i.value = '');
           submit.textContent = '✓ Você está na lista';
@@ -2380,6 +2760,7 @@
           }, 5000);
         } catch (err) {
           submit.disabled = false;
+          submit.classList.remove('loading');
           submit.textContent = '✦ Tentar novamente';
           alert('Não foi possível enviar agora. Tente novamente em instantes.');
         }

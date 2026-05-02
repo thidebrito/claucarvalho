@@ -1,367 +1,449 @@
-# VSL — Curso Método Aurora · v2 (alta conversão)
-> Roteiro de gravação da VSL (Vídeo de Vendas) do Curso Método Aurora.
-> **Objetivo:** captar leads para a **lista de espera** (não vender direto).
-> **Duração total:** 7'30"–8'30" (não passar de 9 minutos — VTR despenca)
-> **Tom:** Light Copy + VTSD aplicado. Direta, humana, com humor leve quando couber. Ritmo de quem fala no Instagram, não em palestra.
-> **Público:** fisioterapeuta ou esteticista, 25–45 anos, mulher na maioria, antenada em Instagram, com técnica boa mas faturamento aquém. Já comprou curso antes e ficou frustrada com promessa vazia.
-> **Princípio:** cada bloco precisa entregar uma frase que ela queira screenshotar.
+# VSL — Curso Método Aurora · v3 (alta conversão · Light Copy + VTSD afiados)
+
+> **Objetivo:** captar leads pra **lista de espera**. Não é VSL de venda direta — é VSL de antecipação.
+> **Duração ideal:** 6'30" a 7'30" (mais curta que v2 — corte gordura, ganho retenção)
+> **Tom:** Light Copy (Leandro Ladeira) + VTSD aplicados. Como Clau fala no Reels — não como Clau fala em palestra.
+> **Princípio editorial:** cada bloco deve ter **uma frase que ela queira dar pause e screenshotar.** Sem isso, o bloco não justifica existir.
+> **Público-alvo:** mulher, fisioterapeuta ou esteticista, 25–45 anos, brasileira, instagram-savvy. Já comprou curso/mentoria antes e ficou frustrada com promessa vazia. Sente que tem técnica e não fatura o que merece. Tem medo de errar com paciente — fibrose, seroma, intercorrência. Quer ser respeitada por cirurgião e cobrar valor.
 
 ---
 
-## Diretrizes de gravação
+## ⚙️ Diretrizes técnicas (mantidas da v2)
 
-### Setup técnico
-- **Câmera:** mesma do Dia 1 do plano. Frontal, altura dos olhos, 60cm. Plano peito-pra-cima.
-- **Áudio:** lapela. Testar antes. Sem som ambiente.
-- **Iluminação:** luz natural lateral OU ring light frontal suave. Sem sombra dura no rosto.
-- **Fundo:** parede creme/bege limpa. Um detalhe único (planta seca, quadro discreto). Nada de prateleira cheia.
-- **Roupa:** blazer chocolate ou off-white + blusa terracotta. Acessórios statement gold visíveis (aparece nas mãos durante explicação).
-- **Maquiagem:** suave, nude/terra. Boca natural — não vermelho.
+### Setup
+- **Câmera:** frontal · altura dos olhos · 60cm · plano peito-pra-cima
+- **Áudio:** lapela testada · sem som ambiente
+- **Luz:** natural lateral OU ring light frontal suave · sem sombra dura
+- **Fundo:** parede creme/bege · um detalhe único (planta seca / quadro discreto) · nada de prateleira cheia
+- **Roupa:** blazer chocolate ou off-white + blusa terracotta · acessórios statement gold visíveis
+- **Maquiagem:** suave · nude/terra · boca natural
 
 ### Linguagem corporal
-- **Olhar:** firme na lente. Não desvia pra monitor.
-- **Mãos:** visíveis. Gesticular sem exagero.
-- **Pausa:** uma respiração curta antes de cada frase de impacto.
-- **Sorriso:** só nos momentos certos. A maior parte da VSL é séria — porque o assunto é dinheiro e carreira da pessoa.
-- **Velocidade:** 130–150 palavras por minuto. Mais rápido que isso, ela perde. Mais devagar, ela fecha.
+- Olhar firme na lente · não desvia pra monitor
+- Mãos visíveis · gesticular sem exagero
+- Pausa curta antes de cada frase de impacto
+- Sorriso só nos momentos certos — VSL é séria porque o assunto é dinheiro e carreira
+- Velocidade: 130–150 palavras/minuto
 
 ### Antes de gravar
-- **Decorar 3 frases:** o gancho (bloco 1), a Big Idea (bloco 3) e o CTA (bloco 9). O resto pode consultar script.
-- **Beber água. Falar uma frase aleatória pra "soltar" a voz.**
-- **Gravar a VSL inteira 2 takes. NÃO emendar pedaços de takes diferentes na edição** — perde o ritmo.
+- Decorar 4 frases-âncora: **gancho · Big Idea · oferta · CTA final**
+- Beber água. Falar uma frase aleatória pra "soltar" a voz
+- Gravar VSL inteira em 2 takes. **Não emendar pedaços de takes diferentes** — perde ritmo
 
 ---
 
-## Estrutura — 9 blocos
+## 📐 Estrutura — 9 blocos (encurtada vs v2)
 
-| Bloco | Tempo | Função |
-|---|---|---|
-| 1. Gancho | 0:00–0:20 | Parar o scroll. Bater no nervo |
-| 2. Identificação | 0:20–1:00 | "Ela tá falando comigo" |
-| 3. Big Idea | 1:00–2:00 | A virada de chave |
-| 4. Quem é a Clau | 2:00–3:00 | Autoridade por resultado, não por currículo |
-| 5. Os 5 pilares | 3:00–4:30 | O método em 90 segundos |
-| 6. Dentro do curso | 4:30–6:00 | Densidade — sem cansar |
-| 7. Pra quem é | 6:00–6:45 | Filtro honesto |
-| 8. Lista de espera + bônus | 6:45–7:45 | A chamada |
-| 9. CTA + assinatura | 7:45–8:30 | Comando direto |
+| Bloco | v2 | v3 | Função |
+|---|---|---|---|
+| 1. Gancho | 0:00–0:20 | **0:00–0:15** | Parar scroll. Bater no nervo |
+| 2. Identificação | 0:20–1:00 | **0:15–0:50** | "Tá falando comigo" |
+| 3. Big Idea | 1:00–2:00 | **0:50–1:40** | Frase de screenshot |
+| 4. Quem é a Clau | 2:00–3:00 | **1:40–2:25** | Autoridade por resultado |
+| 5. Os 5 pilares | 3:00–4:30 | **2:25–3:50** | Método em 85s |
+| 6. Dentro do curso | 4:30–6:00 | **3:50–5:00** | Densidade sem cansar |
+| 7. Pra quem é | 6:00–6:45 | **5:00–5:35** | Filtro honesto |
+| 8. Lista + bônus | 6:45–7:45 | **5:35–6:35** | A chamada |
+| 9. CTA + assinatura | 7:45–8:30 | **6:35–7:15** | Comando direto |
+
+**Total v3: 7'15"** — 1'15" mais curto que v2. Cada segundo a menos = mais retenção.
 
 ---
 
-## Bloco 1 — Gancho · 0:00–0:20
+## 🎬 Bloco 1 — Gancho · 0:00–0:15
 
-**Função:** parar o scroll em 3 segundos. Bater no nervo real, não no genérico.
+**Função:** parar scroll em 3s. Específico, não genérico.
+
+### Roteiro principal (escolher 1 dos 3 pra gravar — testar nos criativos)
+
+#### Versão A — Pergunta direta *(recomendada)*
+> "Por que tem fisioterapeuta com **agenda lotada cobrando R$500 a sessão** —
+> e tem fisio melhor tecnicamente que ela cobrando R$80 e ainda passando aperto?
+>
+> A resposta vai te incomodar. Mas vai mudar a sua carreira."
+
+#### Versão B — Acusação amigável
+> "Você ralou pra aprender drenagem.
+> Comprou aparelho de quinze mil.
+> Pagou em curso que prometeu agenda lotada.
+>
+> E **paciente continua não voltando.**
+> Em cinco minutos eu te falo por quê."
+
+#### Versão C — Estatística específica
+> "Sete em cada dez fisios brasileiras com técnica boa cobram menos do que merecem.
+>
+> Não é falta de paciente. Não é a crise. **É outra coisa.**
+> E você nunca foi avisada."
+
+### Direção
+- **Primeiros 3 segundos sem música** — o silêncio prende
+- Plano peito-pra-cima · olhar firme · expressão séria
+- Cut limpo no fim · transição com fade-up rápido pro bloco 2
+
+---
+
+## 🎬 Bloco 2 — Identificação · 0:15–0:50
+
+**Função:** ela sentir "ela tá falando comigo, não com a outra fisio".
 
 ### Roteiro
 
-> "Eu vou te falar uma coisa que vai doer.
+> "Você sabe do que eu tô falando.
 >
-> Se você é fisioterapeuta ou esteticista e a sua agenda tá sempre **'quase fechando'** —
+> Paciente atende uma vez. Fala que adorou. **Não volta.**
+> E você abre o Direct e vê colega no mercado há menos tempo do que você
+> fechando agenda lotada com pós-op de papada — cobrando R$500 a sessão.
 >
-> não é falta de paciente. Não é a crise. Não é o algoritmo do Instagram.
+> E você fica se perguntando:
 >
-> É outra coisa. E em oito minutos eu vou te mostrar o que é."
+> *'Mas a minha técnica é boa. Por que comigo não?'*
+>
+> A boa notícia é que **não é problema na sua técnica.**
+> A notícia melhor ainda é que tem solução.
+>
+> A notícia ruim — você não vai gostar."
 
-### Variações pra testar em criativos
-- **Versão dor:** *"Você ralou pra aprender drenagem. Comprou aparelho de R$15 mil. E ainda ouve 'vou ver se consigo voltar mês que vem'. Por que isso acontece com você?"*
-- **Versão pergunta:** *"Por que tem fisio com agenda lotada cobrando R$500 a sessão e tem fisio melhor tecnicamente cobrando R$80 e ainda passando aperto? A resposta vai te incomodar."*
-- **Versão direta (15s):** *"Sua agenda não fecha. E não é por falta de paciente. É outra coisa — e ninguém te falou."*
-
-### Direção visual
-- Plano médio, peito-pra-cima
-- Olhar firme
-- **Sem música ainda** — o silêncio nos primeiros 3 segundos prende mais
-- Cut limpo no fim
+### Direção
+- **Música começa em 0:18** — instrumental terra · sem letra · volume baixo
+- Inserções: print de DM real *"vou ver se consigo voltar"*, screenshot de stories de colega cobrando R$500 (autorizado)
+- **Texto na tela em 0:35:** *"Por que comigo não?"* aparece com fade
+- Volta pra plano frontal antes do bloco 3
 
 ---
 
-## Bloco 2 — Identificação · 0:20–1:00
+## 🎬 Bloco 3 — Big Idea · 0:50–1:40
 
-**Função:** ela sentir "ela tá falando comigo, não com a outra fisio". Específico, sem romantizar a dor.
-
-### Roteiro
-
-> "Eu sei como é.
->
-> Você fez faculdade. Fez curso de drenagem. Comprou aparelho. Pagou R$2 mil em mentoria que prometeu agenda lotada e te entregou um PDF de 30 páginas.
->
-> E mesmo assim. **Paciente atende uma vez. Não volta. Não indica.** E quando indica, é pra outra fisio que cobra menos.
->
-> Você abre o Instagram e vê colega que tá no mercado há menos tempo do que você fechando agenda lotada com pós-op de papada — cobrando R$500 a sessão.
->
-> E você se pergunta: *'mas a minha técnica é boa. Por que comigo não?'*
->
-> A resposta é o que ninguém quis te falar."
-
-### Direção visual
-- **Música começa aqui** — instrumental terra, sem letra, volume baixo
-- Pode entrar inserção visual: print de mensagem real *"vou ver se consigo voltar"*, screenshot de stories de colega cobrando R$500
-- Voltar pro plano frontal antes do bloco 3
-- **Texto sobreposto** no segundo *"e você se pergunta..."*
-
----
-
-## Bloco 3 — Big Idea · 1:00–2:00
-
-**Função:** entregar a frase que reorganiza a cabeça da pessoa. **A frase de screenshot.**
+**Função:** entregar a frase que reorganiza a cabeça da pessoa. **Frase de screenshot.**
 
 ### Roteiro
 
-> "Olha, vou ser bem honesta com você.
+> "Vou ser honesta com você.
 >
-> A maioria dos cursos por aí ensina **manobra**. Faz assim, depois assim, depois assim. Receita de bolo.
+> A maioria dos cursos por aí ensina **manobra**. Faz assim. Depois assim. Depois assim.
+> Receita de bolo.
 >
-> Só que cada paciente é um caso. Tipo de pele, fase da cicatrização, tipo de cirurgia, sensibilidade, **estado emocional**. Tudo muda. E quando você aplica protocolo igual em corpo diferente — o resultado fica medíocre.
+> Só que cada paciente é um caso. Tipo de pele, fase, cirurgia, sensibilidade. **Tudo muda.**
+> E quando você aplica protocolo igual em corpo diferente — o resultado fica medíocre.
 >
-> Aí o paciente não vê diferença. E quando ele não vê diferença, qualquer outra fisio mais barata serve.
+> Aí o paciente não vê diferença.
+> E quando ele não vê diferença — qualquer outra fisio mais barata serve.
+>
+> *(pausa de 1 segundo · respiração)*
 >
 > Então grava essa frase, porque ela vai mudar a sua carreira:
 >
 > **Pós-operatório não é técnica. É leitura.**
 >
-> Quem só tem manobra cobra por hora. Quem tem método cobra por resultado.
+> *(pausa de 1 segundo)*
 >
-> E a diferença entre cobrar R$100 e cobrar R$500 a sessão **não tá na sua manobra**. Tá no que vem antes dela. **No raciocínio clínico que ninguém te ensinou.**
+> Quem só tem manobra cobra **por hora.**
+> Quem tem método cobra **por resultado.**
 >
-> É exatamente isso que eu construí ao longo dos anos. E é exatamente isso que eu vim te entregar."
+> A diferença entre cobrar R$100 e cobrar R$500 a sessão não tá na sua manobra.
+> Tá no que vem antes dela. **No raciocínio clínico que ninguém te ensinou.**"
 
-### Direção visual
-- B-roll: mão na pele, sem áudio, com música por cima
-- **TEXTO NA TELA, grande:** *"Pós-op não é técnica. É leitura."*
-- Volta pra Clau no fechamento
-- Pausa de 1 segundo após "que ninguém te ensinou" — deixa o silêncio operar
+### Direção
+- **TEXTO NA TELA (grande, centralizado):** *"Pós-op não é técnica. É leitura."* — fica 4 segundos
+- B-roll curto: mão na pele de paciente em pós-op (sem áudio, com música por cima)
+- Pausa de 1 segundo após "ninguém te ensinou" — silêncio operando
+- **Outro texto:** *"R$100 → R$500: a diferença está antes da manobra"*
 
 ---
 
-## Bloco 4 — Quem é a Clau · 2:00–3:00
+## 🎬 Bloco 4 — Quem é a Clau · 1:40–2:25
 
-**Função:** autoridade. Mas autoridade por **resultado**, não por currículo. Quem é a pessoa, qual a virada, por que ela pode falar isso.
+**Função:** autoridade. Por resultado, não por currículo.
 
-### Roteiro
+### Roteiro (encurtado vs v2)
 
-> "Eu sou a Clau Carvalho. Fisioterapeuta, formada em Goiânia, e atendo pós-operatório de cirurgia plástica há mais de oito anos.
+> "Eu sou a Clau. Fisioterapeuta em Goiânia, há mais de oito anos só com pós-operatório.
 >
-> E olha, eu comecei igualzinho a você. Aparelho, creme, drenagem padrão. Estudei tudo. E mesmo assim ouvia paciente reclamando de fibrose, de seroma, de demora pra desinchar.
+> Eu comecei igual a você: aparelho, creme, drenagem padrão. Estudei tudo.
+> E mesmo assim ouvia paciente reclamando de fibrose, de seroma, de demora pra desinchar.
 >
-> E eu me culpava. Achava que era a minha técnica.
+> Aí eu **parei de seguir receita** e comecei a observar. Cada caso. Cada pele. Cada fase.
+> E construí um método.
 >
-> Até o dia que eu **parei de seguir receita** e comecei a observar. Cada caso. Cada pele. Cada fase. E fui construindo um método que respeitasse o tecido, a fase e a paciente como **indivíduos** — não como protocolo.
+> Hoje **mais de mil e duzentas pacientes** passaram pela minha clínica.
+> **Mais de duzentas profissionais** já se formaram comigo.
+> Cirurgião manda paciente direto pra mim antes de sair do bloco.
 >
-> Hoje eu atendo paciente que vem de outra cidade. Cirurgião manda direto pra mim antes da paciente sair do bloco cirúrgico. Já passaram mais de mil e duzentas pacientes pela minha clínica. Já formei mais de duzentas profissionais na mentoria.
->
-> E não é porque eu sou a fisio mais barata. **É porque eu sou a única que faz exatamente isso.**
+> Não é porque eu sou a fisio mais barata.
+> **É porque eu sou a única que faz exatamente isso.**
 >
 > Esse método tem nome. Aurora.
->
 > E agora ele virou curso."
 
-### Direção visual
-- Inserções: clipes da Clau atendendo (de costas pra preservar paciente), entrada do consultório, foto da equipe
-- **Prints reais de DM** de cirurgião indicando, depoimento da @marianasimoes.dra
-- Texto na tela em momentos chave: *"+1.200 pacientes"*, *"+200 profissionais formadas"*, *"+30 cirurgiões parceiros"*
+### Direção
+- Inserções: clipe da Clau atendendo (de costas — preserva paciente) · entrada do consultório · prints de DM de cirurgião
+- **Texto na tela em momentos-chave:** *"+1.200 pacientes"* · *"+200 profissionais formadas"* · *"+30 cirurgiões parceiros"*
+- Esses números aparecem com sound effect sutil (impacto leve · não chamativo)
 - Volta pra plano frontal
 
 ---
 
-## Bloco 5 — Os 5 pilares · 3:00–4:30
+## 🎬 Bloco 5 — Os 5 pilares · 2:25–3:50
 
-**Função:** mostrar a estrutura do método. **Sem ser técnico chato** — falar como quem explica pra colega no café.
+**Função:** estrutura do método. Sem ficar técnico chato — falar como quem explica pra colega no café.
 
 ### Roteiro
 
-> "O Aurora tem cinco pilares. Vou te falar rápido cada um — e cada um já é capaz de mudar o seu resultado clínico.
+> "O Aurora tem cinco pilares. Cada um já é capaz de mudar o seu resultado clínico.
 >
-> **Um — técnica 100% manual a seco.** Sem creme na fase inicial. E não, isso não é frescura — eu te explico no curso por quê.
+> **Um — técnica 100% manual a seco.** Sem creme na fase inicial. Não é frescura. Eu te explico no curso.
 >
-> **Dois — zero eletroterapia.** Calor na região operada acelera fibroblasto desordenado. E isso, na linguagem que paciente entende, **é fibrose aparente**. Quem te disse que aparelho ajuda — não te contou tudo.
+> **Dois — zero eletroterapia.** Calor na região operada acelera fibroblasto desordenado. Que na linguagem da paciente é **fibrose aparente.** Quem te disse que aparelho ajuda — não te contou tudo.
 >
-> **Três — sem deslizamento na fase inicial.** Bombeamento de linfonodo, sim. Deslizar em pele recém-operada, jamais. Isso já evita 70% dos pesadelos da paciente.
+> **Três — sem deslizamento na fase inicial.** Bombeamento de linfonodo, sim. Deslizar em pele recém-operada, jamais. Isso já evita 70% dos pesadelos.
 >
-> **Quatro — raciocínio clínico individualizado.** Esse é o coração do método. Cada caso é um caso. E você vai aprender a **ler antes de tocar**.
+> **Quatro — raciocínio clínico individualizado.** Esse é o coração. Cada caso é um caso. **E você vai aprender a ler antes de tocar.**
 >
-> **Cinco — assistência 24 horas.** Não é só atender no consultório. É construir um sistema de acompanhamento que **aproxima paciente e cirurgião** — e te transforma em alguém indispensável.
+> **Cinco — assistência 24 horas.** Não é só atender no consultório. É construir um sistema que aproxima paciente e cirurgião — e te transforma em **indispensável.**
 >
-> Esses cinco pilares mudam o resultado. E quando o resultado muda, **muda também o que você pode cobrar.**"
+> Quando o resultado muda, **muda também o que você pode cobrar.**"
 
-### Direção visual
-- Texto na tela com os 5 pilares numerados aparecendo conforme ela fala
-- Background terracotta/creme, paleta da marca
-- **Em cada pilar:** ícone do MIV (sunburst, diamante, etc) animando entrada
+### Direção
+- 5 pilares aparecem numerados no canto da tela conforme ela fala
+- Em cada pilar: **ícone do MIV** (sunburst, diamante, etc) animando entrada — leve · sem ser cartoon
+- Background terracotta/creme · paleta da marca
 - Volta pra Clau no fechamento
 
 ---
 
-## Bloco 6 — Dentro do curso · 4:30–6:00
+## 🎬 Bloco 6 — Dentro do curso · 3:50–5:00
 
-**Função:** mostrar densidade sem cansar. **Não ler aula por aula** — mostrar o tamanho.
+**Função:** densidade sem cansar. Mostrar tamanho, não ler aula por aula.
 
-### Roteiro
+### Roteiro (encurtado vs v2)
 
-> "Olha o tamanho do curso:
+> "Olha o tamanho do curso.
 >
-> Eu gravei em três dias. Mais de **49 aulas**, em **9 módulos**. Quase 18 horas de conteúdo. Não é curso de Reels editado — é formação completa.
+> Gravado em três dias. **49 aulas em 9 módulos.** Quase 18 horas. Não é Reels editado — é formação completa.
 >
-> Tem o módulo de **anatomia e fisiologia** — porque pra ler caso, você precisa entender por dentro o que tá acontecendo na pele. Sistema linfático, cicatrização, edema. Pra você nunca mais decorar manobra sem saber por que tá fazendo.
+> **Anatomia e fisiologia** — pra você nunca mais decorar manobra sem saber por que tá fazendo.
+> **Manobras com paciente real** — bombeamento, pressão, cisalhamento, Vodder, tape. Filmado de cima e de frente. Você vê **exatamente** onde encostar a mão.
+> **Fases e protocolo** — inicial, mediana, tardia. Como dosar. Como evoluir.
+> **Oito cirurgias diferentes** com paciente real — abdominoplastia, lipo HD, silicone, mastopexia, papada, cervico, dorso, rino.
+> **Intercorrências** — fibrose, seroma, necrose, infecção. Quando seguir, quando suspender, quando encaminhar.
+> **Nutrição e apoio** — porque o pós não é só físico.
+> E o módulo que **ninguém ensina e que mais converte:** gestão e negócio. Anamnese, precificação, parceria com cirurgião, Instagram que vira agenda.
 >
-> Tem o módulo de **manobras com paciente real**. Bombeamento, pressão, descompressão, cisalhamento, Vodder, tape. Filmado de cima e de frente. **Você vai ver exatamente onde encostar a mão.**
->
-> Tem o módulo de **fases e protocolo** — inicial, mediana, tardia. Como dosar. Como evoluir. Como atender online com qualidade.
->
-> E tem **oito cirurgias diferentes**, todas com paciente real, do dia zero à alta: abdominoplastia, lipo HD, silicone, mastopexia, papada com platismoplastia, cervico, dorso, rino.
->
-> Tem o módulo de **intercorrências**: fibrose, seroma, necrose, infecção. Quando seguir, quando suspender, quando encaminhar — sem pânico.
->
-> E tem o módulo que **ninguém ensina e que mais converte**: gestão e negócio. Anamnese impecável, precificação por valor, parceria com cirurgião, Instagram que vira agenda, plano de ação 30/60/90 dias.
->
-> Porque técnica sem negócio **não paga conta**."
+> Porque técnica sem negócio **não paga conta.**"
 
-### Direção visual
-- Timeline animada dos 9 módulos aparecendo em cards (mesmo design da LP)
-- Snippets de 1–2s das gravações com paciente, sem áudio, com música
-- **Texto na tela ao final:** *"49 aulas · 9 módulos · ~18h · 14 com paciente real"*
+### Direção
+- Timeline animada dos 9 módulos aparecendo em cards
+- Snippets de 1–2s das gravações com paciente · sem áudio · com música
+- **Texto final fixo na tela:** *"49 aulas · 9 módulos · ~18h · 14 com paciente real"*
 - Volta pra Clau
 
 ---
 
-## Bloco 7 — Pra quem é · 6:00–6:45
+## 🎬 Bloco 7 — Pra quem é · 5:00–5:35
 
-**Função:** qualificar. Quem não é, sai. Quem é, se aprofunda.
+**Função:** filtro honesto.
 
 ### Roteiro
 
 > "Esse curso é pra você se você é **fisioterapeuta ou esteticista** com técnica boa e que tá cansada de ver gente menos preparada faturando mais.
 >
-> Pra você que quer ser **a referência da sua cidade** em pós-op — não só mais uma na lista do Instagram.
+> Pra você que quer ser **a referência da sua cidade** em pós-op — não só mais uma na lista.
 >
-> Pra você que tá disposta a estudar, aplicar, posicionar e construir autoridade no longo prazo.
+> Pra você que tá disposta a estudar, aplicar e construir autoridade no longo prazo.
 >
-> **Não é** pra quem quer fórmula mágica. Não é pra quem acha que dois Reels resolvem o problema. Não é pra quem quer curso de drenagem genérica — esse aqui é **pós-op de cirurgia plástica**, com tudo que isso exige.
+> **Não é** pra quem quer fórmula mágica. Não é pra quem acha que dois Reels resolvem.
+> Não é pra quem quer curso de drenagem genérica — esse aqui é **pós-op de cirurgia plástica.**
 >
-> E não é pra quem espera que o curso entregue paciente na sua mão. **Aqui ensinamos a atrair. Não a trazer.**"
+> E não é pra quem espera que o curso **traga paciente.**
+> Aqui ensinamos a atrair. Não a trazer."
 
-### Direção visual
+### Direção
 - Checklist na tela: ✓ é pra você se / ✕ não é pra você se
-- Plano frontal, expressão firme
+- Plano frontal · expressão firme
 
 ---
 
-## Bloco 8 — Lista de espera + bônus · 6:45–7:45
+## 🎬 Bloco 8 — Lista de espera + bônus · 5:35–6:35
 
-**Função:** criar urgência real. Bônus exclusivos pra quem entra agora — escassez tangível.
+**Função:** chamada. Escassez tangível, não fabricada.
 
 ### Roteiro
 
-> "Agora vem a parte importante. Presta atenção.
+> "Agora presta atenção.
 >
-> O Curso Método Aurora **ainda não está aberto pra venda**. Vai abrir nas próximas semanas.
+> O Curso Método Aurora **ainda não está aberto pra venda.** Vai abrir nas próximas semanas.
 >
-> Mas a lista de espera **já tá rolando**. E quem entra agora não só recebe o aviso primeiro — recebe **bônus que ninguém mais vai ter**:
+> A lista de espera **já tá rolando.** E quem entra agora não só recebe aviso primeiro — recebe **bônus que ninguém mais vai ter:**
 >
-> Pras **50 primeiras a fechar** quando o carrinho abrir, eu vou rodar um **encontro mensal ao vivo no Zoom** — comigo, em grupo, pra tirar dúvida de caso real durante 6 meses.
+> Pras **50 primeiras** a fechar quando o carrinho abrir, eu vou rodar **encontro mensal ao vivo no Zoom comigo durante 6 meses.** Em grupo. Pra tirar dúvida de caso real.
 >
-> E pras **10 primeiras** — só dez —, eu vou abrir **atendimento 1 a 1 pelo meu WhatsApp**, durante 30 dias. Você falando comigo sobre o seu caso, o seu paciente, a sua dúvida.
+> E pras **10 primeiras** — só dez —, eu vou abrir **atendimento 1 a 1 pelo meu WhatsApp por 30 dias.** Você falando comigo sobre o seu paciente.
 >
-> Esses bônus **não vão estar disponíveis** quando o curso entrar em venda aberta. **Saem da oferta.** São pras alunas pioneiras.
+> Esses bônus **saem da oferta** quando o curso entrar em venda aberta.
+> São pras **alunas pioneiras.**
 >
-> Pra entrar na lista é grátis e leva 30 segundos. Nome, WhatsApp, profissão, e-mail. Aqui embaixo."
+> Pra entrar é grátis. Leva 30 segundos. Aqui embaixo."
 
-### Direção visual
-- **Texto grande na tela:** *"50 primeiras → Zoom mensal por 6 meses"* / *"10 primeiras → WhatsApp 1:1 por 30 dias"*
-- Seta animada apontando pra baixo (pro form)
-- Plano frontal, Clau séria — mas com leve sorriso quando fala "10 primeiras, só dez"
+### Direção
+- **Texto grande na tela:** *"50 primeiras → Zoom mensal · 6 meses"* / *"10 primeiras → WhatsApp 1:1 · 30 dias"*
+- Seta animada apontando pra baixo
+- Plano frontal · Clau séria — leve sorriso quando fala "10 primeiras, só dez"
 
 ---
 
-## Bloco 9 — CTA + assinatura · 7:45–8:30
+## 🎬 Bloco 9 — CTA + assinatura · 6:35–7:15
 
-**Função:** fechar com a frase de marca + comando direto. Sem rodeio.
+**Função:** fechar. Sem rodeio.
 
 ### Roteiro
 
-> "Olha, eu vou ser direta.
+> "Olha. Eu vou ser direta.
 >
-> Você não precisa de mais um curso. Você precisa do **método** que vai fazer paciente sair da sua sala falando *'eu não sabia que pós-op podia ser assim'*.
+> Você não precisa de mais um curso.
 >
-> Você precisa do método que vai fazer **cirurgião te indicar antes da paciente sair do bloco**.
+> Você precisa do **método** que vai fazer paciente sair da sua sala falando *'eu não sabia que pós-op podia ser assim.'*
 >
-> Você precisa do método que vai te tirar do *'quase fechando'* pra **agenda fechada com 30 dias de antecedência**.
+> Você precisa do método que vai fazer **cirurgião te indicar antes da paciente sair do bloco.**
+>
+> Você precisa do método que vai te tirar do *'quase fechando'*
+> pra **agenda fechada com 30 dias de antecedência.**
 >
 > Esse é o Método Aurora.
 >
 > Entra na lista. Garante o bônus. Me espera abrir o carrinho.
 >
-> *Transformando a recuperação em arte — com o Método Aurora, sua beleza renasce.*"
+> *(pausa · sorriso leve · olhar firme)*
+>
+> *Transformando a recuperação em arte —*
+> *com o Método Aurora, sua beleza renasce.*"
 
-### Direção visual
-- Última frase em texto grande na tela (tagline oficial do curso)
+### Direção
+- Última frase em **texto grande** na tela (tagline oficial)
 - Logo Clau Carvalho aparece
-- **Card final**: foto da Clau + frase da promessa + CTA "Entrar na lista de espera →"
+- **Card final fixo nos últimos 8 segundos:** foto da Clau + frase da promessa + botão *"Entrar na lista de espera →"*
 - Música sobe e fade out
-- **Atenção:** o card final fica fixo nos últimos 8 segundos pra dar tempo de ler e clicar
 
 ---
 
-## Pós-edição — checklist de qualidade
+## 🧪 A/B Test — variações pra criativos curtos
 
-- [ ] **Cortar TODA respiração longa, "éééé", "ahn", repetições** — sem dó
-- [ ] **Subtítulo aberto queimado** (90% do tráfego pago é assistido sem som — sem legenda, perde 80% do impacto)
+Pra rodar paralelo nos primeiros 14 dias e descobrir o melhor hook:
+
+### Versão 60s (Reels) — 3 cortes diferentes
+- **Corte 1:** Bloco 1A (gancho pergunta) → 30s do bloco 3 (Big Idea) → 15s do bloco 8 (bônus)
+- **Corte 2:** Bloco 1B (acusação) → 25s do bloco 3 → 20s do bloco 8
+- **Corte 3:** Bloco 1C (estatística) → 30s do bloco 3 → 15s do bloco 8
+
+### Versão 30s (Feed/Stories)
+- 10s gancho + 12s Big Idea + 8s CTA "lista de espera"
+
+### Versão 15s (teste de hook)
+- Só o gancho com texto sobreposto e CTA "saiba mais"
+
+### Métricas pra escolher vencedora
+- VTR 75% (assistir até 75% do vídeo) — meta: 18%+
+- CTR pro form — meta: 5%+
+- CPL — meta: R$3–5
+
+---
+
+## ✅ Pós-edição — checklist
+
+- [ ] **Cortar TODA respiração longa, "éééé", "ahn", repetições** — sem dó. Use Descript ou similar
+- [ ] **Subtítulo aberto queimado** (90% do tráfego pago é assistido sem som — sem legenda perde 80% do impacto)
+  - Estilo: tipografia Archivo bold, branco com sombra terra
+  - Cada linha tem no máx 5–6 palavras
 - [ ] **B-rolls inseridos** nos blocos 4, 5, 6 (já gravados na semana de produção do curso)
-- [ ] **Texto sobreposto:** gancho, Big Idea ("Pós-op não é técnica. É leitura."), 5 pilares numerados, números de prova social, bônus, tagline final
-- [ ] **Música:** instrumental terra, sem letra. Volume baixo (-18db) durante fala, sobe nos respiros (-10db)
-- [ ] **Capa da VSL:** foto da Clau + headline *"O método que ninguém te ensinou"* + selo gráfico **"PRÉ-LANÇAMENTO"** em terracotta
-- [ ] **Versão de 60s pra Reels:** bloco 1 + parte do 3 + bloco 8 + CTA
-- [ ] **Versão de 30s pra anúncio:** gancho duro + 1 frase do método + CTA
-- [ ] **Versão de 15s** pra teste de hook: só o bloco 1 com texto sobreposto
+- [ ] **Texto sobreposto** nos momentos-chave: gancho, Big Idea, números de prova social, 5 pilares, bônus, tagline final
+- [ ] **Música:** instrumental terra, sem letra
+  - Volume baixo (-18db) durante fala
+  - Sobe nos respiros (-10db)
+- [ ] **Sound effect** sutil ao mostrar números de autoridade (impacto leve, não chamativo)
+- [ ] **Capa da VSL:**
+  - Foto da Clau · expressão séria/confiante · plano peito-pra-cima
+  - Headline: *"O método que ninguém te ensinou"*
+  - Selo gráfico **"PRÉ-LANÇAMENTO"** em terracotta
+  - Tipografia: Italiana pra título · Archivo pro selo
+- [ ] **Versões curtas:** 60s · 30s · 15s (ver seção A/B test acima)
+- [ ] **Hospedagem:**
+  - Vimeo Pro com embed personalizado (esconde controles excessivos)
+  - **OU** YouTube unlisted com player customizado
+  - Não usar player nativo do Hotmart aqui — quer controle visual
 
 ---
 
-## Princípios de copy aplicados (pra Clau bater o roteiro durante a gravação)
+## 💡 Princípios de copy aplicados (cola da Clau durante a gravação)
 
-1. **Frase curta vence frase longa.** Se você puder cortar uma palavra, corta.
-2. **Específico vence genérico.** "R$500 a sessão" bate mais que "muito mais caro".
-3. **Você bate eu.** Sempre que possível, fala "você" — não "a profissional", não "as alunas".
-4. **A dor é concreta — não abstrata.** "Vou ver se consigo voltar" é dor real. "Insatisfação com resultados" é dor de slide.
+1. **Frase curta vence frase longa.** Se dá pra cortar palavra, corta.
+2. **Específico bate genérico.** "R$500 a sessão" > "muito mais caro". "+1.200 pacientes" > "muitas pacientes".
+3. **'Você' bate 'a profissional'.** Sempre.
+4. **Dor concreta, não abstrata.** *"Vou ver se consigo voltar"* é dor real. *"Insatisfação com resultados"* é dor de slide.
 5. **Pausa antes da Big Idea.** Silêncio de 1s antes de uma frase forte = ela aterrisa.
-6. **Não pede desculpa.** "Eu sei que isso pode parecer..." → não. Vai direto.
-7. **A última palavra de cada bloco deveria ser uma palavra forte.** "Te ensinou", "paga conta", "trazer", "indispensável".
+6. **Não pede desculpa.** *"Eu sei que isso pode parecer..."* → corta. Vai direto.
+7. **Última palavra de cada bloco = palavra forte.** *"Te ensinou", "paga conta", "trazer", "indispensável".*
+8. **Contraste cria significado.** *"Não é técnica. É leitura."* O `não` faz o `é` virar revelação.
+9. **Números sempre escritos por extenso quando ajudam ritmo.** *"Mais de mil e duzentas pacientes"* > *"+1.200 pacientes"* na fala.
+10. **Pergunta retórica > afirmação.** *"Por que comigo não?"* puxa identificação. *"Você se pergunta por que..."* é narração.
 
 ---
 
-## Métricas pra acompanhar (depois do lançamento)
+## 📊 Métricas pra acompanhar (depois do lançamento)
 
 | Métrica | Meta inicial | Por que importa |
 |---|---|---|
-| **VTR (assistir até o fim)** | 25% chegam ao bloco 9 | Indica força de retenção |
-| **CTR do form** | 8–12% de quem assistiu | Conversão direta |
-| **CPL na lista de espera** | R$3–5 | Custo de aquisição inicial |
-| **Taxa de conversão lead → comprador** | 5–8% no lançamento | Validação de oferta |
-| **Drop em cada bloco** | < 8% por bloco | Identifica buraco no roteiro |
+| **VTR full** (assiste até o fim) | 25% chegam ao bloco 9 | Indica força de retenção |
+| **VTR 50%** | 45%+ | Filtro de qualidade do gancho |
+| **CTR do form** | 8–12% | Conversão direta |
+| **CPL na lista de espera** | R$3–5 | Custo de aquisição |
+| **Taxa lead → comprador** | 5–8% no lançamento | Validação da oferta |
+| **Drop por bloco** | < 8% por bloco | Identifica buraco no roteiro |
 
-Se o drop maior estiver entre o **bloco 6 e o 7** → encurtar bloco 6.
-Se o drop maior estiver no **bloco 1** → reescrever gancho.
-Se o CTR do form estiver < 5% → reescrever bloco 8.
+### Diagnóstico por métrica
+| Sintoma | Provável causa | Ação |
+|---|---|---|
+| VTR 50% < 30% | Gancho fraco | Trocar versão A/B/C do bloco 1 |
+| Drop entre bloco 3 e 4 | Big Idea não vendeu | Reescrever bloco 3 com mais especificidade |
+| Drop entre bloco 6 e 7 | Bloco 6 longo demais | Encurtar lista de módulos |
+| CTR form < 5% | Bloco 8 fraco | Reescrever oferta com escassez mais clara |
+| Lead/comprador < 3% | Lista esfriou | Sequência de e-mails com mais intervalo de aquecimento |
 
 ---
 
-## Tagline oficial do curso
+## 🎯 Tagline oficial
 
 > *"Transformando a recuperação em arte: com o Método Aurora, sua beleza renasce."*
 > — Clau Carvalho
 
-Usar como assinatura no fim de cada peça (VSL, anúncios, e-mails de aquecimento, criativos, posts de pré-lançamento).
+Usar como assinatura no fim de cada peça (VSL, anúncios, e-mails, criativos, posts de aquecimento).
 
 ---
 
-## Frases de screenshot — guia de uso fora da VSL
+## 📚 Frases de screenshot — biblioteca pra reuso
 
-Frases que aparecem no roteiro e que viram **conteúdo orgânico** (carrossel, story, post estático) durante o aquecimento:
+Frases que estão na VSL e que viram **conteúdo orgânico** (carrossel, story, post estático, anúncio) durante o aquecimento:
 
-1. **"Pós-operatório não é técnica. É leitura."**
-2. **"Quem só tem manobra cobra por hora. Quem tem método cobra por resultado."**
-3. **"A diferença entre cobrar R$100 e R$500 a sessão não está na sua técnica."**
-4. **"Cirurgião indica fisio que ele confia."**
-5. **"Não é falta de paciente. É outra coisa."**
-6. **"Calor na região operada é fibrose disfarçada de tratamento."**
-7. **"Aqui ensinamos a atrair. Não a trazer."**
+| # | Frase | Onde aparece na VSL | Reuso ideal |
+|---|---|---|---|
+| 1 | **"Pós-operatório não é técnica. É leitura."** | Bloco 3 | Carrossel · Reels · Anúncio principal |
+| 2 | **"Quem só tem manobra cobra por hora. Quem tem método cobra por resultado."** | Bloco 3 | Story · Anúncio · Post estático |
+| 3 | **"A diferença entre cobrar R$100 e R$500 a sessão não está na sua técnica."** | Bloco 3 | Anúncio · Carrossel · Reels |
+| 4 | **"Cirurgião indica fisio que ele confia."** | Bloco 9 | Story · Carrossel sobre parceria |
+| 5 | **"Calor na região operada é fibrose disfarçada de tratamento."** | Bloco 5 | Carrossel técnico · Reels educativo |
+| 6 | **"Aqui ensinamos a atrair. Não a trazer."** | Bloco 7 | Story de qualificação · Anúncio |
+| 7 | **"Não é falta de paciente. É outra coisa."** | Bloco 1B | Hook de Reels |
+| 8 | **"Eu não sabia que pós-op podia ser assim."** | Bloco 9 | Citação de paciente · Story |
 
-Cada uma dessas pode virar 1 carrossel + 1 story + 1 anúncio. **A VSL não é peça única — é fonte de copy pra um mês de aquecimento.**
+**Cada frase = 1 carrossel + 1 story + 1 anúncio.** A VSL não é peça única — é **fonte de copy pra um mês de aquecimento.**
+
+---
+
+## 🔁 O que mudou da v2 pra v3
+
+- ⏱️ **1'15" mais curto** — corte gordura nos blocos 4, 6 e 8
+- 🎯 **3 versões de gancho** pra A/B test no bloco 1 (antes era 1 só)
+- 💬 **Pausas marcadas no roteiro** — *(pausa · respiração)* — pra Clau saber onde respirar
+- 📝 **Frases de screenshot** identificadas inline (negrito) durante o roteiro
+- 📊 **Diagnóstico por métrica** — tabela de "se X cai, faça Y"
+- 🎬 **Versões de corte** (60s/30s/15s) detalhadas pra Reels e anúncio
+- 🎯 **Métrica VTR 50%** adicionada — filtro de gancho separado da retenção total
+- 🧠 **10 princípios de copy** documentados (eram 7 na v2)
