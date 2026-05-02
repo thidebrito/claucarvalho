@@ -118,7 +118,7 @@
 - **+ acesso completo ao Curso Método Aurora** (49 aulas · 9 módulos)
 - **+ acesso ao sistema/app interativo** com trilha personalizada
 - **+ certificação Aurora** ao terminar
-- Investimento: a partir de R$ 8.000
+- Investimento: a partir de R$ 7.000
 - ⚠️ **Apenas as primeiras X alunas** ganham essa combinação
 - "Depois disso, quem comprar mentoria sozinha paga curso à parte."
 
@@ -207,7 +207,7 @@
 3. Cortes diretos com cross-fade 0.3s
 4. **Texto sobreposto nos momentos-chave:**
    - P5 (tickets): card visual mostrando os 2 lado a lado
-   - P5: "Mentoria · R$ 5.000" / "Premium · R$ 8.000 · Mentoria + Curso + Sistema"
+   - P5: "Mentoria · R$ 5.000" / "Premium · R$ 7.000 · Mentoria + Curso + Sistema"
    - P5: "Apenas X primeiras → Premium combo"
    - P6: lista de bônus aparecendo conforme fala
    - P7: "Vagas limitadas · turma reduzida"
@@ -243,7 +243,7 @@
 > *"Olá Clau, vi sua VSL da Mentoria Técnica Aurora e quero saber mais sobre a turma."*
 
 ### Por que WhatsApp e não checkout direto
-- Mentoria é venda consultiva (preço alto · ticket de R$ 5-8 mil)
+- Mentoria é venda consultiva (preço alto · ticket de R$ 5-7 mil)
 - Clau (ou time comercial) precisa qualificar
 - Ticket alto fecha melhor com conversa humana
 - Permite oferecer o ticket Premium na hora certa
